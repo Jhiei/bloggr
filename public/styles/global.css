@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Roboto&display=swap');
+
+:root {
+    --form-element-border: #dcdcdc;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+button {
+    border: 1px solid var(--form-element-border);
+    outline: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    outline: 0;
+    border: 1px solid var(--form-element-border);
+}
