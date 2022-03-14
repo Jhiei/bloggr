@@ -1,0 +1,81 @@
+main.main-body {
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    grid-template-rows: 90% 1fr;
+
+    .main-body-img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .main-body-form {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .main-body-logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 65%;
+            }
+        }
+
+        .main-body-sign-in-form {
+            margin: 25px;
+
+            .sign-in-form-input-field {
+                position: relative;
+
+                label {
+                    position: absolute;
+                    text-transform: uppercase;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 10px;
+                    top: 5px;
+                    left: 5px;
+                    color: var(--input-labels);
+                    letter-spacing: 1px;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 15px;
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                    background: var(--white-tint);
+                    box-shadow: 2px 2px 3px var(--form-element-border); 
+                }
+
+                input[type="submit"] {
+                    background: var(--main);
+                    border: 1px solid var(--main);
+                    color: var(--input-labels);
+                }
+            }
+        }
+    }
+
+    footer.sign-in-footer {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        border: 1px solid black;
+    }
+}

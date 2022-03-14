@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Roboto&display=swap');
 
 :root {
+    --main: #68FEF5;
     --form-element-border: #dcdcdc;
+    --input-labels: #333;
+    --white-tint: #fff;
+    --dirty-white: #fdfdfd;
+    --body-shade: #f5f5f5;
+    --feed-write-heading: #a1a1a1;
+    --topic-fg: #333;
 }
 
 *,
@@ -10,10 +17,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
-button {
+body {
+    position: relative;
+    background: var(--body-shade);
+}
+
+button, input, select {
     border: 1px solid var(--form-element-border);
     outline: 0;
 }
@@ -27,7 +38,10 @@ a {
     color: black;
 }
 
-input {
-    outline: 0;
-    border: 1px solid var(--form-element-border);
+input[type="submit"] {
+    cursor: pointer;
+}
+
+img {
+    -webkit-user-drag: none;
 }
