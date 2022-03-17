@@ -38,12 +38,40 @@
         </div>
     </main>
 
+    <div class="blog-create-modal">
+        <form action="" method="POST" class="blog-create-modal-form" enctype="multipart/form-data">
+            <h2 class="blog-create-modal-form-heading">Blog Details</h2>
+            <div class="blog-create-modal-form-input-field img-input-field">
+                <label for="blog-thumbnail" class="image-input">
+                    <div class="image-input-container">
+                        <img src="{{ asset('images/tnail.svg') }}" alt="prompt user to enter thumbnail">
+                    </div>
+                </label>
+                <input type="file" name="blog_title" id="blog-thumbnail">
+            </div>
+            <div class="blog-create-modal-form-input-field">
+                <label class="text-input-labels" for="">Title</label>
+                <input type="text" name="blog_title" id="blog-title">
+            </div>
+            <div class="blog-create-modal-form-input-field">
+                <label class="text-input-labels" for="">Description</label>
+                <textarea name="blog_title" id="blog-title"></textarea>
+            </div>
+            <div class="blog-create-modal-form-input-field-btn">
+                <button type="button">Cancel</button>
+                <input type="submit" value="Continue">
+            </div>
+        </form>
+    </div>
+
     <script>
         $(() => {
             let count = 0;
-            let arr = ['Feeling like a writer today, {{ Auth::user()->fname }}?', 
-            'Express your thoughts in words.', 
-            "Keep the momentum, words will flow."];
+            let arr = [
+                'Feeling like a writer today, {{ Auth::user()->fname }}?', 
+                'Express your thoughts in words.', 
+                "Keep the momentum, words will flow."
+            ];
 
             setInterval(() => {
                 count++;
@@ -57,4 +85,5 @@
             }, 10000);
         });
     </script>
+    <script src="{{ asset('js/feed/blog-create-modal.js') }}"></script>
 @endsection

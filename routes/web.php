@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controller\BlogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +23,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/feed', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/blog/create', [BlogController::class, 'create'])->name('blog-create');
 });
 
 require __DIR__.'/auth.php';

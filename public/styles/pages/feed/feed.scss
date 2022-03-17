@@ -7,7 +7,6 @@ main.main-body {
     grid-gap: 30px;
 
     .feed {
-
         .feed-write {
             width: 100%;
 
@@ -19,7 +18,7 @@ main.main-body {
                 justify-content: flex-start;
                 align-items: center;
                 cursor: pointer;
-                transition: .3s;
+                transition: 0.3s;
 
                 .feed-write-intro-img {
                     width: 7%;
@@ -35,7 +34,7 @@ main.main-body {
                     margin-left: 20px;
 
                     h1.feed-write-intro-text {
-                        font-family: 'Poppins', sans-serif;
+                        font-family: "Poppins", sans-serif;
                         font-size: 26px;
                         color: var(--feed-write-heading);
                     }
@@ -47,7 +46,7 @@ main.main-body {
             }
 
             .feed-write-topic {
-                font-family: 'Poppins', sans-serif;
+                font-family: "Poppins", sans-serif;
                 padding: 15px 15px 10px;
                 background: var(--main);
                 position: relative;
@@ -76,6 +75,11 @@ main.main-body {
                         color: var(--topic-fg);
                         border-radius: 50px;
                         border: 1px solid var(--topic-fg);
+                        transition: 0.5s;
+                    }
+
+                    li.feed-write-topic-li:hover {
+                        padding: 5px 10px;
                     }
                 }
             }
@@ -89,6 +93,114 @@ main.main-body {
             position: sticky;
             top: 93px; // fixed value of positioning, fixed on scroll
             left: 0;
+        }
+    }
+}
+
+.blog-create-modal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: var(--modal-bg);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form.blog-create-modal-form {
+        background: var(--white-tint);
+        padding: 30px;
+        width: 30%;
+        border-radius: 5px;
+
+        h2.blog-create-modal-form-heading {
+            font-size: 28px;
+            color: var(--topic-fg);
+            font-family: "Poppins", sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .blog-create-modal-form-input-field {
+            position: relative;
+            margin-bottom: 10px;
+            width: 100%;
+
+            label.text-input-labels {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                font-size: 10px;
+                text-transform: uppercase;
+                color: var(--input-labels);
+                letter-spacing: 1px;
+                font-family: "Roboto", sans-serif;
+            }
+
+            label.image-input {
+                width: 100%;
+                display: block;
+                background: var(--thumbnail-bg);
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 25px 0px;
+
+                .image-input-container {
+                    width: fit-content;
+                    height: 150px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+                font-family: "Poppins", sans-serif;
+            }
+
+            input[type="file"] {
+                border: none;
+                display: none;
+            }
+
+            textarea {
+                height: 150px;
+            }
+        }
+
+        .blog-create-modal-form-input-field:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-create-modal-form-input-field-btn {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            input[type="submit"],
+            button[type="button"] {
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid var(--main);
+                background: var(--main);
+                border-radius: 5px;
+                color: var(--text-main);
+            }
+
+            input[type="submit"] {
+                margin-left: 5px;
+            }
         }
     }
 }

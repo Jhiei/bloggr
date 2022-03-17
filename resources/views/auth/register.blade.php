@@ -63,7 +63,7 @@
 
                 <div class="sign-up-form-input-field">
                     <label for="confirm_password">Confirm Password</label>
-                    <input type="confirm_password" name="confirm_password" id="confirm_password" required>
+                    <input type="password" name="confirm_password" id="confirm_password" required>
                 </div>
 
                 <div class="sign-up-form-input-field">

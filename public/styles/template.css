@@ -7,7 +7,7 @@ header.hdr-container {
   top: 0;
   left: 0;
   border-bottom: 1px solid var(--form-element-border);
-  z-index: 10;
+  z-index: 100;
 }
 
 header.hdr-container .main-hdr {
@@ -45,7 +45,7 @@ header.hdr-container .main-hdr .main-hdr-search form.main-hdr-search-form {
 
 header.hdr-container .main-hdr .main-hdr-search form.main-hdr-search-form input[type="text"] {
   padding: 5px 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: var(--body-shade);
   border-radius: 3px;
   width: 65%;
@@ -123,7 +123,7 @@ header.hdr-container .main-hdr .main-hdr-nav .main-hdr-nav-profile-container .dr
 }
 
 header.hdr-container .main-hdr .main-hdr-nav .main-hdr-nav-profile-container .drop-container ul.drop-container-list a {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   display: block;
   margin-bottom: 10px;
