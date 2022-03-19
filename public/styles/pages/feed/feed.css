@@ -4,18 +4,22 @@ main.main-body {
   padding: 25px 0px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 75% 1fr;
-      grid-template-columns: 75% 1fr;
-  grid-gap: 30px;
+  -ms-grid-columns: 70% 1fr;
+      grid-template-columns: 70% 1fr;
+  grid-gap: 20px;
+  position: relative;
 }
 
 main.main-body .feed .feed-write {
   width: 100%;
+  margin-bottom: 20px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border-radius: 10px;
 }
 
 main.main-body .feed .feed-write .feed-write-intro {
   background: var(--white-tint);
-  border-radius: 10px;
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,6 +33,7 @@ main.main-body .feed .feed-write .feed-write-intro {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  border-radius: 10px 10px 0px 0px;
 }
 
 main.main-body .feed .feed-write .feed-write-intro .feed-write-intro-img {
@@ -57,12 +62,12 @@ main.main-body .feed .feed-write .feed-write-intro:hover {
 
 main.main-body .feed .feed-write .feed-write-topic {
   font-family: "Poppins", sans-serif;
-  padding: 15px 15px 10px;
+  padding: 10px 15px;
   background: var(--main);
   position: relative;
-  z-index: -1;
-  top: -5px;
   border-radius: 0px 0px 10px 10px;
+  z-index: -1;
+  top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,11 +116,61 @@ main.main-body .user-container {
   position: relative;
 }
 
-main.main-body .user-container .user {
+main.main-body .user-container .user-container-main {
   position: -webkit-sticky;
   position: sticky;
-  top: 93px;
+  top: 80px;
   left: 0;
+}
+
+main.main-body .user-container .user-container-main .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  background: var(--white-tint);
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+main.main-body .user-container .user-container-main .user .user-img-container {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  position: relative;
+  top: 2px;
+}
+
+main.main-body .user-container .user-container-main .user .user-img-container img {
+  width: 100%;
+}
+
+main.main-body .user-container .user-container-main .user .user-name-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+main.main-body .user-container .user-container-main .user .user-name-container span.user-real-name {
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+main.main-body .user-container .user-container-main .user .user-name-container span.user-user-name {
+  color: var(--feed-write-heading);
 }
 
 .blog-create-modal {
@@ -182,6 +237,7 @@ main.main-body .user-container .user {
       -ms-flex-align: center;
           align-items: center;
   padding: 25px 0px;
+  margin-bottom: 15px;
 }
 
 .blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container {
@@ -234,16 +290,23 @@ main.main-body .user-container .user {
 }
 
 .blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button[type="button"] {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button.cancel-btn {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid var(--main);
-  background: var(--main);
   border-radius: 5px;
   color: var(--text-main);
+  cursor: pointer;
 }
 
 .blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn input[type="submit"] {
   margin-left: 5px;
+  border: 1px solid var(--main);
+  background: var(--main);
+}
+
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button.cancel-btn {
+  background: var(--error-tint);
+  border: 1px solid var(--error-tint);
+  color: var(--white-tint);
 }
 /*# sourceMappingURL=feed.css.map */

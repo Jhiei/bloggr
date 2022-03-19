@@ -75,5 +75,7 @@
 
         </footer>
     </main>
+
+    <script src="{{ asset('js/auth/form-labels.js') }}"></script>
 </body>
 </html>

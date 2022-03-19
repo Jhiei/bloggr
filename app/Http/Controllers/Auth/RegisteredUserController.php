@@ -49,7 +49,8 @@ class RegisteredUserController extends Controller
             'username' => $request->username,
             'password' => Hash::make($request->password),
             'salt' => Str::random(30),
-            'user_type' => $request->user_type
+            'user_type' => $request->user_type,
+            'user_token' => Str::random(50)
         ]);
 
         event(new Registered($user));

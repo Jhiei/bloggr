@@ -3,22 +3,27 @@ main.main-body {
     width: 60%;
     padding: 25px 0px;
     display: grid;
-    grid-template-columns: 75% 1fr;
-    grid-gap: 30px;
+    grid-template-columns: 70% 1fr;
+    grid-gap: 20px;
+    position: relative;
 
     .feed {
         .feed-write {
             width: 100%;
+            margin-bottom: 20px;
+            box-shadow: var(--box-shadow);
+            border-radius: 10px;
+            // border: 1px solid black;
 
             .feed-write-intro {
                 background: var(--white-tint);
-                border-radius: 10px;
                 padding: 15px;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 cursor: pointer;
                 transition: 0.3s;
+                border-radius: 10px 10px 0px 0px;
 
                 .feed-write-intro-img {
                     width: 7%;
@@ -47,16 +52,17 @@ main.main-body {
 
             .feed-write-topic {
                 font-family: "Poppins", sans-serif;
-                padding: 15px 15px 10px;
+                padding: 10px 15px;
                 background: var(--main);
                 position: relative;
-                z-index: -1;
-                top: -5px;
                 border-radius: 0px 0px 10px 10px;
+                z-index: -1;
+                top: 0px;
                 display: flex;
                 align-items: center;
                 gap: 10px;
                 flex-shrink: 0;
+                // margin-bottom: -5px;
 
                 span.feed-write-topic-sh {
                     color: var(--input-labels);
@@ -89,10 +95,47 @@ main.main-body {
     .user-container {
         position: relative;
 
-        .user {
+        .user-container-main {
             position: sticky;
-            top: 93px; // fixed value of positioning, fixed on scroll
+            top: 80px; // fixed value of positioning, fixed on scroll
             left: 0;
+
+            .user {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                background: var(--white-tint);
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: var(--box-shadow);
+
+                .user-img-container {
+                    flex-basis: 20%;
+                    position: relative;
+                    top: 2px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .user-name-container {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 14px;
+
+                    span.user-real-name {
+                        font-weight: 800;
+                        color: var(--text-main);
+                    }
+
+                    span.user-user-name {
+                        color: var(--feed-write-heading);
+                    }
+                }
+            }
         }
     }
 }
@@ -146,6 +189,7 @@ main.main-body {
                 justify-content: center;
                 align-items: center;
                 padding: 25px 0px;
+                margin-bottom: 15px;
 
                 .image-input-container {
                     width: fit-content;
@@ -189,17 +233,24 @@ main.main-body {
             align-items: center;
 
             input[type="submit"],
-            button[type="button"] {
+            button.cancel-btn {
                 padding: 10px;
                 font-size: 16px;
-                border: 1px solid var(--main);
-                background: var(--main);
                 border-radius: 5px;
                 color: var(--text-main);
+                cursor: pointer;
             }
 
             input[type="submit"] {
                 margin-left: 5px;
+                border: 1px solid var(--main);
+                background: var(--main);
+            }
+
+            button.cancel-btn {
+                background: var(--error-tint);
+                border: 1px solid var(--error-tint);
+                color: var(--white-tint);
             }
         }
     }

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controller\BlogController;
+use App\Http\Controllers\BlogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,8 @@ Route::middleware(['auth'])->group(function() {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/blog/create', [BlogController::class, 'create'])->name('blog-create');
+    Route::get('/blog/create/{token}/{id}', [BlogsController::class, 'create'])->name('blog-create');
+    Route::post('/blog/store', [BlogsController::class, 'store'])->name('blog-store');
 });
 
 require __DIR__.'/auth.php';
