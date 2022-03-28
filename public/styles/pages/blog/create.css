@@ -1,0 +1,275 @@
+body {
+  background: var(--white-tint);
+}
+
+main.main-body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 1fr 20%;
+      grid-template-columns: 5% 1fr 20%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  position: relative;
+}
+
+main.main-body .sidebar-tools-container,
+main.main-body .sidebar-details {
+  padding: 25px;
+  font-family: "Poppins", sans-serif;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  background: var(--white-tint);
+}
+
+main.main-body .sidebar-tools {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+main.main-body .sidebar-tools .sidebar-tools-container {
+  height: 100%;
+  width: 100%;
+  border-right: 1px solid var(--form-element-border);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main.main-body .sidebar-tools .sidebar-tools-container .tool {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+main.main-body .sidebar-tools .sidebar-tools-container .tool .tool-icon {
+  position: relative;
+  top: 2px;
+}
+
+main.main-body .sidebar-tools .sidebar-tools-container .tool .tool-icon ion-icon {
+  font-size: 26px;
+}
+
+main.main-body .sidebar-tools .sidebar-tools-container .tool h3.tool-heading {
+  display: none;
+  font-weight: 100;
+  color: var(--text-main);
+}
+
+main.main-body .sidebar-tools .sidebar-tools-container .tool:hover {
+  background: var(--feed-write-heading);
+}
+
+main.main-body .content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 25px 50px;
+  font-family: "Poppins", sans-serif;
+}
+
+main.main-body .content .elem {
+  margin-bottom: 15px;
+  outline: 0;
+  border: 1px dashed var(--form-element-border);
+  width: 100%;
+}
+
+main.main-body .content h2.heading-element {
+  font-size: 48px;
+}
+
+main.main-body .content p.paragraph-element {
+  font-size: 18px;
+}
+
+main.main-body .sidebar-details {
+  border-left: 1px solid var(--form-element-border);
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field label.image-input {
+  width: 100%;
+  display: block;
+  background: var(--thumbnail-bg);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field label.image-input .image-input-container {
+  width: 100%;
+  height: 150px;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field label.image-input .image-input-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field input[type="file"] {
+  border: none;
+  display: none;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field label.details-blog-form-label {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--text-main);
+  letter-spacing: 1px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field input.details-blog-form-input,
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field textarea.details-blog-form-text {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: var(--text-main);
+  font-family: "Poppins", sans-serif;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field textarea.details-blog-form-text {
+  resize: none;
+  height: 100px;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field .details-blog-form-add-tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field .details-blog-form-add-tag .add-tag-input {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field .details-blog-form-add-tag .blog-tags-icon {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  background: var(--main);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid var(--main);
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field .details-blog-form-add-tag .blog-tags-icon ion-icon {
+  color: var(--white-tint);
+  font-size: 26px;
+  position: relative;
+  left: -1px;
+}
+
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field span.blog-tags-note {
+  font-size: 12px;
+  margin-top: 5px;
+  color: var(--text-main);
+}
+
+main.main-body .sidebar-details .sidebar-details-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20px;
+}
+
+main.main-body .sidebar-details .sidebar-details-submit button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border: none;
+}
+
+main.main-body .sidebar-details .sidebar-details-submit button[type="submit"] {
+  background: var(--main);
+}
+
+main.main-body .sidebar-details .sidebar-details-submit button[type="button"] {
+  background: var(--draft-btn);
+}
+/*# sourceMappingURL=create.css.map */

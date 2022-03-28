@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/blog/create/{token}/{id}', [BlogsController::class, 'create'])->name('blog-create');
     Route::post('/blog/store', [BlogsController::class, 'store'])->name('blog-store');
+    Route::post('/blog/update', [BlogsController::class, 'update'])->name('blog-update');
 });
 
 require __DIR__.'/auth.php';

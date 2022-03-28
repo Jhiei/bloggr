@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Blog;
+use App\Models\User;
 
 use Str;
 use Auth;
@@ -15,7 +16,11 @@ class BlogsController extends Controller
     public function create($token, $id) {
         $blog = Blog::find($id);
 
-        return view('blog.create');
+        $data['user'] = User::find($blog->user_id);
+
+        $data['this_blog'] = $blog;
+        
+        return view('blog.create', $data);
     }
 
     public function store(Request $request) {
@@ -41,8 +46,15 @@ class BlogsController extends Controller
         $data->user_id = Auth::user()->id;
         $data->blog_tnail_ext = $file_ext;
         $data->blog_tnail_size = $file_size;
+        $data->blog_status = "Draft";
         $data->save();
 
         return redirect(route('blog-create', [$data->blog_token, $data->id]));
+    }
+
+    public function update(Request $request) {
+        
+
+        return redirect(route('feed'));
     }
 }
