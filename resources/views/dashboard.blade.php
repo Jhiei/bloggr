@@ -2,6 +2,8 @@
 
 @section('styles', 'pages/feed/feed.css')
 
+@section('title', '')
+
 @section('content')
     <main class="main-body">
         <div class="feed">
@@ -9,7 +11,7 @@
                 <div class="feed-write-intro">
                     <div class="feed-write-intro-img">
                         @if(!isset(Auth::user()->profile_img_path))
-                        <img src="{{ asset('images/empty-prof.svg') }}" alt="" class="main-hdr-nav-profile-img">
+                        <img src="{{ asset('images/empty-prof.svg') }}" alt="empty profile pic" class="main-hdr-nav-profile-img">
                         @endif
                     </div>
                     <div class="feed-write-intro-blink-text">

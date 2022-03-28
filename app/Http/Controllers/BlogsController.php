@@ -53,8 +53,31 @@ class BlogsController extends Controller
     }
 
     public function update(Request $request) {
+        $blog = Blog::find($request->blog_id);
         
+        if ($request->hasFile('blog_tnail')) {
+            $file_name = $request->file('blog_tnail')->getClientOriginalName();
+            $file_ext = $request->file('blog_tnail')->getClientOriginalExtension();
+            $file_size = $request->file('blog_tnail')->getSize();
 
-        return redirect(route('feed'));
+            $file = pathinfo($file_name, PATHINFO_FILENAME);
+
+            $storeFile = $file . '_' . $user_token . '.' . $file_ext;
+
+            $request->file('blog_tnail')->storeAs('public/thumbnail', $storeFile);
+
+            Storage::delete('public/thumbnail/' . $blog->blog_tnail_path);
+
+            $blog->blog_tnail_ext = $file_ext;
+            $blog->blog_tnail_size = $file_size;
+            $blog->blog_tnail_path = $storeFile;
+        }
+
+        $blog->blog_title = $request->blog_title;
+        $blog->blog_desc = $request->blog_desc;
+        $blog->blog_html = $request->blog_html;
+        $blog->save();
+
+        return redirect(route('dashboard'));
     }
 }

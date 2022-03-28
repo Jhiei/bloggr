@@ -56,11 +56,11 @@
                         </div>
                         <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-title">Title</label>
-                            <input type="text" id="blog-title" class="details-blog-form-input" value="{{ $this_blog->blog_title }}">
+                            <input type="text" id="blog-title" name="blog_title" class="details-blog-form-input" value="{{ $this_blog->blog_title }}">
                         </div>
                         <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-desc">Description</label>
-                            <textarea id="blog-desc" class="details-blog-form-text">{{ $this_blog->blog_desc }}</textarea>
+                            <textarea id="blog-desc" name="blog_desc" class="details-blog-form-text">{{ $this_blog->blog_desc }}</textarea>
                         </div>
                         <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-tags">Tags</label>
@@ -72,6 +72,8 @@
                             </div>
                             <span class="blog-tags-note">You may add up to 4 tags.</span>
                         </div>
+                        <input type="hidden" name="blog_id" value="{{ $this_blog->id }}">
+                        <input type="hidden" name="blog_html" id="blog-html" class="content-body">                    
                     </form>
                 </div>
             </div>
@@ -86,6 +88,7 @@
     <script src="{{ asset('js/blog/add-element.js') }}"></script>
     <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
     <script src="{{ asset('js/blog/open-sidebar-tool.js') }}"></script>
+    <script src="{{ asset('js/blog/submit.js') }}"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

@@ -77,6 +77,7 @@ main.main-body .feed .feed-write .feed-write-topic {
   gap: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  overflow: hidden;
 }
 
 main.main-body .feed .feed-write .feed-write-topic span.feed-write-topic-sh {
