@@ -8,18 +8,379 @@ main.main-profile {
 main.main-profile section.user-details {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 1fr;
-      grid-template-columns: 25% 1fr;
-  grid-gap: 20px;
+  -ms-grid-columns: 300px 1fr;
+      grid-template-columns: 300px 1fr;
+  grid-gap: 35px;
+  position: relative;
+  padding-bottom: 35px;
 }
 
 main.main-profile section.user-details .user-details-img {
-  width: 100%;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 main.main-profile section.user-details .user-details-img img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+main.main-profile section.user-details .user-details-img button.user-details-img-edit-btn {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: none;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  cursor: pointer;
+  background: var(--main);
+  border: 1px solid var(--main);
+  color: var(--text-main);
+  border-radius: 5px;
+}
+
+main.main-profile section.user-details .user-details-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-name span.user-details-info-user-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  padding-right: 20px;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-name span.user-details-info-user-name::after {
+  content: "";
+  width: 2px;
+  height: 65%;
+  position: absolute;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  top: 0;
+  right: 5px;
+  background: var(--form-element-border);
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-name span.user-details-info-real-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: var(--text-main);
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-nums {
+  margin-top: 10px;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-nums ul.user-details-info-nums-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-nums ul.user-details-info-nums-list li.user-details-info-nums-li {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  border-right: 2px solid var(--feed-write-heading);
+  padding-right: 10px;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-nums ul.user-details-info-nums-list li.user-details-info-nums-li:last-child {
+  border-right: none;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-bio,
+main.main-profile section.user-details .user-details-info .user-details-info-link {
+  margin-top: 10px;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-bio p.user-details-info-user-bio,
+main.main-profile section.user-details .user-details-info .user-details-info-bio a.user-details-info-hyperlink,
+main.main-profile section.user-details .user-details-info .user-details-info-link p.user-details-info-user-bio,
+main.main-profile section.user-details .user-details-info .user-details-info-link a.user-details-info-hyperlink {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-info-link a.user-details-info-hyperlink {
+  display: block;
+  font-weight: 800;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 5px;
+  color: var(--sub-main);
+  font-size: 14px;
+}
+
+main.main-profile section.user-details::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: radial-gradient(circle at center, #ebebeb, #f5f5f5);
+}
+
+main.main-profile section.blog-details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 25px;
+  margin-top: 40px;
+}
+
+main.main-profile section.blog-details .blog-details-item {
+  width: 100%;
+  height: 250px;
+  cursor: pointer;
+  position: relative;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-img {
+  height: inherit;
+  width: inherit;
+  position: relative;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--faded-black-tint);
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: 0;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text span.blog-details-item-title {
+  color: var(--white-tint);
+  display: block;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  width: 200px;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text .blog-details-item-nums {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text .blog-details-item-nums .blog-details-item-nums-likes,
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text .blog-details-item-nums .blog-details-item-nums-comms {
+  background: var(--white-tint);
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7.5px;
+  border-radius: 5px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  color: var(--text-main);
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text .blog-details-item-nums .blog-details-item-nums-likes ion-icon,
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text .blog-details-item-nums .blog-details-item-nums-comms ion-icon {
+  font-size: 26px;
+}
+
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text .blog-details-item-nums .blog-details-item-nums-likes span,
+main.main-profile section.blog-details .blog-details-item .blog-details-item-text .blog-details-item-nums .blog-details-item-nums-comms span {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+main.main-profile section.blog-details .blog-details-item:hover .blog-details-item-img::after,
+main.main-profile section.blog-details .blog-details-item:hover .blog-details-item-text {
+  opacity: 1;
+}
+
+.upload-profile-modal {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: var(--modal-bg);
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upload-profile-modal form.upload-profile-modal-form {
+  background: var(--white-tint);
+  padding: 30px;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.upload-profile-modal form.upload-profile-modal-form label.profile-img-label {
+  width: 100%;
+  display: block;
+  background: var(--thumbnail-bg);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0px;
+  margin-bottom: 15px;
+}
+
+.upload-profile-modal form.upload-profile-modal-form label.profile-img-label .image-input-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 150px;
+}
+
+.upload-profile-modal form.upload-profile-modal-form label.profile-img-label .image-input-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.upload-profile-modal form.upload-profile-modal-form input[type="file"] {
+  border: none;
+  display: none;
+}
+
+.upload-profile-modal form.upload-profile-modal-form .profile-img-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.upload-profile-modal form.upload-profile-modal-form .profile-img-submit input[type="submit"],
+.upload-profile-modal form.upload-profile-modal-form .profile-img-submit button {
+  padding: 10px;
+  font-size: 16px;
+  background: var(--main);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid var(--main);
+  color: var(--text-main);
+  border-radius: 5px;
+}
+
+.upload-profile-modal form.upload-profile-modal-form .profile-img-submit input[type="submit"]:hover {
+  background: var(--trans-main);
+}
+
+.upload-profile-modal form.upload-profile-modal-form .profile-img-submit button {
+  cursor: pointer;
+  margin-right: 5px;
+  background: var(--error-tint);
+  border: 1px solid var(--error-tint);
+  color: var(--white-tint);
+}
+
+.blog-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--modal-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=profile.css.map */

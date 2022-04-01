@@ -10,6 +10,7 @@ use App\Models\User;
 use Str;
 use Auth;
 use Hash;
+use Storage;
 
 class BlogsController extends Controller
 {
@@ -33,7 +34,7 @@ class BlogsController extends Controller
         if ($request->hasFile('blog_tnail')) {
             $file = pathinfo($file_name, PATHINFO_FILENAME);
 
-            $storeFile = $file . '_' . $user_token . '.' . $file_ext;
+            $storeFile = $file . '_' . $user_token . '_' . time() . '_' . Str::random(35) . '.' . $file_ext;
 
             $request->file('blog_tnail')->storeAs('public/thumbnail', $storeFile);
         }
@@ -62,7 +63,7 @@ class BlogsController extends Controller
 
             $file = pathinfo($file_name, PATHINFO_FILENAME);
 
-            $storeFile = $file . '_' . $user_token . '.' . $file_ext;
+            $storeFile = $file . '_' . $user_token . '_' . time() . '_' . Str::random(35) . '.' . $file_ext;
 
             $request->file('blog_tnail')->storeAs('public/thumbnail', $storeFile);
 

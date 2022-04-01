@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/blog/update', [BlogsController::class, 'update'])->name('blog-update');
 
     Route::get('/profile/{name}/{id}', [ProfileController::class, 'create'])->name('profile-view');
+    Route::post('/store/profile/img', [ProfileController::class, 'store_img'])->name('profile-upload');
 });
 
 require __DIR__.'/auth.php';

@@ -97,13 +97,16 @@ header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container ul.main-
 }
 
 header.hdr-container .main-hdr .main-hdr-nav .main-hdr-nav-profile-container {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
+  -ms-flex-preferred-size: 35px;
+      flex-basis: 35px;
+  height: 35px;
   position: relative;
 }
 
 header.hdr-container .main-hdr .main-hdr-nav .main-hdr-nav-profile-container img.main-hdr-nav-profile-img {
   width: 100%;
+  height: 100%;
+  border-radius: 50px;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;

@@ -2,7 +2,10 @@
 
 :root {
     --main: #68fef5;
+    --trans-main: #34f8eb;
+    --sub-main: #6bd5ed;
     --text-main: #333;
+    --faded-black-tint: rgba(0, 0, 0, 0.4);
     --form-element-border: #dcdcdc;
     --input-labels: #333;
     --white-tint: #fff;
@@ -13,7 +16,7 @@
     --modal-bg: rgba(0, 0, 0, 0.3);
     --thumbnail-bg: #fafafa;
     --error-tint: #ee5757;
-    --box-shadow: 2px 2px 5px rgb(211, 211, 211);
+    --box-shadow: 2px 2px 5px var(--faded-black-tint);
     --draft-btn: #eeeeee;
 }
 

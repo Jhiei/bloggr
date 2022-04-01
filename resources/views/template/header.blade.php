@@ -27,6 +27,8 @@
             <div class="main-hdr-nav-profile-container">
                 @if(!isset(Auth::user()->profile_img_path))
                 <img src="{{ asset('images/empty-prof.svg') }}" alt="" class="main-hdr-nav-profile-img">
+                @else
+                <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="main-hdr-nav-profile-img">
                 @endif
                 <div class="drop-container">
                     <ul class="drop-container-list">

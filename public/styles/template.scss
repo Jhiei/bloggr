@@ -77,11 +77,14 @@ header.hdr-container {
             }
 
             .main-hdr-nav-profile-container {
-                flex-basis: 10%;
+                flex-basis: 35px;
+                height: 35px;
                 position: relative;
 
                 img.main-hdr-nav-profile-img {
                     width: 100%;
+                    height: 100%;
+                    border-radius: 50px;
                     object-fit: cover;
                     cursor: pointer;
                 }

@@ -26,12 +26,17 @@ main.main-body {
                 border-radius: 10px 10px 0px 0px;
 
                 .feed-write-intro-img {
-                    width: 7%;
+                    width: 45px;
+                    height: 45px;
                     position: relative;
                     top: 2px;
+                    overflow: hidden;
+                    border-radius: 50px;
 
                     img {
                         width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
                 }
 
@@ -112,12 +117,17 @@ main.main-body {
                 box-shadow: var(--box-shadow);
 
                 .user-img-container {
-                    flex-basis: 20%;
+                    flex-basis: 45px;
+                    height: 45px;
                     position: relative;
+                    overflow: hidden;
+                    border-radius: 50px;
                     top: 2px;
 
                     img {
                         width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
                 }
 
