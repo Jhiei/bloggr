@@ -383,4 +383,85 @@ main.main-profile section.blog-details .blog-details-item:hover .blog-details-it
       -ms-flex-align: center;
           align-items: center;
 }
+
+.blog-modal .blog-modal-container {
+  width: 50%;
+  height: 500px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 1fr;
+      grid-template-columns: 70% 1fr;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border-radius: 10px;
+}
+
+.blog-modal .blog-modal-container .blog-modal-img {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--img-bg);
+  border-radius: 10px 0px 0px 10px;
+}
+
+.blog-modal .blog-modal-container .blog-modal-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.blog-modal .blog-modal-container .blog-modal-text {
+  background: var(--white-tint);
+  border-radius: 0px 10px 10px 0px;
+  padding: 10px 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blog-modal .blog-modal-container .blog-modal-text .blog-modal-text-container {
+  font-family: 'Poppins', sans-serif;
+}
+
+.blog-modal .blog-modal-container .blog-modal-text .blog-modal-text-container h2.blog-modal-text-heading {
+  font-size: 30px;
+  color: var(--text-main);
+}
+
+.blog-modal .blog-modal-container .blog-modal-text .blog-modal-text-container p.blog-modal-text-desc {
+  font-size: 18px;
+  color: var(--par-main);
+}
+
+.blog-modal .blog-modal-container .blog-modal-text a.blog-modal-link {
+  display: block;
+  width: 100%;
+  background: var(--main);
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-main);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.blog-modal .blog-modal-container .blog-modal-text a.blog-modal-link:hover {
+  background: var(--trans-main);
+}
 /*# sourceMappingURL=profile.css.map */

@@ -5,6 +5,7 @@
     --trans-main: #34f8eb;
     --sub-main: #6bd5ed;
     --text-main: #333;
+    --par-main: #797979;
     --faded-black-tint: rgba(0, 0, 0, 0.4);
     --form-element-border: #dcdcdc;
     --input-labels: #333;
@@ -18,6 +19,7 @@
     --error-tint: #ee5757;
     --box-shadow: 2px 2px 5px var(--faded-black-tint);
     --draft-btn: #eeeeee;
+    --img-bg: #333;
 }
 
 *,

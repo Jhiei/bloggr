@@ -20,6 +20,8 @@ class ProfileController extends Controller
 
         $data['blog_list'] = Blog::where('user_id', $user->id)->get();
 
+        $data['blog_count'] = count($data['blog_list']);
+
         return view('profile.profile', $data);
     }
 

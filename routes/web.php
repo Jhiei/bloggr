@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/blog/create/{token}/{id}', [BlogsController::class, 'create'])->name('blog-create');
     Route::post('/blog/store', [BlogsController::class, 'store'])->name('blog-store');
     Route::post('/blog/update', [BlogsController::class, 'update'])->name('blog-update');
+    Route::get('/blog/view/{id}/{title}', [BlogsController::class, 'view'])->name('blog-view');
 
     Route::get('/profile/{name}/{id}', [ProfileController::class, 'create'])->name('profile-view');
     Route::post('/store/profile/img', [ProfileController::class, 'store_img'])->name('profile-upload');

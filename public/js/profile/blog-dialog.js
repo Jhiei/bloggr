@@ -1,3 +1,23 @@
 $(function() {
-    // complete this tomorrow
+    var modal = $('.blog-modal');
+    var blog = $('.blog-details-item');
+
+    blog.on('click', function() {
+        var img = $(this).find('.blog-details-item-img-dialog');
+        var title = $(this).find('.blog-details-item-title');
+        var desc = $(this).find('.blog-details-item-desc');
+        var link = $(this).find('.blog-details-item-link');
+
+        var imgToRep = $('.blog-modal-img img');
+        var titleToRep = $('.blog-modal-text-heading');
+        var descToRep = $('.blog-modal-text-desc');
+        var linkToRep = $('.blog-modal-link');
+
+        imgToRep.attr('src', img.attr('src'));
+        titleToRep.text(title.text());
+        descToRep.text(desc.text());
+        linkToRep.attr('href', link.attr('href'));
+
+        modal.fadeIn(200);
+    });
 });

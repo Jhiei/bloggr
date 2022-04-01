@@ -81,4 +81,8 @@ class BlogsController extends Controller
 
         return redirect(route('dashboard'));
     }
+
+    public function view($id, $title) {
+        return view('blog.view_blog');
+    }
 }
