@@ -14,13 +14,16 @@
                 <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="user-details-profile-img">
                 @endif
                 <button class="user-details-img-edit-btn">
-                    {{ __('Upload Profile') }}
+                    {{ __('Upload Image') }}
                 </button>
             </div>
             <div class="user-details-info">
                 <div class="user-details-info-name">
                     <span class="user-details-info-user-name"><span>@</span>{{ Auth::user()->username }}</span>
                     <span class="user-details-info-real-name">{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
+                    <button type="button" class="user-edit-profile-btn">
+                        {{ __('Edit Profile') }}
+                    </button>
                 </div>
                 <div class="user-details-info-nums">
                     <ul class="user-details-info-nums-list">
@@ -101,6 +104,9 @@
                 </div>
                 <a href="" class="blog-modal-link">Read Blog</a>
             </div>
+            <button class="blog-modal-close-btn">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
         </div>
     </div>
 

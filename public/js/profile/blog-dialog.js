@@ -1,6 +1,7 @@
 $(function() {
     var modal = $('.blog-modal');
     var blog = $('.blog-details-item');
+    var close = $('.blog-modal-close-btn');
 
     blog.on('click', function() {
         var img = $(this).find('.blog-details-item-img-dialog');
@@ -18,6 +19,14 @@ $(function() {
         descToRep.text(desc.text());
         linkToRep.attr('href', link.attr('href'));
 
+        modal.css('top', $(window).scrollTop());
+        $('body').css('overflow-y', 'hidden');
+
         modal.fadeIn(200);
+    });
+
+    close.on('click', function() {
+        $('body').css('overflow-y', 'visible');
+        modal.fadeOut(200);
     });
 });

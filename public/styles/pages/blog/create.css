@@ -181,7 +181,8 @@ main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .de
 }
 
 main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field input.details-blog-form-input,
-main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field textarea.details-blog-form-text {
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field textarea.details-blog-form-text,
+main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .details-blog-form-input-field select.details-blog-form-select {
   width: 100%;
   padding: 10px;
   font-size: 16px;

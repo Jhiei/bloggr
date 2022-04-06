@@ -1,0 +1,102 @@
+main.main-blog {
+    margin: 30px auto;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-gap: 20px;
+
+    section.blog-content {
+
+        .elem {
+            margin-bottom: 15px;
+            outline: 0;
+            width: 100%;
+        }
+
+        h2.heading-element {
+            font-size: 48px;
+        }
+
+        p.paragraph-element {
+            font-size: 18px;
+        }
+    }
+
+    section.user-content {
+
+        .user-content-main {
+            position: sticky;
+            top: 80px; // fixed value of positioning, fixed on scroll
+            left: 0;
+
+            .user {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                background: var(--white-tint);
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: var(--box-shadow);
+
+                .user-img-container {
+                    flex-basis: 45px;
+                    height: 45px;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 50px;
+                    top: 2px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .user-name-container {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 14px;
+
+                    span.user-real-name {
+                        font-weight: 800;
+                        color: var(--text-main);
+                    }
+
+                    span.user-user-name {
+                        color: var(--feed-write-heading);
+                    }
+                }
+            }
+
+            .user-bio,
+            .user-url {
+                margin-top: 20px;
+
+                .user-bio-label,
+                .user-url-label {
+                    display: block;
+                    font-family: 'Roboto', sans-serif;
+                    margin-bottom: 5px;
+                    font-size: 10px;
+                    color: var(--feed-write-heading);
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                .user-bio-text,
+                .user-url-text {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 16px;
+                    color: var(--text-main);
+                }
+
+                .user-url-text {
+                    color: var(--sub-main);
+                }
+            }
+        }
+    }
+}

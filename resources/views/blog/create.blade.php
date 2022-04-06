@@ -63,6 +63,17 @@
                             <textarea id="blog-desc" name="blog_desc" class="details-blog-form-text">{{ $this_blog->blog_desc }}</textarea>
                         </div>
                         <div class="details-blog-form-input-field">
+                            <label class="details-blog-form-label" for="blog-font">Font</label>
+                            <select id="blog-font" name="blog_font" class="details-blog-form-select">
+                                <option value="Poppins" selected>Poppins (Default)</option>
+                                <option value="Montserrat">Montserrat</option>
+                                <option value="Arial">Arial</option>
+                                <option value="Verdana">Verdana</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="Courier">Courier</option>
+                            </select>
+                        </div>
+                        <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-tags">Tags</label>
                             <div class="details-blog-form-add-tag">
                                 <input type="text" id="blog-tags" class="details-blog-form-input add-tag-input" placeholder="Add tag...">
@@ -88,6 +99,7 @@
     <script src="{{ asset('js/blog/add-element.js') }}"></script>
     <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
     <script src="{{ asset('js/blog/open-sidebar-tool.js') }}"></script>
+    <script src="{{ asset('js/blog/change-font.js') }}"></script>
     <script src="{{ asset('js/blog/submit.js') }}"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

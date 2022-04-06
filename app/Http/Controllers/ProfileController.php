@@ -18,7 +18,7 @@ class ProfileController extends Controller
 
         $data['user_id'] = $id;
 
-        $data['blog_list'] = Blog::where('user_id', $user->id)->get();
+        $data['blog_list'] = Blog::where('user_id', $user->id)->orderByDesc('created_at')->get();
 
         $data['blog_count'] = count($data['blog_list']);
 

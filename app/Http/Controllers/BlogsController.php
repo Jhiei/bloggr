@@ -77,12 +77,17 @@ class BlogsController extends Controller
         $blog->blog_title = $request->blog_title;
         $blog->blog_desc = $request->blog_desc;
         $blog->blog_html = $request->blog_html;
+        $blog->blog_font = $request->blog_font;
         $blog->save();
 
         return redirect(route('dashboard'));
     }
 
     public function view($id, $title) {
-        return view('blog.view_blog');
+        $blog = Blog::find($id);
+
+        $data['this_blog'] = $blog;
+
+        return view('blog.view_blog', $data);
     }
 }

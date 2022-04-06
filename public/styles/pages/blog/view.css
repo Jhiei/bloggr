@@ -1,0 +1,119 @@
+main.main-blog {
+  margin: 30px auto;
+  width: 60%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 1fr;
+      grid-template-columns: 70% 1fr;
+  grid-gap: 20px;
+}
+
+main.main-blog section.blog-content .elem {
+  margin-bottom: 15px;
+  outline: 0;
+  width: 100%;
+}
+
+main.main-blog section.blog-content h2.heading-element {
+  font-size: 48px;
+}
+
+main.main-blog section.blog-content p.paragraph-element {
+  font-size: 18px;
+}
+
+main.main-blog section.user-content .user-content-main {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+  left: 0;
+}
+
+main.main-blog section.user-content .user-content-main .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  background: var(--white-tint);
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+main.main-blog section.user-content .user-content-main .user .user-img-container {
+  -ms-flex-preferred-size: 45px;
+      flex-basis: 45px;
+  height: 45px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  top: 2px;
+}
+
+main.main-blog section.user-content .user-content-main .user .user-img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main.main-blog section.user-content .user-content-main .user .user-name-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+main.main-blog section.user-content .user-content-main .user .user-name-container span.user-real-name {
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+main.main-blog section.user-content .user-content-main .user .user-name-container span.user-user-name {
+  color: var(--feed-write-heading);
+}
+
+main.main-blog section.user-content .user-content-main .user-bio,
+main.main-blog section.user-content .user-content-main .user-url {
+  margin-top: 20px;
+}
+
+main.main-blog section.user-content .user-content-main .user-bio .user-bio-label,
+main.main-blog section.user-content .user-content-main .user-bio .user-url-label,
+main.main-blog section.user-content .user-content-main .user-url .user-bio-label,
+main.main-blog section.user-content .user-content-main .user-url .user-url-label {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 5px;
+  font-size: 10px;
+  color: var(--feed-write-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main.main-blog section.user-content .user-content-main .user-bio .user-bio-text,
+main.main-blog section.user-content .user-content-main .user-bio .user-url-text,
+main.main-blog section.user-content .user-content-main .user-url .user-bio-text,
+main.main-blog section.user-content .user-content-main .user-url .user-url-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+main.main-blog section.user-content .user-content-main .user-bio .user-url-text,
+main.main-blog section.user-content .user-content-main .user-url .user-url-text {
+  color: var(--sub-main);
+}
+/*# sourceMappingURL=view.css.map */
