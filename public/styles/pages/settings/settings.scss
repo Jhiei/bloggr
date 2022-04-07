@@ -1,0 +1,140 @@
+main.main-settings {
+    margin: 25px auto;
+    width: 60%;
+    position: relative;
+
+    .main-settings-container {
+        display: grid;
+        grid-template-columns: 25% 1fr;
+
+        > section {
+            padding: 25px;
+            border: 1px solid var(--form-element-border);
+            background: var(--white-tint);
+        }
+
+        section.main-settings-tabs {
+
+            ul.tabs-list {
+                display: flex;
+                flex-direction: column;
+
+                a.tabs-list-li-link {
+                    padding: 10px;
+                    width: 100%;
+                    transition: .3s;
+
+                    li.tabs-list-li {
+                        font-size: 16px;
+                        font-family: 'Montserrat', sans-serif;
+                    }
+                }
+
+                a.tabs-list-li-link:hover {
+                    background: var(--body-shade);
+                }
+            }
+        }
+
+        section.main-settings-field {
+            border-left: none;
+            height: 100vh;
+
+            form.main-settings-edit-profile {
+                width: 100%;
+                height: fit-content;
+
+                .edit-profile-img,
+                .edit-profile-username,
+                .edit-profile-name,
+                .edit-profile-bio,
+                .edit-profile-link,
+                .edit-profile-email,
+                .edit-profile-save-btn {
+                    display: grid;
+                    grid-template-columns: 100px 1fr;
+                    align-items: center;
+                    gap: 25px;
+                    margin-bottom: 25px;
+
+                    .edit-profile-img-container {
+                        width: 100px;
+                        height: 100px;
+                        position: relative;
+                        transition: 0.2s;
+                        overflow: hidden;
+                        border-radius: 50px;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+    
+                    .edit-profile-input-field {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        span.edit-profile-img-username {
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 28px;
+                            color: var(--text-main);
+                        }
+
+                        label {
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 14px;
+                            cursor: pointer;
+                            color: var(--sub-main);
+                        }
+                    }
+
+                    small.edit-profile-note {
+                        display: block;
+                        margin-top: 5px;
+                        font: 12px 'Roboto', sans-serif;
+                        color: var(--note-colour);
+                    }
+
+                    input[type="submit"] {
+                        grid-column: 2 / 3;
+                        font: 14px 'Roboto', sans-serif;
+                        width: 100px;
+                        padding: 10px;
+                        background: var(--main);
+                        border: 1px solid var(--main);
+                        transition: .2s;
+                    }
+
+                    input[type="submit"]:hover {
+                        background: var(--trans-main);
+                    }
+                }
+                
+                .edit-profile-name,
+                .edit-profile-username,
+                .edit-profile-bio,
+                .edit-profile-link,
+                .edit-profile-email {
+                    
+                    label.edit-profile-label {
+                        align-self: flex-start;
+                        justify-self: flex-end;
+                        font: 14px 'Poppins', sans-serif;
+                    }
+
+                    .edit-profile-input {
+                        padding: 5px 10px;
+                        font: 14px 'Poppins', sans-serif;
+                    }
+
+                    textarea {
+                        resize: none;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

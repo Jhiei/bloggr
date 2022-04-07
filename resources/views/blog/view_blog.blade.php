@@ -24,14 +24,18 @@
                         <span class="user-user-name">{{ $this_blog->user->username }}</span>
                     </div>
                 </a>
+                @if(isset($this_blog->user->bio))
                 <div class="user-bio">
                     <span class="user-bio-label">Biography</span>
                     <p class="user-bio-text">{{ $this_blog->user->bio }}</p>
                 </div>
+                @endif
+                @if(isset($this_blog->user->website_url))
                 <div class="user-url">
                     <span class="user-url-label">Website</span>
                     <a href="{{ $this_blog->user->website_url }}" class="user-url-text">{{ $this_blog->user->website_url }}</a>
                 </div>
+                @endif
             </div>
         </section>
     </main>

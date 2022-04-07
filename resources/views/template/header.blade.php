@@ -33,7 +33,7 @@
                 <div class="drop-container">
                     <ul class="drop-container-list">
                         <a href="{{ route('profile-view', [Auth::user()->username, Auth::user()->id]) }}"><li class="drop-container-li">Profile</li></a>
-                        <a href="#"><li class="drop-container-li">Settings</li></a>
+                        <a href="{{ route('settings-view') }}"><li class="drop-container-li">Settings</li></a>
                         <a href="#"><li class="drop-container-li">Sign Out</li></a>
                     </ul>
                 </div>

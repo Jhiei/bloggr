@@ -13,7 +13,7 @@
                         @if(!isset(Auth::user()->profile_img_path))
                         <img src="{{ asset('images/empty-prof.svg') }}" alt="empty profile pic" class="main-hdr-nav-profile-img">
                         @else
-                        <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="main-hdr-nav-profile-img">
+                        <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="profile-img">
                         @endif
                     </div>
                     <div class="feed-write-intro-blink-text">
@@ -42,7 +42,7 @@
                         @if(!isset(Auth::user()->profile_img_path))
                         <img src="{{ asset('images/empty-prof.svg') }}" alt="" class="main-hdr-nav-profile-img">
                         @else
-                        <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="main-hdr-nav-profile-img">
+                        <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="profile-img">
                         @endif
                     </div>
                     <div class="user-name-container">

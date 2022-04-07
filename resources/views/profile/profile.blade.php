@@ -13,17 +13,12 @@
                 @else
                 <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="user-details-profile-img">
                 @endif
-                <button class="user-details-img-edit-btn">
-                    {{ __('Upload Image') }}
-                </button>
             </div>
             <div class="user-details-info">
                 <div class="user-details-info-name">
                     <span class="user-details-info-user-name"><span>@</span>{{ Auth::user()->username }}</span>
                     <span class="user-details-info-real-name">{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
-                    <button type="button" class="user-edit-profile-btn">
-                        {{ __('Edit Profile') }}
-                    </button>
+                    <a href="{{ route('settings-view') }}" class="user-edit-profile-btn">{{ __('Edit Profile') }}</a>
                 </div>
                 <div class="user-details-info-nums">
                     <ul class="user-details-info-nums-list">
@@ -75,23 +70,6 @@
         </section>
     </main>
 
-    <div class="upload-profile-modal" style="display: none;">
-        <form action="{{ route('profile-upload') }}" class="upload-profile-modal-form" method="POST" enctype="multipart/form-data">
-            @csrf
-            <label class="profile-img-label" for="profile-img">
-                <div class="image-input-container">
-                    <img id="thumbnail" src="{{ asset('images/tnail.svg') }}" alt="prompt user to enter thumbnail">
-                </div>
-            </label>
-            <input class="profile-img-input" type="file" name="profile_img" id="profile-img" accept="image/*" onchange="loadFile(event)" required>
-            <div class="profile-img-submit">
-                <button type="button" class="close-modal-btn">{{ __('Cancel') }}</button>
-                <input type="submit" value="Save">
-            </div>
-            <input type="hidden" value="{{ $user_id }}" name="user_id">
-        </form>
-    </div>
-
     <div class="blog-modal" style="display: none;">
         <div class="blog-modal-container">
             <div class="blog-modal-img">
@@ -111,6 +89,5 @@
     </div>
 
     <script src="{{ asset('js/profile/user-info.js') }}"></script>
-    <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
     <script src="{{ asset('js/profile/blog-dialog.js') }}"></script>
 @endsection

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,9 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/blog/view/{id}/{title}', [BlogsController::class, 'view'])->name('blog-view');
 
     Route::get('/profile/{name}/{id}', [ProfileController::class, 'create'])->name('profile-view');
-    Route::post('/store/profile/img', [ProfileController::class, 'store_img'])->name('profile-upload');
+
+    Route::get('/settings', [SettingsController::class, 'create'])->name('settings-view');
+    Route::post('/settings/edit-profile', [SettingsController::class, 'update'])->name('settings-edit-profile');
 });
 
 require __DIR__.'/auth.php';
