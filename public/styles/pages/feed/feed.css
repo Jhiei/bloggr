@@ -143,8 +143,11 @@ main.main-body .feed .feed-blog .feed-tags .feed-tags-topics {
   margin-top: 20px;
 }
 
-main.main-body .feed .feed-blog .feed-tags .feed-tags-topics span[class^="feed-tags-topics-"] {
+main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container {
   display: inline-block;
+}
+
+main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"] {
   border-radius: 50px;
   padding: 5px 10px;
   border: 1px solid var(--main);
@@ -156,7 +159,7 @@ main.main-body .feed .feed-blog .feed-tags .feed-tags-topics span[class^="feed-t
   margin-right: 3px;
 }
 
-main.main-body .feed .feed-blog .feed-tags .feed-tags-topics span[class^="feed-tags-topics-"]:hover {
+main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"]:hover {
   background: var(--main);
 }
 
@@ -242,6 +245,33 @@ main.main-body .feed .feed-blog .feed-blogs .feed-blogs-tnail img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-tnail .feed-blogs-tnail-darken {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--faded-black-tint);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-tnail .feed-blogs-tnail-darken a.feed-blogs-tnail-link {
+  padding: 10px;
+  font: 18px 'Poppins', sans-serif;
+  background: var(--main);
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
 }
 
 main.main-body .feed .feed-blog .feed-blogs .feed-blogs-desc {

@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\TagsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/settings', [SettingsController::class, 'create'])->name('settings-view');
     Route::post('/settings/edit-profile', [SettingsController::class, 'update'])->name('settings-edit-profile');
+
+    Route::post('/tag/save', [TagsController::class, 'save'])->name('tags-save');
 });
 
 require __DIR__.'/auth.php';

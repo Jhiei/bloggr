@@ -194,6 +194,8 @@ main.main-settings .main-settings-container section.main-settings-field form.mai
       align-self: flex-start;
   justify-self: flex-end;
   font: 14px 'Poppins', sans-serif;
+  font-weight: bold;
+  color: var(--input-labels);
 }
 
 main.main-settings .main-settings-container section.main-settings-field form.main-settings-edit-profile .edit-profile-name .edit-profile-input,
@@ -203,6 +205,7 @@ main.main-settings .main-settings-container section.main-settings-field form.mai
 main.main-settings .main-settings-container section.main-settings-field form.main-settings-edit-profile .edit-profile-email .edit-profile-input {
   padding: 5px 10px;
   font: 14px 'Poppins', sans-serif;
+  color: var(--text-main);
 }
 
 main.main-settings .main-settings-container section.main-settings-field form.main-settings-edit-profile .edit-profile-name textarea,
@@ -212,5 +215,6 @@ main.main-settings .main-settings-container section.main-settings-field form.mai
 main.main-settings .main-settings-container section.main-settings-field form.main-settings-edit-profile .edit-profile-email textarea {
   resize: none;
   height: 100px;
+  color: var(--text-main);
 }
 /*# sourceMappingURL=settings.css.map */

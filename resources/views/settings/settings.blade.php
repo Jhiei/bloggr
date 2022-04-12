@@ -36,7 +36,7 @@
                         <div class="edit-profile-name-container">
                             <input type="text" required name="profile_name" id="profile-name" class="edit-profile-input" value="{{ Auth::user()->fname }}" placeholder="First Name">
                             <input type="text" required name="profile_lname" id="profile-lname" class="edit-profile-input" value="{{ Auth::user()->lname }}" placeholder="Last Name">
-                            <small class="edit-profile-note">Note: You can only change your name once every month.</small>
+                            <small class="edit-profile-note">Note: You can only change your name once every 30 days.</small>
                         </div>
                     </div>
                     <div class="edit-profile-username">

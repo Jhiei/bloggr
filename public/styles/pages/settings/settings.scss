@@ -122,16 +122,20 @@ main.main-settings {
                         align-self: flex-start;
                         justify-self: flex-end;
                         font: 14px 'Poppins', sans-serif;
+                        font-weight: bold;
+                        color: var(--input-labels);
                     }
 
                     .edit-profile-input {
                         padding: 5px 10px;
                         font: 14px 'Poppins', sans-serif;
+                        color: var(--text-main);
                     }
 
                     textarea {
                         resize: none;
                         height: 100px;
+                        color: var(--text-main);
                     }
                 }
             }

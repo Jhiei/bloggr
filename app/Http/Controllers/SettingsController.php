@@ -36,8 +36,6 @@ class SettingsController extends Controller
             }
 
             $user->profile_img_path = $storeFile;
-
-            $user->save();
         }
 
         $user->fname = $request->profile_name;

@@ -119,20 +119,23 @@ main.main-body {
                 .feed-tags-topics {
                     margin-top: 20px;
 
-                    span[class^="feed-tags-topics-"] {
+                    .feed-tags-topics-container {
                         display: inline-block;
-                        border-radius: 50px;
-                        padding: 5px 10px;
-                        border: 1px solid var(--main);
-                        color: var(--text-main);
-                        font: 16px 'Poppins', sans-serif;
-                        transition: .3s;
-                        cursor: pointer;
-                        margin-right: 3px;
-                    }
 
-                    span[class^="feed-tags-topics-"]:hover {
-                        background: var(--main);
+                        span[class^="feed-tags-topics-"] {
+                            border-radius: 50px;
+                            padding: 5px 10px;
+                            border: 1px solid var(--main);
+                            color: var(--text-main);
+                            font: 16px 'Poppins', sans-serif;
+                            transition: .3s;
+                            cursor: pointer;
+                            margin-right: 3px;
+                        }
+    
+                        span[class^="feed-tags-topics-"]:hover {
+                            background: var(--main);
+                        }
                     }
                 }
             }
@@ -201,6 +204,28 @@ main.main-body {
                         height: 100%;
                         object-fit: cover;
                     }
+
+                    .feed-blogs-tnail-darken {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--faded-black-tint);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        a.feed-blogs-tnail-link {
+                            padding: 10px;
+                            font: 18px 'Poppins', sans-serif;
+                            background: var(--main);
+                            border-radius: 5px;
+                            width: 200px;
+                            text-align: center;
+                        }
+                    }
+
                 }
 
                 .feed-blogs-desc {

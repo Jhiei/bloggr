@@ -38,9 +38,17 @@
                     <p class="feed-tags-par">The selection of topics can be edited later in your profile page.</p>
                     <div class="feed-tags-topics">
                         @foreach($tags as $tag)
-                        <span class="feed-tags-topics-{{ $tag->id }}">{{ $tag->tag_label }}</span>
+                        <div class="feed-tags-topics-container">
+                            <span class="feed-tags-topics-{{ $tag->id }} topic-tags">{{ $tag->tag_label }}</span>
+                            <small style="display: none;">{{ $tag->id }}</small>
+                        </div>
                         @endforeach
                     </div>
+                    <form action="javascript: void(0)" style="display: none;" method="POST" class="topic-form">
+                        @csrf
+                        <input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user-id">
+                        <input type="hidden" value="" name="tag_id" id="tag-id">
+                    </form>
                 </div>
                 @endif
 
@@ -64,6 +72,9 @@
                     </div>
                     <div class="feed-blogs-tnail">
                         <img src="{{ asset('storage/thumbnail/' . $blog->blog_tnail_path) }}" alt="thumbnail for the blog titled with '{{ $blog->blog_title }}'">
+                        <div class="feed-blogs-tnail-darken" style="display: none;">
+                            <a href="{{ route('blog-view', [$blog->id, $blog->blog_title]) }}" class="feed-blogs-tnail-link">{{ __('Read Blog') }}</a>
+                        </div>
                     </div>
                     <div class="feed-blogs-desc">
                         <h2 class="feed-blogs-desc-heading">{{ $blog->blog_title }}</h2>
@@ -145,4 +156,32 @@
     <script src="{{ asset('js/feed/blog-create-modal.js') }}"></script>
     <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
     <script src="{{ asset('js/feed/modal-form-labels.js') }}"></script>
+    <script src="{{ asset('js/feed/show-read-link.js') }}"></script>
+    <script src="{{ asset('js/feed/tag-click.js') }}"></script>
+    <script>
+        $("form.topic-form").submit(function(e) {
+            var formData = {
+                user: $("#user-id").val(),
+                tag: $("#tag-id").val(),
+            };
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('tags-save') }}",
+                data: $(this).serialize(),
+                dataType: "json",
+                encode: true,
+            }).done(function (data) {
+                console.log(data);
+            });
+
+            e.preventDefault();
+        });
+    </script>
 @endsection
