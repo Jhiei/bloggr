@@ -29,4 +29,8 @@ $(function() {
         $('body').css('overflow-y', 'visible');
         modal.fadeOut(200);
     });
+
+    modal.click(function() {
+        $(this).fadeOut(200);
+    });
 });

@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class UserTag extends Model
 {
     use HasFactory;
 
-    protected $table = "blogs";
+    protected $table = "user_tags";
 
     public function user() {
         return $this->belongsTo(User::class);

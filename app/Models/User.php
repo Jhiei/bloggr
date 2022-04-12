@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function blog() {
         return $this->hasMany(Blog::class);
     }
+
+    public function userTag() {
+        return $this->hasMany(UserTag::class);
+    }
 }

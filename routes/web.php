@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
@@ -22,9 +23,7 @@ Route::get('/', function () {
 })->name('rdr');
 
 Route::middleware(['auth'])->group(function() {
-    Route::get('/feed', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/feed', [DashboardController::class, 'create'])->name('dashboard');
 
     Route::get('/blog/create/{token}/{id}', [BlogsController::class, 'create'])->name('blog-create');
     Route::post('/blog/store', [BlogsController::class, 'store'])->name('blog-store');

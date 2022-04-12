@@ -32,7 +32,47 @@
                 </div>
             </div>
             <div class="feed-blog">
-                <h1>blog</h1>
+                @if(count($interests) <= 3)
+                <div class="feed-tags">
+                    <h2 class="feed-tags-heading">For a start, select topics that may be of interest.</h2>
+                    <p class="feed-tags-par">The selection of topics can be edited later in your profile page.</p>
+                    <div class="feed-tags-topics">
+                        @foreach($tags as $tag)
+                        <span class="feed-tags-topics-{{ $tag->id }}">{{ $tag->tag_label }}</span>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
+
+                @if(count($interests) == 0)
+                @foreach($rand_blogs as $blog)
+                <div class="feed-blogs">
+                    <div class="feed-blogs-header">
+                        <a href="{{ route('profile-view', [$blog->user->username, $blog->user->id]) }}" class="feed-blogs-header-profile-link">
+                            <div class="feed-blogs-header-user">
+                                <div class="feed-blogs-header-user-img-container">
+                                    @if(!isset($blog->user->profile_img_path))
+                                    <img src="{{ asset('images/empty-prof.svg') }}" alt="empty profile pic" class="feed-blogs-header-img">
+                                    @else
+                                    <img src="{{ asset('storage/profile/' . $blog->user->profile_img_path) }}" alt="empty profile pic" class="feed-blogs-header-img">
+                                    @endif
+                                </div>
+                                <span class="feed-blogs-header-user-name">{{ $blog->user->username }}</span>
+                            </div>
+                        </a>
+                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                    </div>
+                    <div class="feed-blogs-tnail">
+                        <img src="{{ asset('storage/thumbnail/' . $blog->blog_tnail_path) }}" alt="thumbnail for the blog titled with '{{ $blog->blog_title }}'">
+                    </div>
+                    <div class="feed-blogs-desc">
+                        <h2 class="feed-blogs-desc-heading">{{ $blog->blog_title }}</h2>
+                        <p class="feed-blogs-desc-par">{{ $blog->blog_desc }}</p>
+                        <p class="feed-blogs-desc-meta">{{ $blog->tag->tag_label }} &bullet; {{ $blog->created_at->format('d-m-Y') }}</p>
+                    </div>
+                </div>
+                @endforeach
+                @endif
             </div>
         </div>
         <div class="user-container">

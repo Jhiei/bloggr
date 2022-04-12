@@ -15,7 +15,7 @@ main.main-body .feed .feed-write {
   margin-bottom: 20px;
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 main.main-body .feed .feed-write .feed-write-intro {
@@ -33,7 +33,7 @@ main.main-body .feed .feed-write .feed-write-intro {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 main.main-body .feed .feed-write .feed-write-intro .feed-write-intro-img {
@@ -71,7 +71,7 @@ main.main-body .feed .feed-write .feed-write-topic {
   padding: 10px 15px;
   background: var(--main);
   position: relative;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 5px 5px;
   z-index: -1;
   top: 0px;
   display: -webkit-box;
@@ -119,6 +119,158 @@ main.main-body .feed .feed-write .feed-write-topic ul.feed-write-topic-list li.f
   padding: 5px 10px;
 }
 
+main.main-body .feed .feed-blog .feed-tags {
+  border-radius: 5px;
+  background: var(--white-tint);
+  -webkit-box-shadow: var(--main-box-shadow);
+          box-shadow: var(--main-box-shadow);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+main.main-body .feed .feed-blog .feed-tags h2.feed-tags-heading {
+  font: 1.5 24px 'Poppins', sans-serif;
+  margin-bottom: 5px;
+  color: var(--text-main);
+}
+
+main.main-body .feed .feed-blog .feed-tags p.feed-tags-par {
+  font: 1.5 16px 'Roboto', sans-serif;
+  color: var(--par-main);
+}
+
+main.main-body .feed .feed-blog .feed-tags .feed-tags-topics {
+  margin-top: 20px;
+}
+
+main.main-body .feed .feed-blog .feed-tags .feed-tags-topics span[class^="feed-tags-topics-"] {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 5px 10px;
+  border: 1px solid var(--main);
+  color: var(--text-main);
+  font: 16px 'Poppins', sans-serif;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  margin-right: 3px;
+}
+
+main.main-body .feed .feed-blog .feed-tags .feed-tags-topics span[class^="feed-tags-topics-"]:hover {
+  background: var(--main);
+}
+
+main.main-body .feed .feed-blog .feed-blogs {
+  border-radius: 5px;
+  background: var(--white-tint);
+  margin-bottom: 20px;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header a.feed-blogs-header-profile-link {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header a.feed-blogs-header-profile-link .feed-blogs-header-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header a.feed-blogs-header-profile-link .feed-blogs-header-user .feed-blogs-header-user-img-container {
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  border-radius: 50px;
+  top: 2px;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header a.feed-blogs-header-profile-link .feed-blogs-header-user .feed-blogs-header-user-img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header a.feed-blogs-header-profile-link .feed-blogs-header-user span.feed-blogs-header-user-name {
+  font: 18px 'Poppins', sans-serif;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header ion-icon {
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header ion-icon:hover {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-tnail {
+  height: 450px;
+  background: var(--thumbnail-bg);
+  position: relative;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-tnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-desc {
+  padding: 15px;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-desc h2.feed-blogs-desc-heading {
+  font: 24px 'Poppins', sans-serif;
+  line-height: 1.5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--text-main);
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-desc p.feed-blogs-desc-par {
+  font: 16px 'Roboto', sans-serif;
+  line-height: 1.5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 5px 0px;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-desc p.feed-blogs-desc-meta {
+  font: 14px 'Poppins', sans-serif;
+  color: var(--par-main);
+}
+
 main.main-body .user-container {
   position: relative;
 }
@@ -142,7 +294,7 @@ main.main-body .user-container .user-container-main .user {
           align-items: center;
   gap: 10px;
   background: var(--white-tint);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);

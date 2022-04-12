@@ -6,7 +6,7 @@
     --sub-main: #6bd5ed;
     --text-main: #333;
     --par-main: #797979;
-    --faded-black-tint: rgba(0, 0, 0, 0.4);
+    --faded-black-tint: rgba(0, 0, 0, 0.2);
     --form-element-border: #dcdcdc;
     --input-labels: #333;
     --white-tint: #fff;
@@ -18,6 +18,7 @@
     --thumbnail-bg: #fafafa;
     --error-tint: #ee5757;
     --box-shadow: 2px 2px 5px var(--faded-black-tint);
+    --main-box-shadow: 2px 2px 3px var(--main);
     --draft-btn: #eeeeee;
     --img-bg: #333;
     --note-colour: #dcdcdc;

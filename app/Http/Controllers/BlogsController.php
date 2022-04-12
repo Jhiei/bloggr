@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\Tag;
 
 use Str;
 use Auth;
@@ -18,6 +19,8 @@ class BlogsController extends Controller
         $blog = Blog::find($id);
 
         $data['user'] = User::find($blog->user_id);
+
+        $data['tags'] = Tag::all();
 
         $data['this_blog'] = $blog;
         
@@ -78,6 +81,7 @@ class BlogsController extends Controller
         $blog->blog_desc = $request->blog_desc;
         $blog->blog_html = $request->blog_html;
         $blog->blog_font = $request->blog_font;
+        $blog->tag_id = $request->blog_topic;
         $blog->save();
 
         return redirect(route('dashboard'));

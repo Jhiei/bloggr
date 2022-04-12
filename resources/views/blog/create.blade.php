@@ -74,14 +74,13 @@
                             </select>
                         </div>
                         <div class="details-blog-form-input-field">
-                            <label class="details-blog-form-label" for="blog-tags">Tags</label>
-                            <div class="details-blog-form-add-tag">
-                                <input type="text" id="blog-tags" class="details-blog-form-input add-tag-input" placeholder="Add tag...">
-                                <div class="blog-tags-icon">
-                                    <ion-icon name="add-outline"></ion-icon>
-                                </div>
-                            </div>
-                            <span class="blog-tags-note">You may add up to 4 tags.</span>
+                            <label class="details-blog-form-label" for="blog-topic">Topic</label>
+                            <select id="blog-topic" name="blog_topic" class="details-blog-form-select" required>
+                                <option value="" selected>Select a topic...</option>
+                                @foreach($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->tag_label }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <input type="hidden" name="blog_id" value="{{ $this_blog->id }}">
                         <input type="hidden" name="blog_html" id="blog-html" class="content-body">                    
