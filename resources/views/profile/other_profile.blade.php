@@ -18,7 +18,6 @@
                 <div class="user-details-info-name">
                     <span class="user-details-info-user-name"><span>@</span>{{ $user->username }}</span>
                     <span class="user-details-info-real-name">{{ $user->fname }} {{ $user->lname }}</span>
-                    <a href="{{ route('settings-view') }}" class="user-edit-profile-btn">{{ __('Edit Profile') }}</a>
                 </div>
                 <div class="user-details-info-nums">
                     <ul class="user-details-info-nums-list">
