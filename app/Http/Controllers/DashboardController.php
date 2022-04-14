@@ -22,9 +22,11 @@ class DashboardController extends Controller
         $data['rand_blogs'] = Blog::orderByDesc('created_at')->get();
 
         foreach ($user_interest as $interest) {
-            $data['interest_blogs'] = Blog::where('tag_id', $interest->tag_id)->orderByDesc('created_at')->get();
+            $res = Blog::where('tag_id', $interest->tag_id)->orderByDesc('created_at')->get();
+            $data['interest_blogs'][] = $res;
         }
 
+        // return $data['tags'];
         return view('dashboard', $data);
     }
 }

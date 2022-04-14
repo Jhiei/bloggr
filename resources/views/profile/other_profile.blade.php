@@ -8,16 +8,16 @@
     <main class="main-profile">
         <section class="user-details">
             <div class="user-details-img">
-                @if(!isset(Auth::user()->profile_img_path))
+                @if(!isset($user->profile_img_path))
                 <img src="{{ asset('images/empty-prof.svg') }}" alt="empty profile pic" class="user-details-profile-img">
                 @else
-                <img src="{{ asset('storage/profile/' . Auth::user()->profile_img_path) }}" alt="empty profile pic" class="user-details-profile-img">
+                <img src="{{ asset('storage/profile/' . $user->profile_img_path) }}" alt="empty profile pic" class="user-details-profile-img">
                 @endif
             </div>
             <div class="user-details-info">
                 <div class="user-details-info-name">
-                    <span class="user-details-info-user-name"><span>@</span>{{ Auth::user()->username }}</span>
-                    <span class="user-details-info-real-name">{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
+                    <span class="user-details-info-user-name"><span>@</span>{{ $user->username }}</span>
+                    <span class="user-details-info-real-name">{{ $user->fname }} {{ $user->lname }}</span>
                     <a href="{{ route('settings-view') }}" class="user-edit-profile-btn">{{ __('Edit Profile') }}</a>
                 </div>
                 <div class="user-details-info-nums">
@@ -28,14 +28,14 @@
                         <li class="user-details-info-nums-li">99 blog points</li>
                     </ul>
                 </div>
-                @if(isset(Auth::user()->bio))
+                @if(isset($user->bio))
                 <div class="user-details-info-bio">
-                    <p class="user-details-info-user-bio">{{ Auth::user()->bio }}</p>
+                    <p class="user-details-info-user-bio">{{ $user->bio }}</p>
                 </div>
                 @endif
-                @if(isset(Auth::user()->website_url))
+                @if(isset($user->website_url))
                 <div class="user-details-info-link">
-                    <a class="user-details-info-hyperlink" href="{{ Auth::user()->website_url }}">{{ Auth::user()->website_url }}</a>
+                    <a class="user-details-info-hyperlink" href="{{ $user->website_url }}">{{ $user->website_url }}</a>
                 </div>
                 @endif
             </div>
@@ -65,7 +65,7 @@
             </div>
             @endforeach
             @else
-            <h2 class="no-published-blogs">This user has not published any blogs.</h2>
+            <h1>This user has not published any blogs.</h1>
             @endif
         </section>
     </main>

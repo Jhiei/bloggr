@@ -24,4 +24,16 @@ class ProfileController extends Controller
 
         return view('profile.profile', $data);
     }
+
+    public function other_user_view($name, $id) {
+        $data['user'] = User::find($id);
+
+        $data['user_id'] = $id;
+
+        $data['blog_list'] = Blog::where('user_id', $data['user']->id)->orderByDesc('created_at')->get();
+
+        $data['blog_count'] = count($data['blog_list']);
+
+        return view('profile.other_profile', $data);
+    }
 }

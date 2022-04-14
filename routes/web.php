@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/blog/view/{id}/{title}', [BlogsController::class, 'view'])->name('blog-view');
 
     Route::get('/profile/{name}/{id}', [ProfileController::class, 'create'])->name('profile-view');
+    Route::get('/profile/view/{name}/{id}', [ProfileController::class, 'other_user_view'])->name('user-profile-view');
 
     Route::get('/settings', [SettingsController::class, 'create'])->name('settings-view');
     Route::post('/settings/edit-profile', [SettingsController::class, 'update'])->name('settings-edit-profile');

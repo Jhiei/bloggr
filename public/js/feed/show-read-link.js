@@ -3,10 +3,10 @@ $(function() {
     var modal = $('.feed-blogs-tnail-darken');
 
     container.hover(function() {
-        modal.fadeIn(200);
+        $(this).find(modal).fadeIn(200);
     });
 
     container.on('mouseleave', function() {
-        modal.fadeOut(200);
+        $(this).find(modal).fadeOut(200);
     });
 });

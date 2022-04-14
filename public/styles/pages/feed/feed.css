@@ -145,6 +145,7 @@ main.main-body .feed .feed-blog .feed-tags .feed-tags-topics {
 
 main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container {
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"] {
@@ -161,6 +162,10 @@ main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-c
 
 main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"]:hover {
   background: var(--main);
+}
+
+main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container:last-child {
+  margin-bottom: 0px;
 }
 
 main.main-body .feed .feed-blog .feed-blogs {
@@ -235,7 +240,7 @@ main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header ion-icon:hover {
 }
 
 main.main-body .feed .feed-blog .feed-blogs .feed-blogs-tnail {
-  height: 450px;
+  height: 400px;
   background: var(--thumbnail-bg);
   position: relative;
 }

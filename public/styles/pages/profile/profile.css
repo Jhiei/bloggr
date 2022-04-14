@@ -283,6 +283,13 @@ main.main-profile section.blog-details .blog-details-item:hover .blog-details-it
   opacity: 1;
 }
 
+main.main-profile h2.no-published-blogs {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  font: 24px 'Poppins', sans-serif;
+}
+
 .blog-modal {
   position: absolute;
   top: 0;

@@ -235,6 +235,11 @@ main.main-profile {
             }
         }
     }
+
+    h2.no-published-blogs {
+        grid-column: 1 / 4;
+        font: 24px 'Poppins', sans-serif;
+    }
 }
 
 .blog-modal {

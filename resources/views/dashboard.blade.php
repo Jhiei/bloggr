@@ -56,7 +56,7 @@
                 @foreach($rand_blogs as $blog)
                 <div class="feed-blogs">
                     <div class="feed-blogs-header">
-                        <a href="{{ route('profile-view', [$blog->user->username, $blog->user->id]) }}" class="feed-blogs-header-profile-link">
+                        <a href="{{ route('user-profile-view', [$blog->user->username, $blog->user->id]) }}" class="feed-blogs-header-profile-link">
                             <div class="feed-blogs-header-user">
                                 <div class="feed-blogs-header-user-img-container">
                                     @if(!isset($blog->user->profile_img_path))
@@ -86,10 +86,11 @@
                 @endif
 
                 @if(count($interests) > 0)
-                @foreach($interest_blogs as $blog)
+                @foreach($interest_blogs as $row)
+                @foreach($row as $blog)
                 <div class="feed-blogs">
                     <div class="feed-blogs-header">
-                        <a href="{{ route('profile-view', [$blog->user->username, $blog->user->id]) }}" class="feed-blogs-header-profile-link">
+                        <a href="{{ route('user-profile-view', [$blog->user->username, $blog->user->id]) }}" class="feed-blogs-header-profile-link">
                             <div class="feed-blogs-header-user">
                                 <div class="feed-blogs-header-user-img-container">
                                     @if(!isset($blog->user->profile_img_path))
@@ -115,6 +116,7 @@
                         <p class="feed-blogs-desc-meta">{{ $blog->tag->tag_label }} &bullet; {{ $blog->created_at->format('d-m-Y') }}</p>
                     </div>
                 </div>
+                @endforeach
                 @endforeach
                 @endif
             </div>

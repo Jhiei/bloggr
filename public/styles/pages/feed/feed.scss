@@ -121,6 +121,7 @@ main.main-body {
 
                     .feed-tags-topics-container {
                         display: inline-block;
+                        margin-bottom: 20px;
 
                         span[class^="feed-tags-topics-"] {
                             border-radius: 50px;
@@ -136,6 +137,10 @@ main.main-body {
                         span[class^="feed-tags-topics-"]:hover {
                             background: var(--main);
                         }
+                    }
+
+                    .feed-tags-topics-container:last-child {
+                        margin-bottom: 0px;
                     }
                 }
             }
@@ -195,7 +200,7 @@ main.main-body {
                 }
 
                 .feed-blogs-tnail {
-                    height: 450px;
+                    height: 400px;
                     background: var(--thumbnail-bg);
                     position: relative;
 
