@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\User;
 use App\Models\Tag;
+use App\Models\Comment;
 
 use Str;
 use Auth;
@@ -91,6 +92,8 @@ class BlogsController extends Controller
         $blog = Blog::find($id);
 
         $data['this_blog'] = $blog;
+
+        $data['comments'] = Comment::where('blog_id', $blog->id)->orderByDesc('created_at')->get();
 
         return view('blog.view_blog', $data);
     }

@@ -32,6 +32,9 @@
                 @endif
                 <div class="drop-container">
                     <ul class="drop-container-list">
+                        @if(Auth::user()->user_type == "Admin")
+                        <a href="#"><li class="drop-container-li">Admin</li></a>
+                        @endif
                         <a href="{{ route('profile-view', [Auth::user()->username, Auth::user()->id]) }}"><li class="drop-container-li">Profile</li></a>
                         <a href="{{ route('settings-view') }}"><li class="drop-container-li">Settings</li></a>
                         <a href="#" class="logout-btn"><li class="drop-container-li">Sign Out</li></a>

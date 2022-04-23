@@ -53,4 +53,12 @@ class User extends Authenticatable
     public function userTag() {
         return $this->hasMany(UserTag::class);
     }
+
+    public function follow() {
+        return $this->hasMany(Follow::class);
+    }
+
+    public function comment() {
+        return $this->hasMany(Comment::class);
+    }
 }

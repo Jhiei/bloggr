@@ -3,26 +3,152 @@ main.main-blog {
     width: 60%;
     display: grid;
     grid-template-columns: 70% 1fr;
-    grid-gap: 20px;
+    grid-gap: 30px;
 
     section.blog-content {
 
-        .elem {
-            margin-bottom: 15px;
-            outline: 0;
-            width: 100%;
+        .blog-content-container {
+            background: var(--white-tint);
+            border: none;
+            box-shadow: var(--main-box-shadow);
+
+            img.blog-content-container-img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .elem {
+                padding: 0 15px;
+                outline: 0;
+                width: 100%;
+            }
+
+            .elem:first-child {
+                padding-top: 10px;
+            }
+
+            .elem:last-child {
+                padding-bottom: 10px;
+            }
+    
+            h2.heading-element {
+                font-size: 48px;
+                color: var(--text-main);
+            }
+    
+            p.paragraph-element {
+                font-size: 18px;
+            }
+
+            svg.heart-icon {
+                margin: 50px 0px 10px;
+                font-size: 36px;
+                padding: 0 15px;
+                color: var(--error-tint);
+                display: block;
+                transition: .3s;
+                width: 65px;
+                height: 65px;
+
+                > path:hover {
+                    fill: var(--error-tint);
+                    cursor: pointer;
+                }
+            }
         }
 
-        h2.heading-element {
-            font-size: 48px;
-        }
+        .blog-comment {
+            margin-top: 30px;
+            background: var(--white-tint);
+            padding: 10px 15px;
+            border: none;
+            box-shadow: var(--main-box-shadow);
 
-        p.paragraph-element {
-            font-size: 18px;
+            h2.blog-comment-heading {
+                color: var(--text-main);
+            }
+
+            form.blog-comment-form {
+                margin-top: 5px;
+
+                .blog-comment-input-field {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    > textarea {
+                        width: 100%;
+                        padding: 10px;
+                        height: 75px;
+                        font: 16px 'Poppins', sans-serif;
+                    }
+
+                    > input[type="submit"] {
+                        display: block;
+                        width: fit-content;
+                        border: 1px solid var(--main);
+                        background: var(--main);
+                        padding: 10px;
+                        font: 16px 'Roboto', sans-serif;
+                        align-self: flex-end;
+                    }
+                }
+            }
+
+            .blog-comments-container {
+                margin-top: 10px;
+
+                ul.blog-comments-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    li[class^="blog-comments-li-"] {
+                        display: flex;
+                        justify-content: flex-start;
+                        gap: 15px;
+                        
+                        .blog-comments-li-user-img {
+                            flex-basis: 45px;
+                            height: 45px;
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 50px;
+                            top: 2px;
+        
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .blog-comments-li-user-comm {
+                            width: 100%;
+
+                            > span {
+                                display: block;
+                                width: fit-content;
+                                font: 14px 'Poppins', sans-serif;
+                                color: var(--text-main);
+                            }
+
+                            span.blog-comments-li-user-name {
+                                font-weight: 600;
+                                letter-spacing: 0.5px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
+
     section.user-content {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
 
         .user-content-main {
             position: sticky;

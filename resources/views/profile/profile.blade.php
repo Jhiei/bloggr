@@ -23,8 +23,8 @@
                 <div class="user-details-info-nums">
                     <ul class="user-details-info-nums-list">
                         <li class="user-details-info-nums-li">{{ $blog_count }} blogs</li>
-                        <li class="user-details-info-nums-li">9 followers</li>
-                        <li class="user-details-info-nums-li">9 following</li>
+                        <li class="user-details-info-nums-li">{{ $follow_count }} followers</li>
+                        <li class="user-details-info-nums-li">{{ $following_count }} following</li>
                         <li class="user-details-info-nums-li">99 blog points</li>
                     </ul>
                 </div>
@@ -56,7 +56,17 @@
                         </div>
                         <div class="blog-details-item-nums-comms">
                             <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-                            <span>0</span>
+                            @php
+                                $count = 0;
+                            @endphp
+                            @foreach($all_comments as $comm)
+                                @if($comm->blog_id == $blog->id)
+                                    @php
+                                        $count++;
+                                    @endphp
+                                @endif
+                            @endforeach
+                            <span class="comm-nums">@php echo $count; @endphp</span>
                         </div>
                     </div>
                 </div>

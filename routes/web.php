@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TagsController;
+use App\Http\Controllers\CommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +32,12 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/blog/update', [BlogsController::class, 'update'])->name('blog-update');
     Route::get('/blog/view/{id}/{title}', [BlogsController::class, 'view'])->name('blog-view');
 
+    Route::post('/comment/store', [CommentsController::class, 'store'])->name('comments-store');
+
     Route::get('/profile/{name}/{id}', [ProfileController::class, 'create'])->name('profile-view');
     Route::get('/profile/view/{name}/{id}', [ProfileController::class, 'other_user_view'])->name('user-profile-view');
+    Route::post('/profile/follow', [ProfileController::class, 'follow'])->name('user-follow');
+    Route::post('/profile/unfollow', [ProfileController::class, 'unfollow'])->name('user-unfollow');
 
     Route::get('/settings', [SettingsController::class, 'create'])->name('settings-view');
     Route::post('/settings/edit-profile', [SettingsController::class, 'update'])->name('settings-edit-profile');

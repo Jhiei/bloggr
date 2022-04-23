@@ -161,6 +161,23 @@ main.main-profile section.user-details .user-details-info .user-details-info-lin
   font-size: 14px;
 }
 
+main.main-profile section.user-details .user-details-info .user-details-follow {
+  margin-top: 20px;
+}
+
+main.main-profile section.user-details .user-details-info .user-details-follow form.user-details-follow-form button.user-details-follow-btn,
+main.main-profile section.user-details .user-details-info .user-details-follow form.user-details-unfollow-form button.user-details-follow-btn {
+  background: var(--trans-main);
+  border: 1px solid var(--trans-main);
+  padding: 10px;
+  cursor: pointer;
+  font: 14px 'Montserrat', sans-serif;
+  width: 200px;
+  border-radius: 5px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
 main.main-profile section.user-details::after {
   content: "";
   position: absolute;

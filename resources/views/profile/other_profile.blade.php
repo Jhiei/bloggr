@@ -22,8 +22,8 @@
                 <div class="user-details-info-nums">
                     <ul class="user-details-info-nums-list">
                         <li class="user-details-info-nums-li">{{ $blog_count }} blogs</li>
-                        <li class="user-details-info-nums-li">9 followers</li>
-                        <li class="user-details-info-nums-li">9 following</li>
+                        <li class="user-details-info-nums-li">{{ $follow_count }} followers</li>
+                        <li class="user-details-info-nums-li">{{ $following_count }} following</li>
                         <li class="user-details-info-nums-li">99 blog points</li>
                     </ul>
                 </div>
@@ -36,6 +36,44 @@
                 <div class="user-details-info-link">
                     <a class="user-details-info-hyperlink" href="{{ $user->website_url }}">{{ $user->website_url }}</a>
                 </div>
+                @endif
+                <!-- TODO: Follow user functionality -->
+                @if(Auth::user()->id != $user->id)
+                    @if(!isset($follow_exists))
+                    <div class="user-details-follow follow-btn">
+                        <form action="javascript: void(0)" method="POST" class="user-details-follow-form">
+                            @csrf
+                            <input type="hidden" name="auth_user_id" id="auth-user-id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="user_id" id="view-user-id" value="{{ $user->id }}">
+                            <button type="submit" class="user-details-follow-btn">{{ __('Follow') }}</button>
+                        </form>
+                    </div>
+                    <div class="user-details-follow unfollow-btn" style="display: none;">
+                        <form action="javascript: void(0)" method="POST" class="user-details-unfollow-form">
+                            @csrf
+                            <input type="hidden" name="auth_user_id" id="auth-user-id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="user_id" id="view-user-id" value="{{ $user->id }}">
+                            <button type="submit" class="user-details-follow-btn">{{ __('Unfollow') }}</button>
+                        </form>
+                    </div>
+                    @else
+                    <div class="user-details-follow unfollow-btn">
+                        <form action="javascript: void(0)" method="POST" class="user-details-unfollow-form">
+                            @csrf
+                            <input type="hidden" name="auth_user_id" id="auth-user-id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="user_id" id="view-user-id" value="{{ $user->id }}">
+                            <button type="submit" class="user-details-follow-btn">{{ __('Unfollow') }}</button>
+                        </form>
+                    </div>
+                    <div class="user-details-follow follow-btn" style="display: none;">
+                        <form action="javascript: void(0)" method="POST" class="user-details-follow-form">
+                            @csrf
+                            <input type="hidden" name="auth_user_id" id="auth-user-id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="user_id" id="view-user-id" value="{{ $user->id }}">
+                            <button type="submit" class="user-details-follow-btn">{{ __('Follow') }}</button>
+                        </form>
+                    </div>
+                    @endif
                 @endif
             </div>
         </section>
@@ -55,7 +93,17 @@
                         </div>
                         <div class="blog-details-item-nums-comms">
                             <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-                            <span>0</span>
+                            @php
+                                $count = 0;
+                            @endphp
+                            @foreach($all_comments as $comm)
+                                @if($comm->blog_id == $blog->id)
+                                    @php
+                                        $count++;
+                                    @endphp
+                                @endif
+                            @endforeach
+                            <span class="comm-nums">@php echo $count; @endphp</span>
                         </div>
                     </div>
                 </div>
@@ -89,4 +137,52 @@
 
     <script src="{{ asset('js/profile/user-info.js') }}"></script>
     <script src="{{ asset('js/profile/blog-dialog.js') }}"></script>
+    <script src="{{ asset('js/profile/follow.js') }}"></script>
+    <script>
+        $("form.user-details-follow-form").submit(function(e) {
+            var formData = {
+                auth_user: $("#auth-user-id").val(),
+                user: $("#view-user-id").val(),
+            };
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('user-follow') }}",
+                data: $(this).serialize(),
+                dataType: "json",
+                encode: true,
+            }).done(function (data) {
+                console.log(data);
+            });
+        });
+
+        $("form.user-details-unfollow-form").submit(function(e) {
+            var formData = {
+                auth_user: $("#auth-user-id").val(),
+                user: $("#view-user-id").val(),
+            };
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('user-unfollow') }}",
+                data: $(this).serialize(),
+                dataType: "json",
+                encode: true,
+            }).done(function (data) {
+                console.log(data);
+            });
+        });
+    </script>
 @endsection

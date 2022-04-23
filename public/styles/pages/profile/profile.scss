@@ -127,6 +127,27 @@ main.main-profile {
                     font-size: 14px;
                 }
             }
+
+            .user-details-follow {
+                margin-top: 20px;
+
+                form.user-details-follow-form,
+                form.user-details-unfollow-form {
+
+                    button.user-details-follow-btn {
+                        background: var(--trans-main);
+                        border: 1px solid var(--trans-main);
+                        padding: 10px;
+                        cursor: pointer;
+                        font: 14px 'Montserrat', sans-serif;
+                        width: 200px;
+                        border-radius: 5px;
+                        font-weight: 500;
+                        color: var(--text-main);
+                    }
+                }
+
+            }
         }
     }
 
