@@ -49,7 +49,34 @@
 
     <div class="edit-modal" style="display: none;">
         <form action="#" class="edit-modal-form" method="POST">
-            <input type="hidden" value="" class="user-id-to-rep">
+            <h2 class="edit-modal-form-heading">Edit User Data</h2>
+            <div class="input-field-name">
+                <div class="edit-modal-input-field">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" value="" class="user-fname-to-rep">
+                </div>
+                <div class="edit-modal-input-field">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" value="" class="user-lname-to-rep">
+                </div>
+            </div>
+            <div class="edit-modal-input-field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="" class="user-username-to-rep">
+            </div>
+            <div class="edit-modal-input-field">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" value="" class="user-email-to-rep">
+            </div>
+            <div class="edit-modal-input-field">
+                <label for="user_type">User Type</label>
+                <input type="text" id="user_type" name="user_type" value="" class="user-type-to-rep">
+            </div>
+            <div class="edit-input-btn">
+                <button type="button" class="edit-close-modal">Cancel</button>
+                <input type="submit" value="Update">
+            </div>
+            <input type="hidden" name="user_id" value="" class="user-id-to-rep">
         </form>
     </div>
     

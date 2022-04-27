@@ -3,7 +3,7 @@ section.users {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 section.users .users-heading-text h2.users-heading {
@@ -15,7 +15,7 @@ section.users .users-heading-text p.users-text {
   font: 18px 'Montserrat', sans-serif;
   color: var(--par-main);
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 section.users .users-heading-text input.users-search,
@@ -121,5 +121,102 @@ section.all-users ul.all-users-list li.all-users-list-li:hover {
   top: 0;
   left: 0;
   margin-left: -25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 50px;
+}
+
+.edit-modal form.edit-modal-form {
+  background: var(--white-tint);
+  padding: 25px;
+  width: 35%;
+}
+
+.edit-modal form.edit-modal-form h2.edit-modal-form-heading {
+  margin-bottom: 10px;
+  color: var(--text-main);
+  font: 36px 'Poppins', sans-serif;
+}
+
+.edit-modal form.edit-modal-form .edit-modal-input-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.edit-modal form.edit-modal-form .edit-modal-input-field label {
+  color: var(--input-labels);
+  font: 10px 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.edit-modal form.edit-modal-form .edit-modal-input-field input[type="text"] {
+  width: 100%;
+  font: 16px 'Poppins', sans-serif;
+  padding: 10px;
+}
+
+.edit-modal form.edit-modal-form .edit-input-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: flex;
+  gap: 5px;
+}
+
+.edit-modal form.edit-modal-form .edit-input-btn button, .edit-modal form.edit-modal-form .edit-input-btn input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  font: 14px 'Poppins', sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-modal form.edit-modal-form .edit-input-btn button[type="button"] {
+  background: var(--error-tint);
+  color: var(--white-tint);
+}
+
+.edit-modal form.edit-modal-form .edit-input-btn input[type="submit"] {
+  background: var(--main);
+}
+
+.edit-modal form.edit-modal-form .input-field-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
+}
+
+.edit-modal form.edit-modal-form .input-field-name .edit-modal-input-field {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 /*# sourceMappingURL=users.css.map */

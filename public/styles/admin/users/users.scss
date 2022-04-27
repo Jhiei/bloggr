@@ -1,7 +1,7 @@
 section.users {
     width: 100%;
     height: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 
     .users-heading-text {
 
@@ -14,7 +14,7 @@ section.users {
             font: 18px 'Montserrat', sans-serif;
             color: var(--par-main);
             line-height: 1.5;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         input.users-search,
@@ -112,4 +112,76 @@ section.all-users {
     top: 0;
     left: 0;
     margin-left: -25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+
+    form.edit-modal-form {
+        background: var(--white-tint);
+        padding: 25px;
+        width: 35%;
+
+        h2.edit-modal-form-heading {
+            margin-bottom: 10px;
+            color: var(--text-main);
+            font: 36px 'Poppins', sans-serif;
+        }
+
+        .edit-modal-input-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            label {
+                color: var(--input-labels);
+                font: 10px 'Roboto', sans-serif;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                font: 16px 'Poppins', sans-serif;
+                padding: 10px;
+            }
+        }
+
+        .edit-input-btn {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            display: flex;
+            gap: 5px;
+
+            button, input {
+                width: fit-content;
+                padding: 10px;
+                font: 14px 'Poppins', sans-serif;
+                border: none;
+                cursor: pointer;
+            }
+
+            button[type="button"] {
+                background: var(--error-tint);
+                color: var(--white-tint);
+            }
+
+            input[type="submit"] {
+                background: var(--main);
+            }
+        }
+    
+        .input-field-name {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+
+            .edit-modal-input-field {
+                flex-basis: 50%;
+            }
+        }
+    }
+
 }
