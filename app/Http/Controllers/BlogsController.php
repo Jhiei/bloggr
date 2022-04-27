@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\User;
 use App\Models\Tag;
 use App\Models\Comment;
+use App\Models\Like;
 
 use Str;
 use Auth;
@@ -95,6 +96,31 @@ class BlogsController extends Controller
 
         $data['comments'] = Comment::where('blog_id', $blog->id)->orderByDesc('created_at')->get();
 
+        $data['like_exists'] = Like::where([
+            ['blog_id', $blog->id],
+            ['user_id', Auth::user()->id]
+        ])->first();
+
         return view('blog.view_blog', $data);
+    }
+
+    public function like(Request $request) {
+        $data = new Like;
+        $data->blog_id = $request->blog_id;
+        $data->user_id = $request->user_id;
+        $data->save();
+
+        return 0;
+    }
+
+    public function unlike(Request $request) {
+        $like = Like::where([
+            ['blog_id', $request->blog_id],
+            ['user_id', $request->user_id]
+        ])->first();
+
+        $like->delete();
+
+        return 0;
     }
 }

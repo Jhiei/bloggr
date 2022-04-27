@@ -1,0 +1,70 @@
+main.main-body {
+  position: relative;
+}
+
+main.main-body .sidebar {
+  position: fixed;
+  width: 75px;
+  height: 100vh;
+  border-right: 1px solid var(--form-element-border);
+  background: var(--white-tint);
+  z-index: 10;
+}
+
+main.main-body .sidebar .sidebar-container {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+main.main-body .sidebar .sidebar-container .sidebar-container-links,
+main.main-body .sidebar .sidebar-container .sidebar-container-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+  color: var(--text-main);
+}
+
+main.main-body .sidebar .sidebar-container .sidebar-container-links a ion-icon,
+main.main-body .sidebar .sidebar-container .sidebar-container-settings a ion-icon {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+main.main-body .sidebar .sidebar-container .sidebar-container-links a ion-icon:hover,
+main.main-body .sidebar .sidebar-container .sidebar-container-settings a ion-icon:hover {
+  color: var(--trans-main);
+}
+
+main.main-body .content {
+  margin-left: 100px;
+  padding: 25px;
+  position: relative;
+}
+/*# sourceMappingURL=admin_template.css.map */

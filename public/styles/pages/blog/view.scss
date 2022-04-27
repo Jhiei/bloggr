@@ -40,21 +40,26 @@ main.main-blog {
                 font-size: 18px;
             }
 
-            svg.heart-icon {
-                margin: 50px 0px 10px;
-                font-size: 36px;
+            .heart-icon-container {
+                margin: 50px 0px;
                 padding: 0 15px;
-                color: var(--error-tint);
-                display: block;
-                transition: .3s;
-                width: 65px;
-                height: 65px;
+                display: flex;
 
-                > path:hover {
-                    fill: var(--error-tint);
-                    cursor: pointer;
+                svg.heart-icon,
+                svg.heart-icon-2 {
+                    color: var(--error-tint);
+                    display: block;
+                    transition: .3s;
+                    width: 35px;
+                    height: 35px;
+                    margin-bottom: 10px;
+    
+                    > path {
+                        cursor: pointer;
+                    }
                 }
             }
+
         }
 
         .blog-comment {

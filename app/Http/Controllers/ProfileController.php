@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Blog;
 use App\Models\Follow;
 use App\Models\Comment;
+use App\Models\Like;
 
 use Auth;
 use Storage;
@@ -29,6 +30,8 @@ class ProfileController extends Controller
         $data['following_count'] = count(Follow::where('auth_user_id', $id)->get());
 
         $data['all_comments'] = Comment::get();
+
+        $data['all_likes'] = Like::get();
 
         return view('profile.profile', $data);
     }
@@ -52,6 +55,8 @@ class ProfileController extends Controller
         $data['following_count'] = count(Follow::where('auth_user_id', $id)->get());
 
         $data['all_comments'] = Comment::get();
+
+        $data['all_likes'] = Like::get();
 
         return view('profile.other_profile', $data);
     }

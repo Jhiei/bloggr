@@ -37,7 +37,6 @@
                     <a class="user-details-info-hyperlink" href="{{ $user->website_url }}">{{ $user->website_url }}</a>
                 </div>
                 @endif
-                <!-- TODO: Follow user functionality -->
                 @if(Auth::user()->id != $user->id)
                     @if(!isset($follow_exists))
                     <div class="user-details-follow follow-btn">
@@ -89,7 +88,17 @@
                     <div class="blog-details-item-nums">
                         <div class="blog-details-item-nums-likes">
                             <ion-icon name="heart-circle-outline"></ion-icon>
-                            <span>0</span>
+                            @php
+                                $like_count = 0;
+                            @endphp
+                            @foreach($all_likes as $like)
+                                @if($like->blog_id == $blog->id)
+                                    @php
+                                        $like_count++;
+                                    @endphp
+                                @endif
+                            @endforeach
+                            <span class="like-nums">@php echo $like_count; @endphp</span>
                         </div>
                         <div class="blog-details-item-nums-comms">
                             <ion-icon name="chatbox-ellipses-outline"></ion-icon>

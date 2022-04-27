@@ -1,0 +1,115 @@
+section.users {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+
+    .users-heading-text {
+
+        h2.users-heading {
+            font: 60px 'Poppins', sans-serif;
+            color: var(--text-main);
+        }
+
+        p.users-text {
+            font: 18px 'Montserrat', sans-serif;
+            color: var(--par-main);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        input.users-search,
+        button {
+            padding: 10px;
+            width: 400px;
+            font: 18px 'Poppins', sans-serif;
+            color: var(--text-main);
+        }
+
+        button {
+            width: fit-content;
+            color: var(--text-main);
+            background: var(--main);
+            border: 1px solid var(--main);
+        }
+    }
+}
+
+section.all-users {
+
+    .all-users-labels {
+        display: grid;
+        grid-template-columns: 10% 20% 20% 20% 20% 10%;
+        border-bottom: 1px solid var(--form-element-border);
+        padding: 5px 10px;
+
+        span[class^="all-users-"] {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--input-labels);
+            font: 10px 'Montserrat', sans-serif;
+        }
+    }
+
+    ul.all-users-list {
+
+        li.all-users-list-li {
+            display: grid;
+            grid-template-columns: 10% 20% 20% 20% 20% 10%;
+            align-items: center;
+            padding: 20px 10px;
+            transition: .2s;
+            
+            span[class^="users-"] {
+                font: 14px 'Poppins', sans-serif;
+            }
+
+            span.users-utility {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 5px;
+
+                button {
+                    cursor: pointer;
+                    font-size: 16px;
+                    padding: 5px;
+                    border: none;
+                    box-shadow: var(--box-shadow);
+                    border-radius: 5px;
+
+                    ion-icon {
+                        position: relative;
+                        top: 2px;
+                        color: var(--text-main);
+                    }
+                }
+
+                .users-edit-btn {
+                    background: var(--white-tint);
+                }
+
+                .users-delete-btn {
+                    background: var(--error-tint);
+                    
+                    ion-icon {
+                        color: var(--white-tint);
+                    }
+                }
+            }
+        }
+
+        li.all-users-list-li:hover {
+            background: var(--main);
+        }
+    }
+}
+
+.edit-modal {
+    width: calc(100% + 25px);
+    height: 100vh;
+    background: var(--faded-black-tint);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -25px;
+}

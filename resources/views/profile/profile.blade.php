@@ -52,21 +52,31 @@
                     <div class="blog-details-item-nums">
                         <div class="blog-details-item-nums-likes">
                             <ion-icon name="heart-circle-outline"></ion-icon>
-                            <span>0</span>
+                            @php
+                                $like_count = 0;
+                            @endphp
+                            @foreach($all_likes as $like)
+                                @if($like->blog_id == $blog->id)
+                                    @php
+                                        $like_count++;
+                                    @endphp
+                                @endif
+                            @endforeach
+                            <span class="like-nums">@php echo $like_count; @endphp</span>
                         </div>
                         <div class="blog-details-item-nums-comms">
                             <ion-icon name="chatbox-ellipses-outline"></ion-icon>
                             @php
-                                $count = 0;
+                                $follow_count = 0;
                             @endphp
                             @foreach($all_comments as $comm)
                                 @if($comm->blog_id == $blog->id)
                                     @php
-                                        $count++;
+                                        $follow_count++;
                                     @endphp
                                 @endif
                             @endforeach
-                            <span class="comm-nums">@php echo $count; @endphp</span>
+                            <span class="comm-nums">@php echo $follow_count; @endphp</span>
                         </div>
                     </div>
                 </div>

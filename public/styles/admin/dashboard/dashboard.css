@@ -1,0 +1,41 @@
+section.welcome {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+section.welcome .welcome-user-img {
+  width: 250px;
+  height: 250px;
+}
+
+section.welcome .welcome-user-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section.welcome .welcome-user-text h2.welcome-heading {
+  font: 60px 'Poppins', sans-serif;
+  color: var(--text-main);
+}
+
+section.welcome .welcome-user-text p.welcome-text {
+  font: 18px 'Montserrat', sans-serif;
+  color: var(--par-main);
+  line-height: 1.5;
+}
+/*# sourceMappingURL=dashboard.css.map */

@@ -43,20 +43,27 @@ main.main-blog section.blog-content .blog-content-container p.paragraph-element 
   font-size: 18px;
 }
 
-main.main-blog section.blog-content .blog-content-container svg.heart-icon {
-  margin: 50px 0px 10px;
-  font-size: 36px;
+main.main-blog section.blog-content .blog-content-container .heart-icon-container {
+  margin: 50px 0px;
   padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main.main-blog section.blog-content .blog-content-container .heart-icon-container svg.heart-icon,
+main.main-blog section.blog-content .blog-content-container .heart-icon-container svg.heart-icon-2 {
   color: var(--error-tint);
   display: block;
   -webkit-transition: .3s;
   transition: .3s;
-  width: 65px;
-  height: 65px;
+  width: 35px;
+  height: 35px;
+  margin-bottom: 10px;
 }
 
-main.main-blog section.blog-content .blog-content-container svg.heart-icon > path:hover {
-  fill: var(--error-tint);
+main.main-blog section.blog-content .blog-content-container .heart-icon-container svg.heart-icon > path,
+main.main-blog section.blog-content .blog-content-container .heart-icon-container svg.heart-icon-2 > path {
   cursor: pointer;
 }
 

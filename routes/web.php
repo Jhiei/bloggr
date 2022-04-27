@@ -9,6 +9,8 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\CommentsController;
 
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,8 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/blog/store', [BlogsController::class, 'store'])->name('blog-store');
     Route::post('/blog/update', [BlogsController::class, 'update'])->name('blog-update');
     Route::get('/blog/view/{id}/{title}', [BlogsController::class, 'view'])->name('blog-view');
+    Route::post('/blog/like', [BlogsController::class, 'like'])->name('blog-like');
+    Route::post('/blog/unlike', [BlogsController::class, 'unlike'])->name('blog-unlike');
 
     Route::post('/comment/store', [CommentsController::class, 'store'])->name('comments-store');
 
@@ -43,6 +47,12 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/settings/edit-profile', [SettingsController::class, 'update'])->name('settings-edit-profile');
 
     Route::post('/tag/save', [TagsController::class, 'save'])->name('tags-save');
+});
+
+Route::middleware(['auth', 'admin'])->group(function() {
+    Route::get('/admin/dashboard', [AdminController::class, 'create'])->name('admin-dashboard');
+
+    Route::get('/admin/manage/users', [AdminController::class, 'users'])->name('admin-manage-users');
 });
 
 require __DIR__.'/auth.php';
