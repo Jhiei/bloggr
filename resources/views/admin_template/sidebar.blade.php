@@ -15,7 +15,7 @@
                 <ion-icon name="chevron-up-circle-outline"></ion-icon>
             </a>
             @endif
-            <a href="">
+            <a href="{{ route('admin-reports-view') }}">
                 <ion-icon name="alert-circle-outline"></ion-icon>
             </a>
         </div>

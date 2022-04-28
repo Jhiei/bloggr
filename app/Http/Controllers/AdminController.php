@@ -50,4 +50,8 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+    public function report() {
+        return view('admin.reports');
+    }
 }

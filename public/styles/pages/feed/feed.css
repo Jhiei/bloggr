@@ -227,16 +227,44 @@ main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header a.feed-blogs-head
   font: 18px 'Poppins', sans-serif;
 }
 
-main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header ion-icon {
-  font-size: 24px;
-  cursor: pointer;
-  -webkit-transition: 1s;
-  transition: 1s;
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header .feed-blogs-menu-container {
+  position: relative;
 }
 
-main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header ion-icon:hover {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header .feed-blogs-menu-container ion-icon {
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header .feed-blogs-menu-container ion-icon:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header .feed-blogs-menu-container .feed-blogs-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  z-index: 5;
+  width: 100px;
+  background: var(--white-tint);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header .feed-blogs-menu-container .feed-blogs-menu span.feed-blogs-menu-option {
+  font: 16px 'Roboto', sans-serif;
+  cursor: pointer;
+  padding: 10px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: block;
+  width: 100%;
+}
+
+main.main-body .feed .feed-blog .feed-blogs .feed-blogs-header .feed-blogs-menu-container .feed-blogs-menu span.feed-blogs-menu-option:hover {
+  background: var(--hover-grey-colour);
 }
 
 main.main-body .feed .feed-blog .feed-blogs .feed-blogs-tnail {
@@ -373,7 +401,8 @@ main.main-body .user-container .user-container-main .user .user-name-container s
   color: var(--feed-write-heading);
 }
 
-.blog-create-modal {
+.blog-create-modal,
+.report-modal {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -389,29 +418,54 @@ main.main-body .user-container .user-container-main .user .user-name-container s
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 10;
 }
 
-.blog-create-modal form.blog-create-modal-form {
+.blog-create-modal form.blog-create-modal-form,
+.blog-create-modal form.report-modal-form,
+.report-modal form.blog-create-modal-form,
+.report-modal form.report-modal-form {
   background: var(--white-tint);
   padding: 30px;
   width: 30%;
   border-radius: 5px;
 }
 
-.blog-create-modal form.blog-create-modal-form h2.blog-create-modal-form-heading {
+.blog-create-modal form.blog-create-modal-form h2.blog-create-modal-form-heading,
+.blog-create-modal form.blog-create-modal-form h2.report-modal-form-heading,
+.blog-create-modal form.report-modal-form h2.blog-create-modal-form-heading,
+.blog-create-modal form.report-modal-form h2.report-modal-form-heading,
+.report-modal form.blog-create-modal-form h2.blog-create-modal-form-heading,
+.report-modal form.blog-create-modal-form h2.report-modal-form-heading,
+.report-modal form.report-modal-form h2.blog-create-modal-form-heading,
+.report-modal form.report-modal-form h2.report-modal-form-heading {
   font-size: 28px;
   color: var(--topic-fg);
   font-family: "Poppins", sans-serif;
   margin-bottom: 10px;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field,
+.report-modal form.report-modal-form .report-modal-form-input-field {
   position: relative;
   margin-bottom: 10px;
   width: 100%;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.text-input-labels {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.text-input-labels,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field label.text-input-labels,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field label.text-input-labels,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field label.text-input-labels,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.text-input-labels,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field label.text-input-labels,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field label.text-input-labels,
+.report-modal form.report-modal-form .report-modal-form-input-field label.text-input-labels {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -422,7 +476,14 @@ main.main-body .user-container .user-container-main .user .user-name-container s
   font-family: "Roboto", sans-serif;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field label.image-input,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field label.image-input,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field label.image-input,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field label.image-input,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field label.image-input,
+.report-modal form.report-modal-form .report-modal-form-input-field label.image-input {
   width: 100%;
   display: block;
   background: var(--thumbnail-bg);
@@ -440,14 +501,28 @@ main.main-body .user-container .user-container-main .user .user-name-container s
   margin-bottom: 15px;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field label.image-input .image-input-container,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field label.image-input .image-input-container,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field label.image-input .image-input-container,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container,
+.report-modal form.report-modal-form .report-modal-form-input-field label.image-input .image-input-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: 150px;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container img {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container img,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field label.image-input .image-input-container img,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container img,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field label.image-input .image-input-container img,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container img,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field label.image-input .image-input-container img,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field label.image-input .image-input-container img,
+.report-modal form.report-modal-form .report-modal-form-input-field label.image-input .image-input-container img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -456,7 +531,29 @@ main.main-body .user-container .user-container-main .user .user-name-container s
 }
 
 .blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field input,
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field textarea {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field textarea,
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field select,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field input,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field textarea,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field select,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field input,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field textarea,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field select,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field input,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field textarea,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field select,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field input,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field textarea,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field select,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field input,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field textarea,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field select,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field input,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field textarea,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field select,
+.report-modal form.report-modal-form .report-modal-form-input-field input,
+.report-modal form.report-modal-form .report-modal-form-input-field textarea,
+.report-modal form.report-modal-form .report-modal-form-input-field select {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -464,20 +561,49 @@ main.main-body .user-container .user-container-main .user .user-name-container s
   font-family: "Poppins", sans-serif;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field input[type="file"] {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field input[type="file"],
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field input[type="file"],
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field input[type="file"],
+.blog-create-modal form.report-modal-form .report-modal-form-input-field input[type="file"],
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field input[type="file"],
+.report-modal form.blog-create-modal-form .report-modal-form-input-field input[type="file"],
+.report-modal form.report-modal-form .blog-create-modal-form-input-field input[type="file"],
+.report-modal form.report-modal-form .report-modal-form-input-field input[type="file"] {
   border: none;
   display: none;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field textarea {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field textarea,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field textarea,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field textarea,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field textarea,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field textarea,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field textarea,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field textarea,
+.report-modal form.report-modal-form .report-modal-form-input-field textarea {
   height: 150px;
+  resize: none;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field:last-child {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field:last-child,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field:last-child,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field:last-child,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field:last-child,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field:last-child,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field:last-child,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field:last-child,
+.report-modal form.report-modal-form .report-modal-form-input-field:last-child {
   margin-bottom: 0;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field-btn,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field-btn,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field-btn,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field-btn,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field-btn,
+.report-modal form.report-modal-form .report-modal-form-input-field-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,7 +616,21 @@ main.main-body .user-container .user-container-main .user .user-name-container s
 }
 
 .blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button.cancel-btn {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field-btn input[type="submit"],
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field-btn button,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field-btn button,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field-btn input[type="submit"],
+.blog-create-modal form.report-modal-form .report-modal-form-input-field-btn button,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field-btn input[type="submit"],
+.report-modal form.blog-create-modal-form .report-modal-form-input-field-btn button,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
+.report-modal form.report-modal-form .blog-create-modal-form-input-field-btn button,
+.report-modal form.report-modal-form .report-modal-form-input-field-btn input[type="submit"],
+.report-modal form.report-modal-form .report-modal-form-input-field-btn button {
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
@@ -498,13 +638,27 @@ main.main-body .user-container .user-container-main .user .user-name-container s
   cursor: pointer;
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn input[type="submit"] {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field-btn input[type="submit"],
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
+.blog-create-modal form.report-modal-form .report-modal-form-input-field-btn input[type="submit"],
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
+.report-modal form.blog-create-modal-form .report-modal-form-input-field-btn input[type="submit"],
+.report-modal form.report-modal-form .blog-create-modal-form-input-field-btn input[type="submit"],
+.report-modal form.report-modal-form .report-modal-form-input-field-btn input[type="submit"] {
   margin-left: 5px;
   border: 1px solid var(--main);
   background: var(--main);
 }
 
-.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button.cancel-btn {
+.blog-create-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button,
+.blog-create-modal form.blog-create-modal-form .report-modal-form-input-field-btn button,
+.blog-create-modal form.report-modal-form .blog-create-modal-form-input-field-btn button,
+.blog-create-modal form.report-modal-form .report-modal-form-input-field-btn button,
+.report-modal form.blog-create-modal-form .blog-create-modal-form-input-field-btn button,
+.report-modal form.blog-create-modal-form .report-modal-form-input-field-btn button,
+.report-modal form.report-modal-form .blog-create-modal-form-input-field-btn button,
+.report-modal form.report-modal-form .report-modal-form-input-field-btn button {
   background: var(--error-tint);
   border: 1px solid var(--error-tint);
   color: var(--white-tint);

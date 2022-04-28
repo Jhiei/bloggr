@@ -102,7 +102,14 @@
                                 <span class="feed-blogs-header-user-name">{{ $blog->user->username }}</span>
                             </div>
                         </a>
-                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        <div class="feed-blogs-menu-container">
+                            <ion-icon name="ellipsis-horizontal-outline" class="feed-blogs-menu-btn"></ion-icon>
+                            <div class="feed-blogs-menu" style="display: none;">
+                                <span class="feed-blogs-menu-option">Report</span>
+                                <span class="feed-blogs-menu-option-blog-id" style="display: none;">{{ $blog->id }}</span>
+                                <span class="feed-blogs-menu-option-user-id" style="display: none;">{{ $blog->user->id }}</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="feed-blogs-tnail">
                         <img src="{{ asset('storage/thumbnail/' . $blog->blog_tnail_path) }}" alt="thumbnail for the blog titled with '{{ $blog->blog_title }}'">
@@ -167,6 +174,29 @@
         </form>
     </div>
 
+    <div class="report-modal" style="display: none;">
+        <form action="#" class="report-modal-form" method="POST">
+            <h2 class="report-modal-form-heading">File A Report</h2>
+            <div class="report-modal-form-input-field">
+                <label for="report-type" class="text-input-labels">Report Type</label>
+                <select name="report_type" id="report-type">
+                    <option value="User" selected>User</option>
+                    <option value="Blog">Blog</option>
+                </select>
+            </div>
+            <div class="report-modal-form-input-field">
+                <label for="report-text" class="text-input-labels">Report Message</label>
+                <textarea name="report_text" id="report-text"></textarea>
+            </div>
+            <div class="report-modal-form-input-field-btn">
+                <button type="button" class="report-cancel-btn">Cancel</button>
+                <input type="submit" value="Submit">
+            </div>
+            <input type="hidden" name="user_id" value="" class="input-user-id">
+            <input type="hidden" name="blog_id" value="" class="input-blog-id">
+        </form>
+    </div>
+
     <script>
         $(() => {
             let count = 0;
@@ -188,6 +218,7 @@
             }, 10000);
         });
     </script>
+    <script src="{{ asset('js/feed/report-modal.js') }}"></script>
     <script src="{{ asset('js/feed/blog-create-modal.js') }}"></script>
     <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
     <script src="{{ asset('js/feed/modal-form-labels.js') }}"></script>

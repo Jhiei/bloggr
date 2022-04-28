@@ -188,15 +188,42 @@ main.main-body {
                         }
                     }
 
-                    ion-icon {
-                        font-size: 24px;
-                        cursor: pointer;
-                        transition: 1s;
+                    .feed-blogs-menu-container {
+                        position: relative;
+
+                        ion-icon {
+                            font-size: 24px;
+                            cursor: pointer;
+                            transition: .75s;
+                        }
+    
+                        ion-icon:hover {
+                            transform: rotate(180deg);
+                        }
+
+                        .feed-blogs-menu {
+                            position: absolute;
+                            top: calc(100% + 5px);
+                            z-index: 5;
+                            width: 100px;
+                            background: var(--white-tint);
+                            box-shadow: var(--box-shadow);
+
+                            span.feed-blogs-menu-option {
+                                font: 16px 'Roboto', sans-serif;
+                                cursor: pointer;
+                                padding: 10px;
+                                transition: .3s;
+                                display: block;
+                                width: 100%;
+                            }
+
+                            span.feed-blogs-menu-option:hover {
+                                background: var(--hover-grey-colour);
+                            }
+                        }
                     }
 
-                    ion-icon:hover {
-                        transform: rotate(270deg);
-                    }
                 }
 
                 .feed-blogs-tnail {
@@ -312,7 +339,8 @@ main.main-body {
     }
 }
 
-.blog-create-modal {
+.blog-create-modal,
+.report-modal {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -322,21 +350,25 @@ main.main-body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 
-    form.blog-create-modal-form {
+    form.blog-create-modal-form,
+    form.report-modal-form {
         background: var(--white-tint);
         padding: 30px;
         width: 30%;
         border-radius: 5px;
 
-        h2.blog-create-modal-form-heading {
+        h2.blog-create-modal-form-heading,
+        h2.report-modal-form-heading {
             font-size: 28px;
             color: var(--topic-fg);
             font-family: "Poppins", sans-serif;
             margin-bottom: 10px;
         }
 
-        .blog-create-modal-form-input-field {
+        .blog-create-modal-form-input-field,
+        .report-modal-form-input-field {
             position: relative;
             margin-bottom: 10px;
             width: 100%;
@@ -377,7 +409,8 @@ main.main-body {
             }
 
             input,
-            textarea {
+            textarea,
+            select {
                 width: 100%;
                 padding: 10px;
                 font-size: 16px;
@@ -392,20 +425,23 @@ main.main-body {
 
             textarea {
                 height: 150px;
+                resize: none;
             }
         }
 
-        .blog-create-modal-form-input-field:last-child {
+        .blog-create-modal-form-input-field:last-child,
+        .report-modal-form-input-field:last-child {
             margin-bottom: 0;
         }
 
-        .blog-create-modal-form-input-field-btn {
+        .blog-create-modal-form-input-field-btn,
+        .report-modal-form-input-field-btn {
             display: flex;
             justify-content: flex-end;
             align-items: center;
 
             input[type="submit"],
-            button.cancel-btn {
+            button {
                 padding: 10px;
                 font-size: 16px;
                 border-radius: 5px;
@@ -419,7 +455,7 @@ main.main-body {
                 background: var(--main);
             }
 
-            button.cancel-btn {
+            button {
                 background: var(--error-tint);
                 border: 1px solid var(--error-tint);
                 color: var(--white-tint);

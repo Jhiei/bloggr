@@ -1,0 +1,20 @@
+section.reports {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 35px;
+}
+
+section.reports .reports-heading-text h2.reports-heading {
+  font: 60px 'Poppins', sans-serif;
+  color: var(--text-main);
+}
+
+section.reports .reports-heading-text p.reports-text {
+  font: 18px 'Montserrat', sans-serif;
+  color: var(--par-main);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=reports.css.map */
