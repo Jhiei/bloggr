@@ -10,7 +10,6 @@
             <div class="blog-content-container">
                 <img class="blog-content-container-img" src="{{ asset('storage/thumbnail/' . $this_blog->blog_tnail_path) }}" alt="">
                 {!! $this_blog->blog_html !!}
-                <!-- TODO: finish like function -->
                 <div class="heart-icon-container">
                     @if(!isset($like_exists))
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon heart-icon" viewBox="0 0 512 512">

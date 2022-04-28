@@ -10,7 +10,7 @@
             <a href="">
                 <ion-icon name="analytics-outline"></ion-icon>
             </a>
-            @if(Auth::user()->id == 1)
+            @if(Auth::user()->is_admin == 1)
             <a href="{{ route('admin-manage-users') }}">
                 <ion-icon name="chevron-up-circle-outline"></ion-icon>
             </a>

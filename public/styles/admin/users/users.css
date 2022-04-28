@@ -113,7 +113,8 @@ section.all-users ul.all-users-list li.all-users-list-li:hover {
   background: var(--main);
 }
 
-.edit-modal {
+.edit-modal,
+.del-modal {
   width: calc(100% + 25px);
   height: 100vh;
   background: var(--faded-black-tint);
@@ -133,19 +134,48 @@ section.all-users ul.all-users-list li.all-users-list-li:hover {
   padding-top: 50px;
 }
 
-.edit-modal form.edit-modal-form {
+.edit-modal form.edit-modal-form,
+.edit-modal form.del-modal-form,
+.del-modal form.edit-modal-form,
+.del-modal form.del-modal-form {
   background: var(--white-tint);
   padding: 25px;
   width: 35%;
 }
 
-.edit-modal form.edit-modal-form h2.edit-modal-form-heading {
+.edit-modal form.edit-modal-form h2.edit-modal-form-heading,
+.edit-modal form.edit-modal-form h2.del-modal-form-heading,
+.edit-modal form.del-modal-form h2.edit-modal-form-heading,
+.edit-modal form.del-modal-form h2.del-modal-form-heading,
+.del-modal form.edit-modal-form h2.edit-modal-form-heading,
+.del-modal form.edit-modal-form h2.del-modal-form-heading,
+.del-modal form.del-modal-form h2.edit-modal-form-heading,
+.del-modal form.del-modal-form h2.del-modal-form-heading {
   margin-bottom: 10px;
   color: var(--text-main);
   font: 36px 'Poppins', sans-serif;
 }
 
-.edit-modal form.edit-modal-form .edit-modal-input-field {
+.edit-modal form.edit-modal-form h2.del-modal-form-heading,
+.edit-modal form.del-modal-form h2.del-modal-form-heading,
+.del-modal form.edit-modal-form h2.del-modal-form-heading,
+.del-modal form.del-modal-form h2.del-modal-form-heading {
+  margin-bottom: 5px;
+}
+
+.edit-modal form.edit-modal-form p.del-modal-form-par,
+.edit-modal form.del-modal-form p.del-modal-form-par,
+.del-modal form.edit-modal-form p.del-modal-form-par,
+.del-modal form.del-modal-form p.del-modal-form-par {
+  margin-bottom: 10px;
+  color: var(--par-main);
+  font: 18px 'Poppins', sans-serif;
+}
+
+.edit-modal form.edit-modal-form .edit-modal-input-field,
+.edit-modal form.del-modal-form .edit-modal-input-field,
+.del-modal form.edit-modal-form .edit-modal-input-field,
+.del-modal form.del-modal-form .edit-modal-input-field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -156,20 +186,33 @@ section.all-users ul.all-users-list li.all-users-list-li:hover {
   margin-bottom: 10px;
 }
 
-.edit-modal form.edit-modal-form .edit-modal-input-field label {
+.edit-modal form.edit-modal-form .edit-modal-input-field label,
+.edit-modal form.del-modal-form .edit-modal-input-field label,
+.del-modal form.edit-modal-form .edit-modal-input-field label,
+.del-modal form.del-modal-form .edit-modal-input-field label {
   color: var(--input-labels);
   font: 10px 'Roboto', sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.edit-modal form.edit-modal-form .edit-modal-input-field input[type="text"] {
+.edit-modal form.edit-modal-form .edit-modal-input-field input[type="text"],
+.edit-modal form.del-modal-form .edit-modal-input-field input[type="text"],
+.del-modal form.edit-modal-form .edit-modal-input-field input[type="text"],
+.del-modal form.del-modal-form .edit-modal-input-field input[type="text"] {
   width: 100%;
   font: 16px 'Poppins', sans-serif;
   padding: 10px;
 }
 
-.edit-modal form.edit-modal-form .edit-input-btn {
+.edit-modal form.edit-modal-form .edit-input-btn,
+.edit-modal form.edit-modal-form .del-input-btn,
+.edit-modal form.del-modal-form .edit-input-btn,
+.edit-modal form.del-modal-form .del-input-btn,
+.del-modal form.edit-modal-form .edit-input-btn,
+.del-modal form.edit-modal-form .del-input-btn,
+.del-modal form.del-modal-form .edit-input-btn,
+.del-modal form.del-modal-form .del-input-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,7 +226,21 @@ section.all-users ul.all-users-list li.all-users-list-li:hover {
   gap: 5px;
 }
 
-.edit-modal form.edit-modal-form .edit-input-btn button, .edit-modal form.edit-modal-form .edit-input-btn input {
+.edit-modal form.edit-modal-form .edit-input-btn button, .edit-modal form.edit-modal-form .edit-input-btn input,
+.edit-modal form.edit-modal-form .del-input-btn button,
+.edit-modal form.edit-modal-form .del-input-btn input,
+.edit-modal form.del-modal-form .edit-input-btn button,
+.edit-modal form.del-modal-form .edit-input-btn input,
+.edit-modal form.del-modal-form .del-input-btn button,
+.edit-modal form.del-modal-form .del-input-btn input,
+.del-modal form.edit-modal-form .edit-input-btn button,
+.del-modal form.edit-modal-form .edit-input-btn input,
+.del-modal form.edit-modal-form .del-input-btn button,
+.del-modal form.edit-modal-form .del-input-btn input,
+.del-modal form.del-modal-form .edit-input-btn button,
+.del-modal form.del-modal-form .edit-input-btn input,
+.del-modal form.del-modal-form .del-input-btn button,
+.del-modal form.del-modal-form .del-input-btn input {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -193,16 +250,33 @@ section.all-users ul.all-users-list li.all-users-list-li:hover {
   cursor: pointer;
 }
 
-.edit-modal form.edit-modal-form .edit-input-btn button[type="button"] {
+.edit-modal form.edit-modal-form .edit-input-btn button[type="button"],
+.edit-modal form.edit-modal-form .del-input-btn button[type="button"],
+.edit-modal form.del-modal-form .edit-input-btn button[type="button"],
+.edit-modal form.del-modal-form .del-input-btn button[type="button"],
+.del-modal form.edit-modal-form .edit-input-btn button[type="button"],
+.del-modal form.edit-modal-form .del-input-btn button[type="button"],
+.del-modal form.del-modal-form .edit-input-btn button[type="button"],
+.del-modal form.del-modal-form .del-input-btn button[type="button"] {
   background: var(--error-tint);
   color: var(--white-tint);
 }
 
-.edit-modal form.edit-modal-form .edit-input-btn input[type="submit"] {
+.edit-modal form.edit-modal-form .edit-input-btn input[type="submit"],
+.edit-modal form.edit-modal-form .del-input-btn input[type="submit"],
+.edit-modal form.del-modal-form .edit-input-btn input[type="submit"],
+.edit-modal form.del-modal-form .del-input-btn input[type="submit"],
+.del-modal form.edit-modal-form .edit-input-btn input[type="submit"],
+.del-modal form.edit-modal-form .del-input-btn input[type="submit"],
+.del-modal form.del-modal-form .edit-input-btn input[type="submit"],
+.del-modal form.del-modal-form .del-input-btn input[type="submit"] {
   background: var(--main);
 }
 
-.edit-modal form.edit-modal-form .input-field-name {
+.edit-modal form.edit-modal-form .input-field-name,
+.edit-modal form.del-modal-form .input-field-name,
+.del-modal form.edit-modal-form .input-field-name,
+.del-modal form.del-modal-form .input-field-name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,7 +289,10 @@ section.all-users ul.all-users-list li.all-users-list-li:hover {
   gap: 10px;
 }
 
-.edit-modal form.edit-modal-form .input-field-name .edit-modal-input-field {
+.edit-modal form.edit-modal-form .input-field-name .edit-modal-input-field,
+.edit-modal form.del-modal-form .input-field-name .edit-modal-input-field,
+.del-modal form.edit-modal-form .input-field-name .edit-modal-input-field,
+.del-modal form.del-modal-form .input-field-name .edit-modal-input-field {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }

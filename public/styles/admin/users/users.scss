@@ -104,7 +104,8 @@ section.all-users {
     }
 }
 
-.edit-modal {
+.edit-modal,
+.del-modal {
     width: calc(100% + 25px);
     height: 100vh;
     background: var(--faded-black-tint);
@@ -117,15 +118,27 @@ section.all-users {
     align-items: flex-start;
     padding-top: 50px;
 
-    form.edit-modal-form {
+    form.edit-modal-form,
+    form.del-modal-form {
         background: var(--white-tint);
         padding: 25px;
         width: 35%;
 
-        h2.edit-modal-form-heading {
+        h2.edit-modal-form-heading,
+        h2.del-modal-form-heading {
             margin-bottom: 10px;
             color: var(--text-main);
             font: 36px 'Poppins', sans-serif;
+        }
+
+        h2.del-modal-form-heading {
+            margin-bottom: 5px;
+        }
+
+        p.del-modal-form-par {
+            margin-bottom: 10px;
+            color: var(--par-main);
+            font: 18px 'Poppins', sans-serif;
         }
 
         .edit-modal-input-field {
@@ -147,7 +160,8 @@ section.all-users {
             }
         }
 
-        .edit-input-btn {
+        .edit-input-btn,
+        .del-input-btn {
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;

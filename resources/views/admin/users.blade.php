@@ -48,7 +48,8 @@
     </section>
 
     <div class="edit-modal" style="display: none;">
-        <form action="#" class="edit-modal-form" method="POST">
+        <form action="{{ route('admin-manage-users-save') }}" class="edit-modal-form" method="POST">
+            @csrf
             <h2 class="edit-modal-form-heading">Edit User Data</h2>
             <div class="input-field-name">
                 <div class="edit-modal-input-field">
@@ -79,7 +80,21 @@
             <input type="hidden" name="user_id" value="" class="user-id-to-rep">
         </form>
     </div>
+
+    <div class="del-modal" style="display: none;">
+        <form action="{{ route('admin-manage-users-remove') }}" class="del-modal-form" method="POST">
+            @csrf
+            <h2 class="del-modal-form-heading">Remove User</h2>
+            <p class="del-modal-form-par">Are you sure you want to remove this user? THis action cannot be undone.</p>
+            <div class="del-input-btn">
+                <button type="button" class="del-close-modal">Cancel</button>
+                <input type="submit" value="Remove">
+            </div>
+            <input type="hidden" name="user_id" value="" class="del-user-id">
+        </form>
+    </div>
     
     <script src="{{ asset('js/admin/user-search.js') }}"></script>
     <script src="{{ asset('js/admin/user-edit-modal.js') }}"></script>
+    <script src="{{ asset('js/admin/user-del-modal.js') }}"></script>
 @endsection

@@ -53,6 +53,8 @@ Route::middleware(['auth', 'admin'])->group(function() {
     Route::get('/admin/dashboard', [AdminController::class, 'create'])->name('admin-dashboard');
 
     Route::get('/admin/manage/users', [AdminController::class, 'users'])->name('admin-manage-users');
+    Route::post('/admin/manage/users/save-profile', [ProfileController::class, 'update'])->name('admin-manage-users-save');
+    Route::post('/admin/manage/users/remove-user', [AdminController::class, 'remove_user'])->name('admin-manage-users-remove');
 });
 
 require __DIR__.'/auth.php';

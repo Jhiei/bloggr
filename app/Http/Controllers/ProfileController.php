@@ -78,4 +78,16 @@ class ProfileController extends Controller
 
         return 0;
     }
+
+    public function update(Request $request) {
+        $user = User::find($request->user_id);
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->user_type = $request->user_type;
+        $user->save();
+
+        return redirect()->back();
+    }
 }
