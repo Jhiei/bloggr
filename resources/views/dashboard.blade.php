@@ -68,7 +68,14 @@
                                 <span class="feed-blogs-header-user-name">{{ $blog->user->username }}</span>
                             </div>
                         </a>
-                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        <div class="feed-blogs-menu-container">
+                            <ion-icon name="ellipsis-horizontal-outline" class="feed-blogs-menu-btn"></ion-icon>
+                            <div class="feed-blogs-menu" style="display: none;">
+                                <span class="feed-blogs-menu-option">Report</span>
+                                <span class="feed-blogs-menu-option-blog-id" style="display: none;">{{ $blog->id }}</span>
+                                <span class="feed-blogs-menu-option-user-id" style="display: none;">{{ $blog->user->id }}</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="feed-blogs-tnail">
                         <img src="{{ asset('storage/thumbnail/' . $blog->blog_tnail_path) }}" alt="thumbnail for the blog titled with '{{ $blog->blog_title }}'">
@@ -175,7 +182,8 @@
     </div>
 
     <div class="report-modal" style="display: none;">
-        <form action="#" class="report-modal-form" method="POST">
+        <form action="{{ route('blog-report') }}" class="report-modal-form" method="POST">
+            @csrf
             <h2 class="report-modal-form-heading">File A Report</h2>
             <div class="report-modal-form-input-field">
                 <label for="report-type" class="text-input-labels">Report Type</label>
@@ -197,8 +205,12 @@
         </form>
     </div>
 
+    @if(session()->has('msg'))
+    <p class="report-success">{{ session()->get('msg') }}</p>
+    @endif
+
     <script>
-        $(() => {
+        $(function() {
             let count = 0;
             let arr = [
                 'Feeling like a writer today, {{ Auth::user()->username }}?', 

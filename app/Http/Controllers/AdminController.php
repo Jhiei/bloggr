@@ -9,6 +9,7 @@ use App\Models\Blog;
 use App\Models\Comment;
 use App\Models\Follow;
 use App\Models\Like;
+use App\Models\Report;
 
 use Auth;
 
@@ -35,6 +36,11 @@ class AdminController extends Controller
             $comment->delete();
         }
 
+        $reports = Report::where('user_id', $request->user_id)->get();
+        foreach ($reports as $report) {
+            $report->delete();
+        }
+
         $follows = Follow::where('auth_user_id', $request->user_id)->get();
         foreach ($follows as $follow) {
             $follow->delete();
@@ -52,6 +58,11 @@ class AdminController extends Controller
     }
 
     public function report() {
-        return view('admin.reports');
+        $data['user_reports'] = Report::where('report_type', 'User')->get();
+        $data['all_users'] = User::all();
+
+        $data['blog_reports'] = Report::where('report_type', 'Blog')->get();
+
+        return view('admin.reports', $data);
     }
 }

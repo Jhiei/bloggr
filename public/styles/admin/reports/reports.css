@@ -17,4 +17,381 @@ section.reports .reports-heading-text p.reports-text {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+
+section.user-reports-container,
+section.blog-reports-container {
+  margin-bottom: 20px;
+}
+
+section.user-reports-container .user-reports-heading-container,
+section.user-reports-container .blog-reports-heading-container,
+section.blog-reports-container .user-reports-heading-container,
+section.blog-reports-container .blog-reports-heading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.user-reports-container .user-reports-heading-container h2.user-reports-heading,
+section.user-reports-container .user-reports-heading-container h2.blog-reports-heading,
+section.user-reports-container .blog-reports-heading-container h2.user-reports-heading,
+section.user-reports-container .blog-reports-heading-container h2.blog-reports-heading,
+section.blog-reports-container .user-reports-heading-container h2.user-reports-heading,
+section.blog-reports-container .user-reports-heading-container h2.blog-reports-heading,
+section.blog-reports-container .blog-reports-heading-container h2.user-reports-heading,
+section.blog-reports-container .blog-reports-heading-container h2.blog-reports-heading {
+  font: 24px 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+section.user-reports-container .user-reports-heading-container ion-icon,
+section.user-reports-container .blog-reports-heading-container ion-icon,
+section.blog-reports-container .user-reports-heading-container ion-icon,
+section.blog-reports-container .blog-reports-heading-container ion-icon {
+  color: var(--text-main);
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+section.user-reports-container .user-reports-labels,
+section.user-reports-container .blog-reports-labels,
+section.blog-reports-container .user-reports-labels,
+section.blog-reports-container .blog-reports-labels {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 20% 20% 20% 20% 10%;
+      grid-template-columns: 10% 20% 20% 20% 20% 10%;
+  border-bottom: 1px solid var(--form-element-border);
+  padding: 5px 10px;
+}
+
+section.user-reports-container .user-reports-labels span[class^="user-reports-"],
+section.user-reports-container .user-reports-labels span[class^="blog-reports-"],
+section.user-reports-container .blog-reports-labels span[class^="user-reports-"],
+section.user-reports-container .blog-reports-labels span[class^="blog-reports-"],
+section.blog-reports-container .user-reports-labels span[class^="user-reports-"],
+section.blog-reports-container .user-reports-labels span[class^="blog-reports-"],
+section.blog-reports-container .blog-reports-labels span[class^="user-reports-"],
+section.blog-reports-container .blog-reports-labels span[class^="blog-reports-"] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--input-labels);
+  font: 10px 'Montserrat', sans-serif;
+}
+
+section.user-reports-container ul.user-reports-list li.user-reports-list-li,
+section.user-reports-container ul.user-reports-list li.blog-reports-list-li,
+section.user-reports-container ul.blog-reports-list li.user-reports-list-li,
+section.user-reports-container ul.blog-reports-list li.blog-reports-list-li,
+section.blog-reports-container ul.user-reports-list li.user-reports-list-li,
+section.blog-reports-container ul.user-reports-list li.blog-reports-list-li,
+section.blog-reports-container ul.blog-reports-list li.user-reports-list-li,
+section.blog-reports-container ul.blog-reports-list li.blog-reports-list-li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 20% 20% 20% 20% 10%;
+      grid-template-columns: 10% 20% 20% 20% 20% 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 10px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+section.user-reports-container ul.user-reports-list li.user-reports-list-li span[class^="reports-"],
+section.user-reports-container ul.user-reports-list li.blog-reports-list-li span[class^="reports-"],
+section.user-reports-container ul.blog-reports-list li.user-reports-list-li span[class^="reports-"],
+section.user-reports-container ul.blog-reports-list li.blog-reports-list-li span[class^="reports-"],
+section.blog-reports-container ul.user-reports-list li.user-reports-list-li span[class^="reports-"],
+section.blog-reports-container ul.user-reports-list li.blog-reports-list-li span[class^="reports-"],
+section.blog-reports-container ul.blog-reports-list li.user-reports-list-li span[class^="reports-"],
+section.blog-reports-container ul.blog-reports-list li.blog-reports-list-li span[class^="reports-"] {
+  font: 14px 'Poppins', sans-serif;
+}
+
+section.user-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility,
+section.user-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility,
+section.user-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility,
+section.user-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility,
+section.blog-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility,
+section.blog-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility,
+section.blog-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility,
+section.blog-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+section.user-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility button,
+section.user-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility button,
+section.user-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility button,
+section.user-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility button,
+section.blog-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility button,
+section.blog-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility button,
+section.blog-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility button,
+section.blog-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  border: none;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+
+section.user-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility button ion-icon,
+section.user-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility button ion-icon,
+section.user-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility button ion-icon,
+section.user-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility button ion-icon,
+section.blog-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility button ion-icon,
+section.blog-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility button ion-icon,
+section.blog-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility button ion-icon,
+section.blog-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility button ion-icon {
+  position: relative;
+  top: 2px;
+  color: var(--text-main);
+}
+
+section.user-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility .reports-dropdown-btn,
+section.user-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility .reports-dropdown-btn,
+section.user-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility .reports-dropdown-btn,
+section.user-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility .reports-dropdown-btn,
+section.blog-reports-container ul.user-reports-list li.user-reports-list-li span.reports-utility .reports-dropdown-btn,
+section.blog-reports-container ul.user-reports-list li.blog-reports-list-li span.reports-utility .reports-dropdown-btn,
+section.blog-reports-container ul.blog-reports-list li.user-reports-list-li span.reports-utility .reports-dropdown-btn,
+section.blog-reports-container ul.blog-reports-list li.blog-reports-list-li span.reports-utility .reports-dropdown-btn {
+  background: var(--white-tint);
+}
+
+section.user-reports-container ul.user-reports-list li.user-reports-list-li:hover,
+section.user-reports-container ul.user-reports-list li.blog-reports-list-li:hover,
+section.user-reports-container ul.blog-reports-list li.user-reports-list-li:hover,
+section.user-reports-container ul.blog-reports-list li.blog-reports-list-li:hover,
+section.blog-reports-container ul.user-reports-list li.user-reports-list-li:hover,
+section.blog-reports-container ul.user-reports-list li.blog-reports-list-li:hover,
+section.blog-reports-container ul.blog-reports-list li.user-reports-list-li:hover,
+section.blog-reports-container ul.blog-reports-list li.blog-reports-list-li:hover {
+  background: var(--main);
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content,
+section.user-reports-container ul.user-reports-list .blog-report-content,
+section.user-reports-container ul.blog-reports-list .user-report-content,
+section.user-reports-container ul.blog-reports-list .blog-report-content,
+section.blog-reports-container ul.user-reports-list .user-report-content,
+section.blog-reports-container ul.user-reports-list .blog-report-content,
+section.blog-reports-container ul.blog-reports-list .user-report-content,
+section.blog-reports-container ul.blog-reports-list .blog-report-content {
+  background: var(--grey-bg);
+  padding: 25px;
+  display: none;
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content ul.blog-report-blog-details,
+section.user-reports-container ul.user-reports-list .blog-report-content ul.blog-report-blog-details,
+section.user-reports-container ul.blog-reports-list .user-report-content ul.blog-report-blog-details,
+section.user-reports-container ul.blog-reports-list .blog-report-content ul.blog-report-blog-details,
+section.blog-reports-container ul.user-reports-list .user-report-content ul.blog-report-blog-details,
+section.blog-reports-container ul.user-reports-list .blog-report-content ul.blog-report-blog-details,
+section.blog-reports-container ul.blog-reports-list .user-report-content ul.blog-report-blog-details,
+section.blog-reports-container ul.blog-reports-list .blog-report-content ul.blog-report-blog-details {
+  margin-bottom: 20px;
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li,
+section.user-reports-container ul.user-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li,
+section.user-reports-container ul.blog-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li,
+section.user-reports-container ul.blog-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li,
+section.blog-reports-container ul.user-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li,
+section.blog-reports-container ul.user-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li,
+section.blog-reports-container ul.blog-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li,
+section.blog-reports-container ul.blog-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 3px;
+  font: 16px 'Poppins', sans-serif;
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child,
+section.user-reports-container ul.user-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child,
+section.user-reports-container ul.blog-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child,
+section.user-reports-container ul.blog-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child,
+section.blog-reports-container ul.user-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child,
+section.blog-reports-container ul.user-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child,
+section.blog-reports-container ul.blog-reports-list .user-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child,
+section.blog-reports-container ul.blog-reports-list .blog-report-content ul.blog-report-blog-details li.blog-report-blog-details-li:last-child {
+  margin-bottom: 0;
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content p.user-report-text,
+section.user-reports-container ul.user-reports-list .user-report-content p.blog-report-text,
+section.user-reports-container ul.user-reports-list .blog-report-content p.user-report-text,
+section.user-reports-container ul.user-reports-list .blog-report-content p.blog-report-text,
+section.user-reports-container ul.blog-reports-list .user-report-content p.user-report-text,
+section.user-reports-container ul.blog-reports-list .user-report-content p.blog-report-text,
+section.user-reports-container ul.blog-reports-list .blog-report-content p.user-report-text,
+section.user-reports-container ul.blog-reports-list .blog-report-content p.blog-report-text,
+section.blog-reports-container ul.user-reports-list .user-report-content p.user-report-text,
+section.blog-reports-container ul.user-reports-list .user-report-content p.blog-report-text,
+section.blog-reports-container ul.user-reports-list .blog-report-content p.user-report-text,
+section.blog-reports-container ul.user-reports-list .blog-report-content p.blog-report-text,
+section.blog-reports-container ul.blog-reports-list .user-report-content p.user-report-text,
+section.blog-reports-container ul.blog-reports-list .user-report-content p.blog-report-text,
+section.blog-reports-container ul.blog-reports-list .blog-report-content p.user-report-text,
+section.blog-reports-container ul.blog-reports-list .blog-report-content p.blog-report-text {
+  font: 16px 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content .user-report-btn,
+section.user-reports-container ul.user-reports-list .user-report-content .blog-report-btn,
+section.user-reports-container ul.user-reports-list .blog-report-content .user-report-btn,
+section.user-reports-container ul.user-reports-list .blog-report-content .blog-report-btn,
+section.user-reports-container ul.blog-reports-list .user-report-content .user-report-btn,
+section.user-reports-container ul.blog-reports-list .user-report-content .blog-report-btn,
+section.user-reports-container ul.blog-reports-list .blog-report-content .user-report-btn,
+section.user-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn,
+section.blog-reports-container ul.user-reports-list .user-report-content .user-report-btn,
+section.blog-reports-container ul.user-reports-list .user-report-content .blog-report-btn,
+section.blog-reports-container ul.user-reports-list .blog-report-content .user-report-btn,
+section.blog-reports-container ul.user-reports-list .blog-report-content .blog-report-btn,
+section.blog-reports-container ul.blog-reports-list .user-report-content .user-report-btn,
+section.blog-reports-container ul.blog-reports-list .user-report-content .blog-report-btn,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .user-report-btn,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content .user-report-btn button,
+section.user-reports-container ul.user-reports-list .user-report-content .blog-report-btn button,
+section.user-reports-container ul.user-reports-list .blog-report-content .user-report-btn button,
+section.user-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button,
+section.user-reports-container ul.blog-reports-list .user-report-content .user-report-btn button,
+section.user-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button,
+section.user-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button,
+section.user-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button,
+section.blog-reports-container ul.user-reports-list .user-report-content .user-report-btn button,
+section.blog-reports-container ul.user-reports-list .user-report-content .blog-report-btn button,
+section.blog-reports-container ul.user-reports-list .blog-report-content .user-report-btn button,
+section.blog-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button,
+section.blog-reports-container ul.blog-reports-list .user-report-content .user-report-btn button,
+section.blog-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button {
+  padding: 10px;
+  font: 14px 'Roboto', sans-serif;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border: none;
+  cursor: pointer;
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content .user-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.user-reports-list .user-report-content .user-report-btn button.blog-report-btn-ack,
+section.user-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.blog-report-btn-ack,
+section.user-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.blog-report-btn-ack,
+section.user-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.blog-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.blog-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.blog-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.user-report-btn-ack,
+section.user-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .user-report-content .user-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .user-report-content .user-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.blog-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.user-report-btn-ack,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-ack {
+  background: var(--success-tint);
+}
+
+section.user-reports-container ul.user-reports-list .user-report-content .user-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.user-reports-list .user-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.user-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.blog-report-btn-dismiss,
+section.user-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.user-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.blog-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.user-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .user-report-content .user-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .user-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .user-report-content .blog-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .blog-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.user-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .user-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .user-report-content .blog-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .user-report-btn button.blog-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.user-report-btn-dismiss,
+section.blog-reports-container ul.blog-reports-list .blog-report-content .blog-report-btn button.blog-report-btn-dismiss {
+  background: var(--white-tint);
+}
+
+p.ack-msg,
+p.dismiss-msg {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  font: 14px 'Poppins', sans-serif;
+  border: 1px solid var(--success-tint);
+  background: var(--success-bg);
+}
 /*# sourceMappingURL=reports.css.map */

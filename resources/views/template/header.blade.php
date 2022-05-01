@@ -17,9 +17,6 @@
                         <img src="{{ asset('images/home.svg') }}" alt="">
                     </li></a>
                     <a href="#"><li class="main-hdr-nav-list-links">
-                        <img src="{{ asset('images/trend.svg') }}" alt="">
-                    </li></a>
-                    <a href="#"><li class="main-hdr-nav-list-links">
                         <img src="{{ asset('images/notif.svg') }}" alt="">
                     </li></a>
                 </ul>

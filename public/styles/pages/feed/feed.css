@@ -663,4 +663,17 @@ main.main-body .user-container .user-container-main .user .user-name-container s
   border: 1px solid var(--error-tint);
   color: var(--white-tint);
 }
+
+p.report-success {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  font: 14px 'Poppins', sans-serif;
+  border: 1px solid var(--success-tint);
+  background: var(--success-bg);
+}
 /*# sourceMappingURL=feed.css.map */

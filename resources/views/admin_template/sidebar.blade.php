@@ -7,9 +7,6 @@
             <a href="{{ route('admin-dashboard') }}">
                 <ion-icon name="apps-outline"></ion-icon>
             </a>
-            <a href="">
-                <ion-icon name="analytics-outline"></ion-icon>
-            </a>
             @if(Auth::user()->is_admin == 1)
             <a href="{{ route('admin-manage-users') }}">
                 <ion-icon name="chevron-up-circle-outline"></ion-icon>

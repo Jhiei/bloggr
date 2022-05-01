@@ -18,3 +18,157 @@ section.reports {
         }
     }
 }
+
+section.user-reports-container,
+section.blog-reports-container {
+    margin-bottom: 20px;
+
+    .user-reports-heading-container,
+    .blog-reports-heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2.user-reports-heading,
+        h2.blog-reports-heading {
+            font: 24px 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        ion-icon {
+            color: var(--text-main);
+            margin-right: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .user-reports-labels,
+    .blog-reports-labels {
+        display: grid;
+        grid-template-columns: 10% 20% 20% 20% 20% 10%;
+        border-bottom: 1px solid var(--form-element-border);
+        padding: 5px 10px;
+    
+        span[class^="user-reports-"],
+        span[class^="blog-reports-"] {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--input-labels);
+            font: 10px 'Montserrat', sans-serif;
+        }
+    }
+
+    ul.user-reports-list,
+    ul.blog-reports-list {
+
+        li.user-reports-list-li,
+        li.blog-reports-list-li {
+            display: grid;
+            grid-template-columns: 10% 20% 20% 20% 20% 10%;
+            align-items: center;
+            padding: 20px 10px;
+            transition: .2s;
+            
+            span[class^="reports-"] {
+                font: 14px 'Poppins', sans-serif;
+            }
+
+            span.reports-utility {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 5px;
+
+                button {
+                    cursor: pointer;
+                    font-size: 16px;
+                    padding: 5px;
+                    border: none;
+                    box-shadow: var(--box-shadow);
+                    border-radius: 5px;
+
+                    ion-icon {
+                        position: relative;
+                        top: 2px;
+                        color: var(--text-main);
+                    }
+                }
+
+                .reports-dropdown-btn {
+                    background: var(--white-tint);
+                }
+            }
+        }
+
+        li.user-reports-list-li:hover,
+        li.blog-reports-list-li:hover {
+            background: var(--main);
+        }
+
+        .user-report-content,
+        .blog-report-content {
+            background: var(--grey-bg);
+            padding: 25px;
+            display: none;
+
+            ul.blog-report-blog-details {
+                margin-bottom: 20px;
+
+                li.blog-report-blog-details-li {
+                    display: block;
+                    width: fit-content;
+                    margin-bottom: 3px;
+                    font: 16px 'Poppins', sans-serif;
+                }
+
+                li.blog-report-blog-details-li:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            p.user-report-text,
+            p.blog-report-text {
+                font: 16px 'Poppins', sans-serif;
+                margin-bottom: 20px;
+            }
+
+            .user-report-btn,
+            .blog-report-btn {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 10px;
+
+                button {
+                    padding: 10px;
+                    font: 14px 'Roboto', sans-serif;
+                    box-shadow: var(--box-shadow);
+                    border: none;
+                    cursor: pointer;
+                }
+
+                button.user-report-btn-ack,
+                button.blog-report-btn-ack {
+                    background: var(--success-tint);
+                }
+
+                button.user-report-btn-dismiss,
+                button.blog-report-btn-dismiss {
+                    background: var(--white-tint);
+                }
+            }
+        }
+    }
+}
+
+p.ack-msg,
+p.dismiss-msg {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: fit-content;
+    padding: 20px;
+    font: 14px 'Poppins', sans-serif;
+    border: 1px solid var(--success-tint);
+    background: var(--success-bg);
+}

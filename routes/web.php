@@ -59,6 +59,10 @@ Route::middleware(['auth', 'admin'])->group(function() {
     Route::post('/admin/manage/users/remove-user', [AdminController::class, 'remove_user'])->name('admin-manage-users-remove');
 
     Route::get('/admin/user-reports', [AdminController::class, 'report'])->name('admin-reports-view');
+
+    Route::post('/admin/acknowledge-report-user', [ReportController::class, 'acknowledge_user'])->name('admin-reports-ack-user');
+    Route::post('/admin/acknowledge-report-blog', [ReportController::class, 'acknowledge_blog'])->name('admin-reports-ack-blog');
+    Route::post('/admin/dismiss-report', [ReportController::class, 'dismiss'])->name('admin-reports-dismiss');
 });
 
 require __DIR__.'/auth.php';

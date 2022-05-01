@@ -463,3 +463,14 @@ main.main-body {
         }
     }
 }
+
+p.report-success {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: fit-content;
+    padding: 20px;
+    font: 14px 'Poppins', sans-serif;
+    border: 1px solid var(--success-tint);
+    background: var(--success-bg);
+}

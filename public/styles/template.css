@@ -92,8 +92,8 @@ header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container ul.main-
      object-fit: cover;
 }
 
-header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container ul.main-hdr-nav-list a:nth-child(2) {
-  margin: 0px 20px;
+header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container ul.main-hdr-nav-list a:last-child {
+  margin-left: 10px;
 }
 
 header.hdr-container .main-hdr .main-hdr-nav .main-hdr-nav-profile-container {

@@ -23,6 +23,9 @@
     --img-bg: #333;
     --note-colour: #dcdcdc;
     --hover-grey-colour: #dcdcdc;
+    --success-tint: #61fc61;
+    --success-bg: #a0ffa0;
+    --grey-bg: #f0f0f0;
 }
 
 *,

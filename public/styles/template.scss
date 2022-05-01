@@ -70,8 +70,8 @@ header.hdr-container {
                         }
                     }
 
-                    a:nth-child(2) {
-                        margin: 0px 20px;
+                    a:last-child {
+                        margin-left: 10px;
                     }
                 }
             }
