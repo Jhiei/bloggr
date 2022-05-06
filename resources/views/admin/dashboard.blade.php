@@ -16,12 +16,13 @@
         <div class="welcome-user-text">
             <h2 class="welcome-heading">Hello, {{ Auth::user()->username }}. Welcome.</h2>
             <p class="welcome-text">
-                Welcome to your dashboard. Here you can quickly access features available only to the administrators of Bloggr.
+                Welcome to your dashboard. Here you can quickly access 
+                features available only to the administrators of Bloggr.
             </p>
         </div>
     </section>
 
-    <section class="admin-tools">
+    <section class="charts">
         
     </section>
 @endsection
