@@ -10,6 +10,7 @@ $(function() {
     var input_email = $('.user-email-to-rep');
     var input_type = $('.user-type-to-rep');
 
+    // replace details of user in the form to prepare for edit
     editBtn.on('click', function() {
         var id = $(this).parent().siblings('.users-id').text();
         var name = $(this).parent().siblings('.users-name').text();

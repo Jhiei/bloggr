@@ -3,6 +3,7 @@ $(function() {
     var blog = $('.blog-details-item');
     var close = $('.blog-modal-close-btn');
 
+    // open modal and replace elements with details of the blog
     blog.on('click', function() {
         var img = $(this).find('.blog-details-item-img-dialog');
         var title = $(this).find('.blog-details-item-title');

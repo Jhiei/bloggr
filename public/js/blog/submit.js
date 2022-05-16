@@ -13,6 +13,7 @@ $(function() {
         form.submit();
     });
 
+    // validate the blog creation and ensure that there are selected font and topic for the blog
     form.on('submit', function(e) {
         if (font_select.val() == "" || topic_select.val() == "") {
             e.preventDefault();

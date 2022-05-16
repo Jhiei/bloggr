@@ -2,7 +2,7 @@ main.main-blog {
     margin: 30px auto;
     width: 60%;
     display: grid;
-    grid-template-columns: 70% 1fr;
+    grid-template-columns: 70% 1fr; // set a grid display
     grid-gap: 30px;
 
     section.blog-content {
@@ -12,6 +12,7 @@ main.main-blog {
             border: none;
             box-shadow: var(--main-box-shadow);
 
+            // styles for appended elements when viewing blog
             img.blog-content-container-img {
                 width: 100%;
                 margin-bottom: 10px;
@@ -42,6 +43,7 @@ main.main-blog {
                 margin-bottom: 15px;
             }
 
+            // like button styles
             .heart-icon-container {
                 margin: 50px 0px;
                 padding: 0 15px;
@@ -49,6 +51,7 @@ main.main-blog {
 
                 svg.heart-icon,
                 svg.heart-icon-2 {
+                    // red tint #EE5757
                     color: var(--error-tint);
                     display: block;
                     transition: .3s;
@@ -64,6 +67,7 @@ main.main-blog {
 
         }
 
+        // styles for comment sections
         .blog-comment {
             margin-top: 30px;
             background: var(--white-tint);
@@ -111,6 +115,7 @@ main.main-blog {
                     flex-direction: column;
                     gap: 15px;
 
+                    // style list elements with class starting with 'blog-comments-li'
                     li[class^="blog-comments-li-"] {
                         display: flex;
                         justify-content: flex-start;
@@ -134,6 +139,7 @@ main.main-blog {
                         .blog-comments-li-user-comm {
                             width: 100%;
 
+                            // apply style to all span elements
                             > span {
                                 display: block;
                                 width: fit-content;
@@ -152,7 +158,7 @@ main.main-blog {
         }
     }
 
-
+    // place section to a specific spot
     section.user-content {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
@@ -204,6 +210,7 @@ main.main-blog {
                 }
             }
 
+            // right aside containing user details
             .user-bio,
             .user-url {
                 margin-top: 20px;

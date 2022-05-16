@@ -1,4 +1,5 @@
 $(function() {
+    // search users within the platform
     $("#user-search").on("keyup", function() {
         // lowercase the input on the search field
         var value = $(this).val().toLowerCase();

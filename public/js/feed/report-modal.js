@@ -12,6 +12,7 @@ $(function() {
         $(this).siblings(menu).slideToggle(300);
     });
 
+    // open report modal through a dropdown button
     reportBtn.on('click', function() {
         var user_id = $(this).siblings('.feed-blogs-menu-option-user-id').text();
         var blog_id = $(this).siblings('.feed-blogs-menu-option-blog-id').text();

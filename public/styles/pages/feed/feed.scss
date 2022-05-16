@@ -11,6 +11,7 @@ main.main-body {
         .feed-write {
             width: 100%;
             margin-bottom: 20px;
+            // using the box shadow variables from global css
             box-shadow: var(--box-shadow);
             border-radius: 5px;
 
@@ -148,16 +149,19 @@ main.main-body {
                     .feed-blogs-menu-container {
                         position: relative;
 
+                        // styling the icons package element
                         ion-icon {
                             font-size: 24px;
                             cursor: pointer;
                             transition: .75s;
                         }
     
+                        // rotate the icon for a small animation
                         ion-icon:hover {
                             transform: rotate(180deg);
                         }
 
+                        // dropdown menu for the report button
                         .feed-blogs-menu {
                             position: absolute;
                             top: calc(100% + 5px);
@@ -194,6 +198,7 @@ main.main-body {
                         object-fit: cover;
                     }
 
+                    // reveal button and darken background on hover
                     .feed-blogs-tnail-darken {
                         position: absolute;
                         top: 0;
@@ -246,6 +251,7 @@ main.main-body {
     .user-container {
         position: relative;
 
+        // follow page as user scrolls
         .user-container-main {
             position: sticky;
             top: 91px; // fixed value of positioning, fixed on scroll
@@ -261,6 +267,7 @@ main.main-body {
                 padding: 10px;
                 box-shadow: var(--box-shadow);
 
+                // flex child elements converts width to flex-basis
                 .user-img-container {
                     flex-basis: 45px;
                     height: 45px;
@@ -294,6 +301,7 @@ main.main-body {
             }
         }
 
+        // section showing more topics to follow
         .user-more-topics {
             margin-top: 15px;
             background: var(--white-tint);
@@ -320,6 +328,7 @@ main.main-body {
                     display: inline-block;
                     margin-bottom: 20px;
     
+                    // select span elements with class starting with 'more-tags-topics'
                     span[class^="more-tags-topics-"] {
                         border-radius: 50px;
                         padding: 5px 10px;
@@ -342,6 +351,7 @@ main.main-body {
             }
         }
 
+        // footer displaying legality
         .footer {
             margin-top: 20px;
             position: sticky;
@@ -358,6 +368,7 @@ main.main-body {
     }
 }
 
+// startup modal only displayed if users do not have any interest selected
 .select-tag-modal {
     position: absolute;
     width: 100%;
@@ -368,7 +379,7 @@ main.main-body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 10; // elevate stack positioning
 
     .feed-tags {
         border-radius: 5px;
@@ -433,6 +444,7 @@ main.main-body {
     }
 }
 
+// modal styles for creating blog and writing report
 .blog-create-modal,
 .report-modal {
     position: absolute;
@@ -446,6 +458,7 @@ main.main-body {
     align-items: center;
     z-index: 10;
 
+    // same styles for both modal forms and child elements
     form.blog-create-modal-form,
     form.report-modal-form {
         background: var(--white-tint);
@@ -512,17 +525,20 @@ main.main-body {
                 font-family: "Poppins", sans-serif;
             }
 
+            // hide input field file
             input[type="file"] {
                 border: none;
                 display: none;
             }
 
+            // set textarea to a specific size
             textarea {
                 height: 150px;
                 resize: none;
             }
         }
 
+        // remove bottom margin on last input field
         .blog-create-modal-form-input-field:last-child,
         .report-modal-form-input-field:last-child {
             margin-bottom: 0;
@@ -558,6 +574,7 @@ main.main-body {
     }
 }
 
+// session variable style if report was successful
 p.report-success {
     position: fixed;
     bottom: 10px;

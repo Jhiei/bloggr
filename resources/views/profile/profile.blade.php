@@ -106,7 +106,6 @@
             </button>
         </div>
     </div>
-
-    <script src="{{ asset('js/profile/user-info.js') }}"></script>
+    
     <script src="{{ asset('js/profile/blog-dialog.js') }}"></script>
 @endsection

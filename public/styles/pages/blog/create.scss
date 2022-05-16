@@ -2,6 +2,9 @@ body {
     background: var(--white-tint);
 }
 
+// left column = sidebar tools
+// center column = content display
+// right column = blog details 
 main.main-body {
     display: grid;
     grid-template-columns: 5% 1fr 20%;
@@ -63,11 +66,13 @@ main.main-body {
         }
     }
 
+    // height is based on the total height of all elements
     .content {
         height: fit-content;
         padding: 25px 50px;
         font-family: "Poppins", sans-serif;
 
+        // set a dashed border for elements upon creation
         .elem {
             margin-bottom: 15px;
             outline: 0;
@@ -102,6 +107,7 @@ main.main-body {
                     flex-direction: column;
                     margin-bottom: 10px;
 
+                    // display image as uploaded by user 
                     label.image-input {
                         width: 100%;
                         display: block;
@@ -125,11 +131,13 @@ main.main-body {
                         }
                     }
 
+                    // hide file display
                     input[type="file"] {
                         border: none;
                         display: none;
                     }
 
+                    // set letter spacing for labels to separate each character
                     label.details-blog-form-label {
                         text-transform: uppercase;
                         font-size: 10px;
@@ -138,6 +146,7 @@ main.main-body {
                         width: fit-content;
                     }
 
+                    // apply to all element swithin the form
                     input.details-blog-form-input,
                     textarea.details-blog-form-text,
                     select.details-blog-form-select {
@@ -189,6 +198,7 @@ main.main-body {
                 }
             }
 
+            // submit button
             .sidebar-details-submit {
                 display: flex;
                 justify-content: space-between;

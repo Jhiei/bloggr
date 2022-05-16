@@ -36,12 +36,14 @@ section.users {
 
 section.all-users {
 
+    // grid display used to arrange labels
     .all-users-labels {
         display: grid;
         grid-template-columns: 10% 20% 20% 20% 20% 10%;
         border-bottom: 1px solid var(--form-element-border);
         padding: 5px 10px;
 
+        // apply styles to spans with class starting with 'all-users-'
         span[class^="all-users-"] {
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -52,6 +54,7 @@ section.all-users {
 
     ul.all-users-list {
 
+        // grid display used to arrange user details
         li.all-users-list-li {
             display: grid;
             grid-template-columns: 10% 20% 20% 20% 20% 10%;
@@ -104,6 +107,7 @@ section.all-users {
     }
 }
 
+// modal form styles for editing and deleting users
 .edit-modal,
 .del-modal {
     width: calc(100% + 25px);

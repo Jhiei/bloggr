@@ -7,6 +7,7 @@ main.main-settings {
         display: grid;
         grid-template-columns: 25% 1fr;
 
+        // apply these styles to each section tag
         > section {
             padding: 25px;
             border: 1px solid var(--form-element-border);
@@ -44,6 +45,7 @@ main.main-settings {
                 width: 100%;
                 height: fit-content;
 
+                // apply to all input fields in edit profile page
                 .edit-profile-img,
                 .edit-profile-username,
                 .edit-profile-name,
@@ -74,7 +76,7 @@ main.main-settings {
     
                     .edit-profile-input-field {
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: column; // set direction of elements to column
                         
                         span.edit-profile-img-username {
                             font-family: 'Poppins', sans-serif;
@@ -90,6 +92,7 @@ main.main-settings {
                         }
                     }
 
+                    // small ntoe written under username
                     small.edit-profile-note {
                         display: block;
                         margin-top: 5px;
@@ -97,6 +100,7 @@ main.main-settings {
                         color: var(--note-colour);
                     }
 
+                    // submit button
                     input[type="submit"] {
                         grid-column: 2 / 3;
                         font: 14px 'Roboto', sans-serif;
@@ -107,11 +111,13 @@ main.main-settings {
                         transition: .2s;
                     }
 
+                    // submit button animation on hover
                     input[type="submit"]:hover {
                         background: var(--trans-main);
                     }
                 }
                 
+                // exclusive styles for the specified elements
                 .edit-profile-name,
                 .edit-profile-username,
                 .edit-profile-bio,

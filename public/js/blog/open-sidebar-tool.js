@@ -3,6 +3,7 @@ $(function() {
     var headings = $('.tool-heading');
     var tools = $('.tool');
 
+    // open the sidebar to show tools on hover
     container.on('mouseenter', function() {
         $(this).animate({
             width : '225px'
@@ -16,6 +17,7 @@ $(function() {
         headings.fadeIn(300);
     });
 
+    // close the sidebar to hide tools on mouse leave
     container.on('mouseleave', function() {
         $(this).animate({
             width : '100%'

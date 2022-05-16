@@ -35,6 +35,7 @@ section.blog-reports-container {
             margin-bottom: 10px;
         }
 
+        // applied color and right margin on icons package
         ion-icon {
             color: var(--text-main);
             margin-right: 20px;
@@ -49,6 +50,7 @@ section.blog-reports-container {
         border-bottom: 1px solid var(--form-element-border);
         padding: 5px 10px;
     
+        // apply styles to spans with class starting with 'user-reports' and 'blog-reports-'
         span[class^="user-reports-"],
         span[class^="blog-reports-"] {
             text-transform: uppercase;
@@ -68,7 +70,8 @@ section.blog-reports-container {
             align-items: center;
             padding: 20px 10px;
             transition: .2s;
-            
+
+            // apply styles to spans with class starting with 'reports-'
             span[class^="reports-"] {
                 font: 14px 'Poppins', sans-serif;
             }
@@ -77,6 +80,7 @@ section.blog-reports-container {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
+                // 5px gap between both elements
                 gap: 5px;
 
                 button {
@@ -161,6 +165,7 @@ section.blog-reports-container {
     }
 }
 
+// session variables styles when report has been acknowledged or dimissed
 p.ack-msg,
 p.dismiss-msg {
     position: fixed;

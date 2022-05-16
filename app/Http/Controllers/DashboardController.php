@@ -13,10 +13,6 @@ use Auth;
 
 class DashboardController extends Controller
 {
-    private function sortByCount($arr1, $arr2) {
-        return $arr1[1] - $arr2[1];
-    }
-
     public function create() {
         $user_interest = UserTag::where('user_id', Auth::user()->id)->get();
         $data['interests'] = $user_interest;
@@ -25,13 +21,20 @@ class DashboardController extends Controller
 
         $data['rand_blogs'] = Blog::orderByDesc('created_at')->get();
 
-        foreach ($user_interest as $interest) {
-            $res = Blog::where('tag_id', $interest->tag_id)->orderByDesc('created_at')->get();
-            $data['interest_blogs'][] = $res;
-        }
-
         $all_topics = Tag::all();
         $all_blogs = Blog::all();
+
+        foreach ($user_interest as $interest) {
+            $res = Blog::where('tag_id', $interest->tag_id)->orderByDesc('created_at')->get();
+            $interests[] = $res;
+        }
+
+        $blogs = Blog::where('user_id', Auth::user()->id)->orderByDesc('created_at')->get();
+        $interests[] = $blogs;
+
+        $data['interest_blogs'] = collect($interests);
+        $data['interest_blogs']->sortByDesc('created_at');
+
         $arr_list = [];
 
         foreach ($all_topics as $t) {

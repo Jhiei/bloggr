@@ -280,7 +280,7 @@
                 encode: true,
             }).done(function (data) {
                 console.log(data);
-            });
+            }); 
 
             e.preventDefault();
         });

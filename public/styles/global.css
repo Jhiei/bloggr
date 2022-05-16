@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Roboto&display=swap");
 
+/* global variables used throughout the project */
 :root {
     --main: #68fef5;
     --trans-main: #34f8eb;
@@ -28,6 +29,7 @@
     --grey-bg: #f0f0f0;
 }
 
+/* all margins and paddings of elements are removed and sized to regular sizing */
 *,
 *::before,
 *::after {
@@ -36,11 +38,13 @@
     box-sizing: border-box;
 }
 
+/* body element set to a dirty white colour */
 body {
     position: relative;
     background: var(--body-shade);
 }
 
+/* input elements are set to no outline and a grey border */
 button,
 input,
 select,
@@ -49,6 +53,7 @@ textarea {
     outline: 0;
 }
 
+/* default stylings for unordered lists and anchors */
 ul {
     list-style-type: none;
 }
@@ -58,10 +63,12 @@ a {
     color: black;
 }
 
+/* change cursor on hover */
 input[type="submit"] {
     cursor: pointer;
 }
 
+/* disable users from dragging image elements */
 img {
     -webkit-user-drag: none;
 }
@@ -70,6 +77,7 @@ textarea {
     resize: none;
 }
 
+/* customized scrollbar */
 ::-webkit-scrollbar {
     width: 3px;
     height: 3px;

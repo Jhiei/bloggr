@@ -3,6 +3,7 @@ $(function() {
     var modal = $('.del-modal');
     var closeBtn = $('.del-close-modal');
 
+    // replace id in the form and prompt user to submit
     delBtn.on('click', function() {
         var id = $(this).parent().siblings('.users-id').text();
         var del_id = $('.del-user-id');

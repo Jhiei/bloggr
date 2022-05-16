@@ -37,27 +37,6 @@ header.hdr-container .main-hdr .main-hdr-logo img {
      object-fit: cover;
 }
 
-header.hdr-container .main-hdr .main-hdr-search form.main-hdr-search-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-header.hdr-container .main-hdr .main-hdr-search form.main-hdr-search-form input[type="text"] {
-  padding: 5px 10px;
-  font-family: "Roboto", sans-serif;
-  background: var(--body-shade);
-  border-radius: 3px;
-  width: 65%;
-}
-
-header.hdr-container .main-hdr .main-hdr-search form.main-hdr-search-form input[type="submit"] {
-  display: none;
-}
-
 header.hdr-container .main-hdr .main-hdr-nav {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;

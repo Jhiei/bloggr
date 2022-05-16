@@ -1,6 +1,7 @@
 main.main-body {
     position: relative;
 
+    // sidebar containing links to other pages in admin dashboard
     .sidebar {
         position: fixed;
         width: 75px;
@@ -9,6 +10,7 @@ main.main-body {
         background: var(--white-tint);
         z-index: 10;
 
+        // used a flex display to style 2 child elements
         .sidebar-container {
             padding: 20px;
             width: 100%;
@@ -32,6 +34,7 @@ main.main-body {
                 a {
 
                     ion-icon {
+                        // animation speed
                         transition: .2s;
                     }
 
