@@ -23,35 +23,13 @@
                 <div class="feed-write-topic">
                     <span class="feed-write-topic-sh">Trending:</span>
                     <ul class="feed-write-topic-list">
-                        <li class="feed-write-topic-li">Genshin Impact</li>
-                        <li class="feed-write-topic-li">Finance</li>
-                        <li class="feed-write-topic-li">ESports</li>
-                        <li class="feed-write-topic-li">Twitch</li>
-                        <li class="feed-write-topic-li">Valorant</li>
+                        @foreach($trending as $foo)
+                        <li class="feed-write-topic-li">{{ $foo['label'] }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
             <div class="feed-blog">
-                @if(count($interests) <= 3)
-                <div class="feed-tags">
-                    <h2 class="feed-tags-heading">For a start, select topics that may be of interest.</h2>
-                    <p class="feed-tags-par">The selection of topics can be edited later in your profile page.</p>
-                    <div class="feed-tags-topics">
-                        @foreach($tags as $tag)
-                        <div class="feed-tags-topics-container">
-                            <span class="feed-tags-topics-{{ $tag->id }} topic-tags">{{ $tag->tag_label }}</span>
-                            <small style="display: none;">{{ $tag->id }}</small>
-                        </div>
-                        @endforeach
-                    </div>
-                    <form action="javascript: void(0)" style="display: none;" method="POST" class="topic-form">
-                        @csrf
-                        <input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user-id">
-                        <input type="hidden" value="" name="tag_id" id="tag-id">
-                    </form>
-                </div>
-                @endif
-
                 @if(count($interests) == 0)
                 @foreach($rand_blogs as $blog)
                 <div class="feed-blogs">
@@ -151,6 +129,26 @@
                     </div>
                 </a>
             </div>
+            <div class="user-more-topics">
+                <h4 class="more-topics-heading">Discover new topics...</h4>
+                <p class="more-topics-par">Note: You must reload the page before seeing new content.</p>
+                <ul class="more-topics-list">
+                    @foreach($tags as $tag)
+                    <div class="more-tags-topics-container">
+                        <span class="more-tags-topics-{{ $tag->id }} topic-tags">{{ $tag->tag_label }}</span>
+                        <small style="display: none;">{{ $tag->id }}</small>
+                    </div>
+                    @endforeach
+                    <form action="javascript: void(0)" style="display: none;" method="POST" class="topic-form">
+                        @csrf
+                        <input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user-id">
+                        <input type="hidden" value="" name="tag_id" id="tag-id">
+                    </form>
+                </ul>
+            </div>
+            <div class="footer">
+                <p>Copyright &copy; 2022 Bloggr. All Rights Reserved.</p>
+            </div>
         </div>
     </main>
 
@@ -181,6 +179,31 @@
         </form>
     </div>
 
+    @if(count($interests) <= 3)
+    <div class="select-tag-modal">
+        <div class="feed-tags">
+            <h2 class="feed-tags-heading">You can select topics that may be of interest.</h2>
+            <p class="feed-tags-par">The selection of topics can be edited later in your profile page.</p>
+            <div class="feed-tags-topics">
+                @foreach($tags as $tag)
+                <div class="feed-tags-topics-container">
+                    <span class="feed-tags-topics-{{ $tag->id }} topic-tags">{{ $tag->tag_label }}</span>
+                    <small style="display: none;">{{ $tag->id }}</small>
+                </div>
+                @endforeach
+            </div>
+            <form action="javascript: void(0)" style="display: none;" method="POST" class="topic-form">
+                @csrf
+                <input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user-id">
+                <input type="hidden" value="" name="tag_id" id="tag-id">
+            </form>
+            <div class="skip-btn">
+                <span>Skip For Now</span>
+            </div>
+        </div>
+    </div>
+    @endif
+
     <div class="report-modal" style="display: none;">
         <form action="{{ route('blog-report') }}" class="report-modal-form" method="POST">
             @csrf
@@ -209,6 +232,12 @@
     <p class="report-success">{{ session()->get('msg') }}</p>
     @endif
 
+    <script src="{{ asset('js/feed/report-modal.js') }}"></script>
+    <script src="{{ asset('js/feed/blog-create-modal.js') }}"></script>
+    <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
+    <script src="{{ asset('js/feed/modal-form-labels.js') }}"></script>
+    <script src="{{ asset('js/feed/show-read-link.js') }}"></script>
+    <script src="{{ asset('js/feed/tag-click.js') }}"></script>
     <script>
         $(function() {
             let count = 0;
@@ -230,12 +259,6 @@
             }, 10000);
         });
     </script>
-    <script src="{{ asset('js/feed/report-modal.js') }}"></script>
-    <script src="{{ asset('js/feed/blog-create-modal.js') }}"></script>
-    <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
-    <script src="{{ asset('js/feed/modal-form-labels.js') }}"></script>
-    <script src="{{ asset('js/feed/show-read-link.js') }}"></script>
-    <script src="{{ asset('js/feed/tag-click.js') }}"></script>
     <script>
         $("form.topic-form").submit(function(e) {
             var formData = {
@@ -261,5 +284,14 @@
 
             e.preventDefault();
         });
+    </script>
+    <script>
+        $('.skip-btn').on('click', function() {
+            $('.select-tag-modal').fadeOut(200);
+        });
+    </script>
+
+    <script>
+        console.log($('.user-more-topics').height());
     </script>
 @endsection

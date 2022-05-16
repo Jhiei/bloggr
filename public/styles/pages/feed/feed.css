@@ -72,7 +72,7 @@ main.main-body .feed .feed-write .feed-write-topic {
   background: var(--main);
   position: relative;
   border-radius: 0px 0px 5px 5px;
-  z-index: -1;
+  z-index: 10;
   top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,7 +83,7 @@ main.main-body .feed .feed-write .feed-write-topic {
   gap: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 main.main-body .feed .feed-write .feed-write-topic span.feed-write-topic-sh {
@@ -119,53 +119,8 @@ main.main-body .feed .feed-write .feed-write-topic ul.feed-write-topic-list li.f
   padding: 5px 10px;
 }
 
-main.main-body .feed .feed-blog .feed-tags {
-  border-radius: 5px;
-  background: var(--white-tint);
-  -webkit-box-shadow: var(--main-box-shadow);
-          box-shadow: var(--main-box-shadow);
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-main.main-body .feed .feed-blog .feed-tags h2.feed-tags-heading {
-  font: 1.5 24px 'Poppins', sans-serif;
-  margin-bottom: 5px;
-  color: var(--text-main);
-}
-
-main.main-body .feed .feed-blog .feed-tags p.feed-tags-par {
-  font: 1.5 16px 'Roboto', sans-serif;
-  color: var(--par-main);
-}
-
-main.main-body .feed .feed-blog .feed-tags .feed-tags-topics {
-  margin-top: 20px;
-}
-
-main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container {
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"] {
-  border-radius: 50px;
-  padding: 5px 10px;
-  border: 1px solid var(--main);
-  color: var(--text-main);
-  font: 16px 'Poppins', sans-serif;
-  -webkit-transition: .3s;
-  transition: .3s;
-  cursor: pointer;
-  margin-right: 3px;
-}
-
-main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"]:hover {
-  background: var(--main);
-}
-
-main.main-body .feed .feed-blog .feed-tags .feed-tags-topics .feed-tags-topics-container:last-child {
-  margin-bottom: 0px;
+main.main-body .feed .feed-write .feed-write-topic::-webkit-scrollbar {
+  display: none;
 }
 
 main.main-body .feed .feed-blog .feed-blogs {
@@ -341,7 +296,7 @@ main.main-body .user-container {
 main.main-body .user-container .user-container-main {
   position: -webkit-sticky;
   position: sticky;
-  top: 80px;
+  top: 91px;
   left: 0;
 }
 
@@ -399,6 +354,155 @@ main.main-body .user-container .user-container-main .user .user-name-container s
 
 main.main-body .user-container .user-container-main .user .user-name-container span.user-user-name {
   color: var(--feed-write-heading);
+}
+
+main.main-body .user-container .user-more-topics {
+  margin-top: 15px;
+  background: var(--white-tint);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  padding: 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 171px;
+  left: 0;
+}
+
+main.main-body .user-container .user-more-topics h4.more-topics-heading {
+  font: 20px 'Poppins', sans-serif;
+}
+
+main.main-body .user-container .user-more-topics p.more-topics-par {
+  font: 12px 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: var(--par-main);
+}
+
+main.main-body .user-container .user-more-topics ul.more-topics-list {
+  margin-top: 20px;
+}
+
+main.main-body .user-container .user-more-topics ul.more-topics-list .more-tags-topics-container {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+main.main-body .user-container .user-more-topics ul.more-topics-list .more-tags-topics-container span[class^="more-tags-topics-"] {
+  border-radius: 50px;
+  padding: 5px 10px;
+  border: 1px solid var(--main);
+  color: var(--text-main);
+  font: 12px 'Poppins', sans-serif;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  margin-right: 3px;
+}
+
+main.main-body .user-container .user-more-topics ul.more-topics-list .more-tags-topics-container span[class^="more-tags-topics-"]:hover {
+  background: var(--main);
+}
+
+main.main-body .user-container .user-more-topics ul.more-topics-list .more-tags-topics-container:last-child {
+  margin-bottom: 0px;
+}
+
+main.main-body .user-container .footer {
+  margin-top: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 580px;
+  left: 0;
+}
+
+main.main-body .user-container .footer p {
+  text-align: center;
+  font: 12px 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: var(--par-main);
+}
+
+.select-tag-modal {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: var(--modal-bg);
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+.select-tag-modal .feed-tags {
+  border-radius: 5px;
+  background: var(--white-tint);
+  -webkit-box-shadow: var(--main-box-shadow);
+          box-shadow: var(--main-box-shadow);
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 50%;
+  position: relative;
+}
+
+.select-tag-modal .feed-tags h2.feed-tags-heading {
+  font: 1.5 24px 'Poppins', sans-serif;
+  margin-bottom: 5px;
+  color: var(--text-main);
+}
+
+.select-tag-modal .feed-tags p.feed-tags-par {
+  font: 1.5 16px 'Roboto', sans-serif;
+  color: var(--par-main);
+}
+
+.select-tag-modal .feed-tags .feed-tags-topics {
+  margin-top: 20px;
+}
+
+.select-tag-modal .feed-tags .feed-tags-topics .feed-tags-topics-container {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.select-tag-modal .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"] {
+  border-radius: 50px;
+  padding: 5px 10px;
+  border: 1px solid var(--main);
+  color: var(--text-main);
+  font: 16px 'Poppins', sans-serif;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  margin-right: 3px;
+}
+
+.select-tag-modal .feed-tags .feed-tags-topics .feed-tags-topics-container span[class^="feed-tags-topics-"]:hover {
+  background: var(--main);
+}
+
+.select-tag-modal .feed-tags .feed-tags-topics .feed-tags-topics-container:last-child {
+  margin-bottom: 0px;
+}
+
+.select-tag-modal .feed-tags .skip-btn {
+  position: absolute;
+  right: 0;
+  top: -25px;
+}
+
+.select-tag-modal .feed-tags .skip-btn span {
+  cursor: pointer;
+  font: 16px 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
+  color: var(--white-tint);
 }
 
 .blog-create-modal,

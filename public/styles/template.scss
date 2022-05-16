@@ -18,6 +18,7 @@ header.hdr-container {
         align-items: center;
 
         .main-hdr-logo {
+            grid-column: 1 / 2;
             width: 100%;
 
             img {
@@ -46,13 +47,15 @@ header.hdr-container {
         }
 
         .main-hdr-nav {
+            grid-column: 3 / 4;
             height: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: center;
 
             nav.main-hdr-nav-container {
-                margin-right: 25px;
+                margin-right: 10px;
+                margin-top: 5px;
 
                 ul.main-hdr-nav-list {
                     display: flex;
@@ -68,10 +71,6 @@ header.hdr-container {
                                 object-fit: cover;
                             }
                         }
-                    }
-
-                    a:last-child {
-                        margin-left: 10px;
                     }
                 }
             }

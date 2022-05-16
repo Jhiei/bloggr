@@ -25,15 +25,9 @@
                 </div>
                 <div class="tool paragraph">
                     <div class="tool-icon">
-                        <ion-icon name="text-outline"></ion-icon>
+                        <ion-icon name="menu-outline"></ion-icon>
                     </div>
                     <h3 class="tool-heading">Paragraph</h3>
-                </div>
-                <div class="tool link">
-                    <div class="tool-icon">
-                        <ion-icon name="text-outline"></ion-icon>
-                    </div>
-                    <h3 class="tool-heading">Hyperlink</h3>
                 </div>
             </div>
         </div>
@@ -43,7 +37,7 @@
         <div class="sidebar-details">
             <div class="sidebar-details-blog">
                 <div class="sidebar-details-blog-container">
-                    <form action="{{ route('blog-update') }}" method="POST" enctype="multipart/form-data" class="details-blog-form">
+                    <form class="details-blog-form" action="{{ route('blog-update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="details-blog-form-input-field img-input-field">
                         <label class="details-blog-form-label">Thumbnail</label>
@@ -52,20 +46,21 @@
                                     <img id="thumbnail" src="{{ asset('storage/thumbnail/' . $this_blog->blog_tnail_path) }}" alt="prompt user to enter thumbnail">
                                 </div>
                             </label>
-                            <input type="file" name="blog_tnail" id="blog-tnail" accept="image/*" onchange="loadFile(event)" required>
+                            <input type="file" name="blog_tnail" id="blog-tnail" accept="image/*" onchange="loadFile(event)">
                         </div>
                         <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-title">Title</label>
-                            <input type="text" id="blog-title" name="blog_title" class="details-blog-form-input" value="{{ $this_blog->blog_title }}">
+                            <input type="text" id="blog-title" name="blog_title" class="details-blog-form-input" value="{{ $this_blog->blog_title }}" required>
                         </div>
                         <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-desc">Description</label>
-                            <textarea id="blog-desc" name="blog_desc" class="details-blog-form-text">{{ $this_blog->blog_desc }}</textarea>
+                            <textarea id="blog-desc" name="blog_desc" class="details-blog-form-text" required>{{ $this_blog->blog_desc }}</textarea>
                         </div>
                         <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-font">Font</label>
-                            <select id="blog-font" name="blog_font" class="details-blog-form-select">
-                                <option value="Poppins" selected>Poppins (Default)</option>
+                            <select id="blog-font" name="blog_font" class="details-blog-form-select font-select" required>
+                                <option value="">Select a font...</option>
+                                <option value="Poppins">Poppins</option>
                                 <option value="Montserrat">Montserrat</option>
                                 <option value="Arial">Arial</option>
                                 <option value="Verdana">Verdana</option>
@@ -75,22 +70,21 @@
                         </div>
                         <div class="details-blog-form-input-field">
                             <label class="details-blog-form-label" for="blog-topic">Topic</label>
-                            <select id="blog-topic" name="blog_topic" class="details-blog-form-select" required>
-                                <option value="" selected>Select a topic...</option>
+                            <select id="blog-topic" name="blog_topic" class="details-blog-form-select topic-select" required>
+                                <option value="">Select a topic...</option>
                                 @foreach($tags as $tag)
                                 <option value="{{ $tag->id }}">{{ $tag->tag_label }}</option>
                                 @endforeach
                             </select>
                         </div>
+                        <div class="sidebar-details-submit">
+                            <!-- <button class="drafts-btn" type="button">Draft</button> -->
+                            <input type="submit" class="submit-btn" value="Publish">
+                        </div>
                         <input type="hidden" name="blog_id" value="{{ $this_blog->id }}">
                         <input type="hidden" name="blog_html" id="blog-html" class="content-body">                    
                     </form>
                 </div>
-            </div>
-
-            <div class="sidebar-details-submit">
-                <button class="drafts-btn" type="button">Draft</button>
-                <button class="submit-btn" type="submit">Publish</button>
             </div>
         </div>
     </main>

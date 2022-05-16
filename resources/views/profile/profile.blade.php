@@ -25,7 +25,6 @@
                         <li class="user-details-info-nums-li">{{ $blog_count }} blogs</li>
                         <li class="user-details-info-nums-li">{{ $follow_count }} followers</li>
                         <li class="user-details-info-nums-li">{{ $following_count }} following</li>
-                        <li class="user-details-info-nums-li">99 blog points</li>
                     </ul>
                 </div>
                 @if(isset(Auth::user()->bio))

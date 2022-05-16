@@ -124,6 +124,34 @@ main.main-body .main-body-form .main-body-sign-up-form .sign-up-form-input-field
   color: var(--input-labels);
 }
 
+main.main-body .main-body-form h4.main-body-register-error {
+  font: 16px 'Poppins', sans-serif;
+  background: var(--error-tint);
+  color: var(--white-tint);
+  padding: 15px 0px;
+  border: 1px solid var(--form-element-border);
+  margin: 0px 25px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+main.main-body .main-body-form .main-body-login {
+  font: 16px 'Poppins', sans-serif;
+  background: var(--white-tint);
+  padding: 15px 0px;
+  border: 1px solid var(--form-element-border);
+  margin: 0px 25px;
+  border-radius: 5px;
+}
+
+main.main-body .main-body-form .main-body-login p.main-body-login-link {
+  text-align: center;
+}
+
+main.main-body .main-body-form .main-body-login p.main-body-login-link a {
+  text-decoration: underline;
+}
+
 main.main-body footer.sign-up-footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;

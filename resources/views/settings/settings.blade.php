@@ -10,8 +10,10 @@
             <section class="main-settings-tabs">
                 <ul class="tabs-list">
                     <a href="#edit-profile" class="tabs-list-li-link"><li class="tabs-list-li">Edit Profile</li></a>
-                    <a href="#change-password" class="tabs-list-li-link"><li class="tabs-list-li">Change Password</li></a>
-                    <a href="#sign-out" class="tabs-list-li-link"><li class="tabs-list-li">Sign Out</li></a>
+                    <a href="#sign-out" class="tabs-list-li-link logout-a-btn"><li class="tabs-list-li">Sign Out</li></a>
+                    <form action="{{ route('logout') }}" style="display: none;" class="logout-a-form" method="POST">
+                        @csrf
+                    </form>
                 </ul>
             </section>
             <section class="main-settings-field">
@@ -66,4 +68,9 @@
 
     <script src="{{ asset('js/feed/display-on-upload.js') }}"></script>
     <script src="{{ asset('js/settings/check-link.js') }}"></script>
+    <script>
+        $('.logout-a-btn').on('click', function() {
+            $(this).siblings('.logout-a-form').submit();
+        });
+    </script>
 @endsection

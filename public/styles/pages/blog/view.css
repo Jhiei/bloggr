@@ -37,10 +37,12 @@ main.main-blog section.blog-content .blog-content-container .elem:last-child {
 main.main-blog section.blog-content .blog-content-container h2.heading-element {
   font-size: 48px;
   color: var(--text-main);
+  margin-bottom: 10px;
 }
 
 main.main-blog section.blog-content .blog-content-container p.paragraph-element {
   font-size: 18px;
+  margin-bottom: 15px;
 }
 
 main.main-blog section.blog-content .blog-content-container .heart-icon-container {

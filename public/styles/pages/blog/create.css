@@ -241,7 +241,7 @@ main.main-body .sidebar-details .sidebar-details-blog form.details-blog-form .de
   color: var(--text-main);
 }
 
-main.main-body .sidebar-details .sidebar-details-submit {
+main.main-body .sidebar-details .sidebar-details-blog .sidebar-details-submit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,7 +256,7 @@ main.main-body .sidebar-details .sidebar-details-submit {
   margin-top: 20px;
 }
 
-main.main-body .sidebar-details .sidebar-details-submit button {
+main.main-body .sidebar-details .sidebar-details-blog .sidebar-details-submit input, main.main-body .sidebar-details .sidebar-details-blog .sidebar-details-submit button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -264,13 +264,14 @@ main.main-body .sidebar-details .sidebar-details-submit button {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   border: none;
+  cursor: pointer;
 }
 
-main.main-body .sidebar-details .sidebar-details-submit button[type="submit"] {
+main.main-body .sidebar-details .sidebar-details-blog .sidebar-details-submit input[type="submit"] {
   background: var(--main);
 }
 
-main.main-body .sidebar-details .sidebar-details-submit button[type="button"] {
+main.main-body .sidebar-details .sidebar-details-blog .sidebar-details-submit button[type="button"] {
   background: var(--draft-btn);
 }
 /*# sourceMappingURL=create.css.map */

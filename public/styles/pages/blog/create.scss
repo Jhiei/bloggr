@@ -188,31 +188,33 @@ main.main-body {
                     }
                 }
             }
+
+            .sidebar-details-submit {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                flex-direction: row;
+                margin-top: 20px;
+    
+                input, button {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 16px;
+                    font-family: "Poppins", sans-serif;
+                    transition: 0.2s;
+                    border: none;
+                    cursor: pointer;
+                }
+    
+                input[type="submit"] {
+                    background: var(--main);
+                }
+    
+                button[type="button"] {
+                    background: var(--draft-btn);
+                }
+            }
         }
 
-        .sidebar-details-submit {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            flex-direction: row;
-            margin-top: 20px;
-
-            button {
-                width: 100%;
-                padding: 10px;
-                font-size: 16px;
-                font-family: "Poppins", sans-serif;
-                transition: 0.2s;
-                border: none;
-            }
-
-            button[type="submit"] {
-                background: var(--main);
-            }
-
-            button[type="button"] {
-                background: var(--draft-btn);
-            }
-        }
     }
 }

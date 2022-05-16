@@ -60,13 +60,13 @@ main.main-body {
                 background: var(--main);
                 position: relative;
                 border-radius: 0px 0px 5px 5px;
-                z-index: -1;
+                z-index: 10;
                 top: 0px;
                 display: flex;
                 align-items: center;
                 gap: 10px;
                 flex-shrink: 0;
-                overflow: hidden;
+                overflow: auto;
                 // margin-bottom: -5px;
 
                 span.feed-write-topic-sh {
@@ -94,56 +94,13 @@ main.main-body {
                     }
                 }
             }
+
+            .feed-write-topic::-webkit-scrollbar {
+                display: none;
+            }
         }
 
         .feed-blog {
-
-            .feed-tags {
-                border-radius: 5px;
-                background: var(--white-tint);
-                box-shadow: var(--main-box-shadow);
-                padding: 15px;
-                margin-bottom: 20px;
-
-                h2.feed-tags-heading {
-                    font: 1.5 24px 'Poppins', sans-serif;
-                    margin-bottom: 5px;
-                    color: var(--text-main);
-                }
-
-                p.feed-tags-par {
-                    font: 1.5 16px 'Roboto', sans-serif;
-                    color: var(--par-main);
-                }
-
-                .feed-tags-topics {
-                    margin-top: 20px;
-
-                    .feed-tags-topics-container {
-                        display: inline-block;
-                        margin-bottom: 20px;
-
-                        span[class^="feed-tags-topics-"] {
-                            border-radius: 50px;
-                            padding: 5px 10px;
-                            border: 1px solid var(--main);
-                            color: var(--text-main);
-                            font: 16px 'Poppins', sans-serif;
-                            transition: .3s;
-                            cursor: pointer;
-                            margin-right: 3px;
-                        }
-    
-                        span[class^="feed-tags-topics-"]:hover {
-                            background: var(--main);
-                        }
-                    }
-
-                    .feed-tags-topics-container:last-child {
-                        margin-bottom: 0px;
-                    }
-                }
-            }
 
             .feed-blogs {
                 border-radius: 5px;
@@ -291,7 +248,7 @@ main.main-body {
 
         .user-container-main {
             position: sticky;
-            top: 80px; // fixed value of positioning, fixed on scroll
+            top: 91px; // fixed value of positioning, fixed on scroll
             left: 0;
 
             .user {
@@ -334,6 +291,143 @@ main.main-body {
                         color: var(--feed-write-heading);
                     }
                 }
+            }
+        }
+
+        .user-more-topics {
+            margin-top: 15px;
+            background: var(--white-tint);
+            box-shadow: var(--box-shadow);
+            padding: 15px;
+            position: sticky;
+            top: 171px; // fixed value of positioning, fixed on scroll
+            left: 0;
+
+            h4.more-topics-heading {
+                font: 20px 'Poppins', sans-serif;
+            }
+
+            p.more-topics-par {
+                font: 12px 'Roboto', sans-serif;
+                line-height: 1.5;
+                color: var(--par-main);
+            }
+
+            ul.more-topics-list {
+                margin-top: 20px;
+
+                .more-tags-topics-container {
+                    display: inline-block;
+                    margin-bottom: 20px;
+    
+                    span[class^="more-tags-topics-"] {
+                        border-radius: 50px;
+                        padding: 5px 10px;
+                        border: 1px solid var(--main);
+                        color: var(--text-main);
+                        font: 12px 'Poppins', sans-serif;
+                        transition: .3s;
+                        cursor: pointer;
+                        margin-right: 3px;
+                    }
+    
+                    span[class^="more-tags-topics-"]:hover {
+                        background: var(--main);
+                    }
+                }
+    
+                .more-tags-topics-container:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        .footer {
+            margin-top: 20px;
+            position: sticky;
+            top: 580px; // fixed value of positioning, fixed on scroll
+            left: 0;
+
+            p {
+                text-align: center;
+                font: 12px 'Poppins', sans-serif;
+                line-height: 1.5;
+                color: var(--par-main);
+            }
+        }
+    }
+}
+
+.select-tag-modal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: var(--modal-bg);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    .feed-tags {
+        border-radius: 5px;
+        background: var(--white-tint);
+        box-shadow: var(--main-box-shadow);
+        padding: 15px;
+        margin-bottom: 20px;
+        width: 50%;
+        position: relative;
+
+        h2.feed-tags-heading {
+            font: 1.5 24px 'Poppins', sans-serif;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        p.feed-tags-par {
+            font: 1.5 16px 'Roboto', sans-serif;
+            color: var(--par-main);
+        }
+
+        .feed-tags-topics {
+            margin-top: 20px;
+
+            .feed-tags-topics-container {
+                display: inline-block;
+                margin-bottom: 20px;
+
+                span[class^="feed-tags-topics-"] {
+                    border-radius: 50px;
+                    padding: 5px 10px;
+                    border: 1px solid var(--main);
+                    color: var(--text-main);
+                    font: 16px 'Poppins', sans-serif;
+                    transition: .3s;
+                    cursor: pointer;
+                    margin-right: 3px;
+                }
+
+                span[class^="feed-tags-topics-"]:hover {
+                    background: var(--main);
+                }
+            }
+
+            .feed-tags-topics-container:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        .skip-btn {
+            position: absolute;
+            right: 0;
+            top: -25px;
+
+            span {
+                cursor: pointer;
+                font: 16px 'Roboto', sans-serif;
+                letter-spacing: 0.5px;
+                color: var(--white-tint);
             }
         }
     }

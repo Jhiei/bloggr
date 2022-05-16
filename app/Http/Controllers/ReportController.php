@@ -85,8 +85,10 @@ class ReportController extends Controller
         $data->user_id = $user->id;
         $data->save();
 
+        $report_count = 5;
+
         $warning_count = count(Warning::where('user_id', $user->id)->get());
-        if ($warning_count >= 7) {
+        if ($warning_count >= $report_count) {
             $blogs = Blog::where('user_id', $user->id)->get();
             foreach ($blogs as $blog) {
                 $blog->delete();

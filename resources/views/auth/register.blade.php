@@ -67,13 +67,16 @@
                 </div>
 
                 <div class="sign-up-form-input-field">
-                    <input type="submit" value="Sign In">
+                    <input type="submit" value="Sign Up">
                 </div>
             </form>
+            @if($errors->any())
+            <h4 class="main-body-register-error">{{$errors->first()}}</h4>
+            @endif
+            <div class="main-body-login">
+                <p class="main-body-login-link">Already have an account? <a href="{{ route('login') }}">Sign in</a></p>
+            </div>
         </div>
-        <footer class="sign-up-footer">
-
-        </footer>
     </main>
 
     <script src="{{ asset('js/auth/form-labels.js') }}"></script>

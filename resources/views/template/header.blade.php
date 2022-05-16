@@ -1,23 +1,20 @@
 <header class="hdr-container">
     <div class="main-hdr">
         <div class="main-hdr-logo">
-            <img src="{{ asset('images/logo.svg') }}" alt="logo inside header container">
+            <a href="{{ route('rdr') }}"><img src="{{ asset('images/logo.svg') }}" alt="logo inside header container"></a>
         </div>
-        <div class="main-hdr-search">
+        <!-- <div class="main-hdr-search">
             <form action="" method="GET" class="main-hdr-search-form">
                 @csrf
                 <input type="text" name="search" id="search" placeholder="Search">
                 <input type="submit">
             </form>
-        </div>
+        </div> -->
         <div class="main-hdr-nav">
             <nav class="main-hdr-nav-container">
                 <ul class="main-hdr-nav-list">
                     <a href="{{ route('rdr') }}"><li class="main-hdr-nav-list-links">
                         <img src="{{ asset('images/home.svg') }}" alt="">
-                    </li></a>
-                    <a href="#"><li class="main-hdr-nav-list-links">
-                        <img src="{{ asset('images/notif.svg') }}" alt="">
                     </li></a>
                 </ul>
             </nav>

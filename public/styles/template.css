@@ -25,6 +25,9 @@ header.hdr-container .main-hdr {
 }
 
 header.hdr-container .main-hdr .main-hdr-logo {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
   width: 100%;
 }
 
@@ -56,6 +59,9 @@ header.hdr-container .main-hdr .main-hdr-search form.main-hdr-search-form input[
 }
 
 header.hdr-container .main-hdr .main-hdr-nav {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -69,7 +75,8 @@ header.hdr-container .main-hdr .main-hdr-nav {
 }
 
 header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container {
-  margin-right: 25px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container ul.main-hdr-nav-list {
@@ -90,10 +97,6 @@ header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container ul.main-
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-header.hdr-container .main-hdr .main-hdr-nav nav.main-hdr-nav-container ul.main-hdr-nav-list a:last-child {
-  margin-left: 10px;
 }
 
 header.hdr-container .main-hdr .main-hdr-nav .main-hdr-nav-profile-container {

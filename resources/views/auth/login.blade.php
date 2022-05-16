@@ -27,7 +27,7 @@
 
                 <div class="sign-in-form-input-field">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" required autofocus>
                 </div>
 
                 <div class="sign-in-form-input-field">
@@ -39,10 +39,13 @@
                     <input type="submit" value="Sign In">
                 </div>
             </form>
+            @if($errors->any())
+            <h4 class="main-body-login-error">{{$errors->first()}}</h4>
+            @endif
+            <div class="main-body-register">
+                <p class="main-body-register-link">Don't have an account? <a href="{{ route('register') }}">Sign up</a></p>
+            </div>
         </div>
-        <footer class="sign-in-footer">
-
-        </footer>
     </main>
 
     <script src="{{ asset('js/auth/form-labels.js') }}"></script>

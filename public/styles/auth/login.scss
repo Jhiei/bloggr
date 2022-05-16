@@ -71,6 +71,34 @@ main.main-body {
                 }
             }
         }
+
+        h4.main-body-login-error {
+            font: 16px 'Poppins', sans-serif;
+            background: var(--error-tint);
+            color: var(--white-tint);
+            padding: 15px 0px;
+            border: 1px solid var(--form-element-border);
+            margin: 0px 25px 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .main-body-register {
+            font: 16px 'Poppins', sans-serif;
+            background: var(--white-tint);
+            padding: 15px 0px;
+            border: 1px solid var(--form-element-border);
+            margin: 0px 25px;
+            border-radius: 5px;
+
+            p.main-body-register-link {
+                text-align: center;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     footer.sign-in-footer {
