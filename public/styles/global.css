@@ -25,7 +25,7 @@
     --note-colour: #dcdcdc;
     --hover-grey-colour: #dcdcdc;
     --success-tint: #61fc61;
-    --success-bg: #0a0c0a;
+    --success-bg: #95f095;
     --grey-bg: #f0f0f0;
 }
 
@@ -85,7 +85,7 @@ textarea {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #ffffff;
 }
 
 /* Handle */

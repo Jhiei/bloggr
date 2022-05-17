@@ -290,8 +290,4 @@
             $('.select-tag-modal').fadeOut(200);
         });
     </script>
-
-    <script>
-        console.log($('.user-more-topics').height());
-    </script>
 @endsection

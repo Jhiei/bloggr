@@ -4,6 +4,4 @@
 
 @yield('content')
 
-@include('template.footer')
-
 @include('template.foot')

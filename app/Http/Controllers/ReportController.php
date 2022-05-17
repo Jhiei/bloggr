@@ -35,7 +35,6 @@ class ReportController extends Controller
         return redirect(route('dashboard'))->with('msg', 'Your report has been successfully submitted.');
     }
 
-    // TODO: finish acknowledge user and acknowledge blog buttons
     public function acknowledge_user(Request $request) {
         $report = Report::find($request->report_id);
         $user = User::find($report->user_id);
